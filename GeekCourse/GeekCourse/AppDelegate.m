@@ -2,11 +2,13 @@
 //  AppDelegate.m
 //  GeekCourse
 //
-//  Created by dllo on 16/9/20.
+//  Created by dllo on 16/9/21.
 //  Copyright © 2016年 Guolefeng. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "Glf_GuideViewController.h"
+#import "Glf_CourseViewController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +16,21 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 使用 NSUserDefaults 读取用户数据
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    
+    // 判断是否是第一次进入引导页
+    if (![userDef boolForKey:@"notFirst"]) {
+        // 如果是第一次进入引导页
+        _window.rootViewController = [[Glf_GuideViewController alloc] init];
+    } else {
+        // 否则直接进入引用
+        _window.rootViewController = [[Glf_CourseViewController alloc] init];
+    }
+    
     return YES;
 }
 
