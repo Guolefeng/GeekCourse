@@ -8,6 +8,8 @@
 
 #import "Glf_GuideViewController.h"
 #import "Glf_CourseViewController.h"
+#import "Glf_TabBarViewController.h"
+
 
 #define WIDITH (NSInteger)self.view.bounds.size.width
 #define HEIGHT (NSInteger)self.view.bounds.size.height
@@ -87,7 +89,7 @@ UIScrollViewDelegate
 }
 
 - (void)buttonAction:(UIButton *)button {
-    NSLog(@"点我啦");
+    NSLog(@"引导页结束了");
     
     flag = YES;
     NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
@@ -95,7 +97,8 @@ UIScrollViewDelegate
     [userDef setBool:flag forKey:@"norFirst"];
     [userDef synchronize];
     // 切换视图控制器
-    self.view.window.rootViewController = [[Glf_CourseViewController alloc] init];
+    self.view.window.rootViewController = [[Glf_TabBarViewController alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {

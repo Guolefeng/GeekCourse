@@ -1,26 +1,23 @@
 //
-//  Glf_CourseViewController.m
+//  Glf_MineViewController.m
 //  GeekCourse
 //
 //  Created by dllo on 16/9/21.
 //  Copyright © 2016年 Guolefeng. All rights reserved.
 //
 
-#import "Glf_CourseViewController.h"
+#import "Glf_MineViewController.h"
 
-@interface Glf_CourseViewController ()
+@interface Glf_MineViewController ()
 
 @end
 
-@implementation Glf_CourseViewController
+@implementation Glf_MineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor cyanColor];
-    
-    
-    
+    self.view.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)didReceiveMemoryWarning {

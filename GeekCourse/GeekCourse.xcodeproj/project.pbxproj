@@ -35,6 +35,10 @@
 		49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3A61D927B2E0011302E /* Glf_BaseViewController.m */; };
 		49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3B51D927C8F0011302E /* Glf_GuideViewController.m */; };
 		49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3B81D927CA20011302E /* Glf_CourseViewController.m */; };
+		49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3BC1D9289EC0011302E /* Glf_DownloadViewController.m */; };
+		49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */; };
+		49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3C81D928A530011302E /* Glf_MineViewController.m */; };
+		49BEC3CE1D928F1A0011302E /* Glf_TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */; };
 		7EDE260FEE911A1B94C954B9 /* libPods-GeekCourse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1201F1BEC3600C670E7C7D /* libPods-GeekCourse.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +101,14 @@
 		49BEC3B51D927C8F0011302E /* Glf_GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_GuideViewController.m; sourceTree = "<group>"; };
 		49BEC3B71D927CA20011302E /* Glf_CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CourseViewController.h; sourceTree = "<group>"; };
 		49BEC3B81D927CA20011302E /* Glf_CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CourseViewController.m; sourceTree = "<group>"; };
+		49BEC3BB1D9289EC0011302E /* Glf_DownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DownloadViewController.h; sourceTree = "<group>"; };
+		49BEC3BC1D9289EC0011302E /* Glf_DownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DownloadViewController.m; sourceTree = "<group>"; };
+		49BEC3C11D928A2B0011302E /* Glf_DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DiscoverViewController.h; sourceTree = "<group>"; };
+		49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DiscoverViewController.m; sourceTree = "<group>"; };
+		49BEC3C71D928A530011302E /* Glf_MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MineViewController.h; sourceTree = "<group>"; };
+		49BEC3C81D928A530011302E /* Glf_MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MineViewController.m; sourceTree = "<group>"; };
+		49BEC3CC1D928F1A0011302E /* Glf_TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_TabBarViewController.h; sourceTree = "<group>"; };
+		49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_TabBarViewController.m; sourceTree = "<group>"; };
 		A7DD935470ECFDE9EE80DC31 /* Pods-GeekCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		C26F2FEB746A615176913B11 /* Pods-GeekCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +190,7 @@
 		49BEC3411D9239EC0011302E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3CA1D928EFA0011302E /* TabBar */,
 				49BEC39D1D92766C0011302E /* Course */,
 				49BEC3921D9275210011302E /* GuidePage */,
 				49BEC3901D923B6F0011302E /* Download */,
@@ -191,6 +204,9 @@
 		49BEC3431D9239EC0011302E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3C01D928A160011302E /* Model */,
+				49BEC3BF1D928A0F0011302E /* View */,
+				49BEC3BE1D928A020011302E /* Controller */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -205,6 +221,9 @@
 		49BEC3451D9239EC0011302E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3C61D928A450011302E /* Model */,
+				49BEC3C51D928A400011302E /* View */,
+				49BEC3C41D928A340011302E /* Controller */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -323,6 +342,7 @@
 		49BEC3901D923B6F0011302E /* Download */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3BA1D9289DD0011302E /* Controller */,
 			);
 			name = Download;
 			sourceTree = "<group>";
@@ -384,6 +404,78 @@
 				49BEC3A61D927B2E0011302E /* Glf_BaseViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49BEC3BA1D9289DD0011302E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49BEC3BB1D9289EC0011302E /* Glf_DownloadViewController.h */,
+				49BEC3BC1D9289EC0011302E /* Glf_DownloadViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49BEC3BE1D928A020011302E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49BEC3C11D928A2B0011302E /* Glf_DiscoverViewController.h */,
+				49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49BEC3BF1D928A0F0011302E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49BEC3C01D928A160011302E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49BEC3C41D928A340011302E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49BEC3C71D928A530011302E /* Glf_MineViewController.h */,
+				49BEC3C81D928A530011302E /* Glf_MineViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49BEC3C51D928A400011302E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49BEC3C61D928A450011302E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49BEC3CA1D928EFA0011302E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				49BEC3CB1D928F0B0011302E /* Controller */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		49BEC3CB1D928F0B0011302E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49BEC3CC1D928F1A0011302E /* Glf_TabBarViewController.h */,
+				49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		5042E664FF8425CE58C016E7 /* Pods */ = {
@@ -523,11 +615,14 @@
 				49BEC3831D9239FD0011302E /* NSString+Categories.m in Sources */,
 				49BEC38B1D9239FE0011302E /* HttpClient.m in Sources */,
 				49BEC3521D9239F10011302E /* Glf_BaseView.m in Sources */,
+				49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */,
 				49BEC3841D9239FD0011302E /* NSString+Regex.m in Sources */,
 				49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */,
+				49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */,
 				49BEC3861D9239FD0011302E /* UIButton+Block.m in Sources */,
 				49BEC37E1D9239FD0011302E /* NSArray+Categories.m in Sources */,
 				49BEC3801D9239FD0011302E /* NSDate+EasyExtend.mm in Sources */,
+				49BEC3CE1D928F1A0011302E /* Glf_TabBarViewController.m in Sources */,
 				49BEC3811D9239FD0011302E /* NSDictionary+Categories.m in Sources */,
 				49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */,
 				49BEC38A1D9239FD0011302E /* DataBaseManager.m in Sources */,
@@ -538,6 +633,7 @@
 				49BEC38C1D9239FE0011302E /* AppStoreUtils.m in Sources */,
 				49BEC3871D9239FD0011302E /* UIColor+Categories.m in Sources */,
 				49BEC38D1D9239FE0011302E /* FileManagerUtils.m in Sources */,
+				49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */,
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */,
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
