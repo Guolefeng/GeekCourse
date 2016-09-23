@@ -28,5 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)modelWithDic:(NSDictionary *)dic;
 
+
 @end
 NS_ASSUME_NONNULL_END

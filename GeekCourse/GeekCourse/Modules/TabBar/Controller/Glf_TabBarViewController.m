@@ -75,9 +75,10 @@ UITabBarControllerDelegate
     self.delegate = self;
     self.tabBar.tintColor = [UIColor redColor];
     self.tabBar.barTintColor = [UIColor whiteColor];
-    self.tabBar.translucent = YES;
-   
+    //self.tabBar.translucent = NO;
+    
 }
+
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     NSLog(@"seleted %lu", tabBarController.selectedIndex);

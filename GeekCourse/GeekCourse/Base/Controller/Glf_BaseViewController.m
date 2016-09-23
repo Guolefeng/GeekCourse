@@ -7,7 +7,8 @@
 //
 
 #import "Glf_BaseViewController.h"
-
+//#define WIDITH (NSInteger)[UIScreen mainScreen].bounds.size.width
+//#define HEIGHT (NSInteger)[UIScreen mainScreen].bounds.size.height
 
 @interface Glf_BaseViewController ()
 
@@ -22,6 +23,36 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+}
+
+- (void)postWithURL:(NSString *)URL body:(NSString *)body block:(void (^)(id result))block {
+    
+    NSURL *url = [NSURL URLWithString:URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"mukewang/4.3.2 (iPhone; iOS 7.1.2; Scale/2.00) Paros/3.2.13" forHTTPHeaderField:@"User-Agent"];
+    
+    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (!error) {
+                id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                // 传值
+                block(result);
+            }
+            
+        });
+        
+    }];
+    
+    [dataTask resume];
     
 }
 

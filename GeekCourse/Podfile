@@ -7,5 +7,7 @@ target 'GeekCourse' do
 
   # Pods for GeekCourse
 pod 'AFNetworking', '~> 3.1.0'
- pod 'HYBMasonryAutoCellHeight', '~> 2.0.1'
+pod 'HYBMasonryAutoCellHeight', '~> 2.0.1'
+pod 'SDWebImage', '~> 3.8.2'
+ pod 'MJExtension', '~> 3.0.13'
 end

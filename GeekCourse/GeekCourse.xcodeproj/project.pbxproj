@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49BEA3F61D93D2A7001DED2E /* Glf_MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3F51D93D2A7001DED2E /* Glf_MyCollectionViewCell.m */; };
+		49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */; };
+		49BEA3FF1D941951001DED2E /* Glf_Datas.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3FE1D941951001DED2E /* Glf_Datas.m */; };
 		49BEC3291D9238FC0011302E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3281D9238FC0011302E /* main.m */; };
 		49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC32B1D9238FC0011302E /* AppDelegate.m */; };
 		49BEC3321D9238FC0011302E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BEC3301D9238FC0011302E /* Main.storyboard */; };
@@ -44,6 +47,12 @@
 
 /* Begin PBXFileReference section */
 		1D1201F1BEC3600C670E7C7D /* libPods-GeekCourse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GeekCourse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BEA3F41D93D2A7001DED2E /* Glf_MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MyCollectionViewCell.h; sourceTree = "<group>"; };
+		49BEA3F51D93D2A7001DED2E /* Glf_MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MyCollectionViewCell.m; sourceTree = "<group>"; };
+		49BEA3FA1D93F7B9001DED2E /* Glf_ModelOfCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ModelOfCourse.h; sourceTree = "<group>"; };
+		49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ModelOfCourse.m; sourceTree = "<group>"; };
+		49BEA3FD1D941951001DED2E /* Glf_Datas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_Datas.h; sourceTree = "<group>"; };
+		49BEA3FE1D941951001DED2E /* Glf_Datas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_Datas.m; sourceTree = "<group>"; };
 		49BEC3241D9238FC0011302E /* GeekCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BEC3281D9238FC0011302E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49BEC32A1D9238FC0011302E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,10 +145,10 @@
 		49BEC31B1D9238FC0011302E = {
 			isa = PBXGroup;
 			children = (
-				49BEC3261D9238FC0011302E /* GeekCourse */,
-				49BEC3251D9238FC0011302E /* Products */,
-				5042E664FF8425CE58C016E7 /* Pods */,
 				29A44834C5C900B14B494B21 /* Frameworks */,
+				49BEC3261D9238FC0011302E /* GeekCourse */,
+				5042E664FF8425CE58C016E7 /* Pods */,
+				49BEC3251D9238FC0011302E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,18 +163,18 @@
 		49BEC3261D9238FC0011302E /* GeekCourse */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3461D9239F10011302E /* Base */,
 				49BEC3551D9239FD0011302E /* Common */,
 				49BEC3531D9239F60011302E /* Macro */,
-				49BEC3461D9239F10011302E /* Base */,
 				49BEC3411D9239EC0011302E /* Modules */,
 				49BEC33E1D9239E30011302E /* Resourses */,
+				49BEC3271D9238FC0011302E /* Supporting Files */,
 				49BEC32A1D9238FC0011302E /* AppDelegate.h */,
 				49BEC32B1D9238FC0011302E /* AppDelegate.m */,
-				49BEC3301D9238FC0011302E /* Main.storyboard */,
 				49BEC3331D9238FC0011302E /* Assets.xcassets */,
-				49BEC3351D9238FC0011302E /* LaunchScreen.storyboard */,
 				49BEC3381D9238FC0011302E /* Info.plist */,
-				49BEC3271D9238FC0011302E /* Supporting Files */,
+				49BEC3351D9238FC0011302E /* LaunchScreen.storyboard */,
+				49BEC3301D9238FC0011302E /* Main.storyboard */,
 			);
 			path = GeekCourse;
 			sourceTree = "<group>";
@@ -173,10 +182,10 @@
 		49BEC3271D9238FC0011302E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49BEC3281D9238FC0011302E /* main.m */,
 				49BEC3911D923C910011302E /* Glf_PrefixHeader.pch */,
+				49BEC3281D9238FC0011302E /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		49BEC33E1D9239E30011302E /* Resourses */ = {
@@ -190,13 +199,13 @@
 		49BEC3411D9239EC0011302E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				49BEC3CA1D928EFA0011302E /* TabBar */,
 				49BEC39D1D92766C0011302E /* Course */,
-				49BEC3921D9275210011302E /* GuidePage */,
-				49BEC3901D923B6F0011302E /* Download */,
 				49BEC3431D9239EC0011302E /* Discover */,
+				49BEC3901D923B6F0011302E /* Download */,
+				49BEC3921D9275210011302E /* GuidePage */,
 				49BEC3441D9239EC0011302E /* LoginAndRegister */,
 				49BEC3451D9239EC0011302E /* Mine */,
+				49BEC3CA1D928EFA0011302E /* TabBar */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -204,9 +213,9 @@
 		49BEC3431D9239EC0011302E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3BE1D928A020011302E /* Controller */,
 				49BEC3C01D928A160011302E /* Model */,
 				49BEC3BF1D928A0F0011302E /* View */,
-				49BEC3BE1D928A020011302E /* Controller */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -221,9 +230,9 @@
 		49BEC3451D9239EC0011302E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC3C41D928A340011302E /* Controller */,
 				49BEC3C61D928A450011302E /* Model */,
 				49BEC3C51D928A400011302E /* View */,
-				49BEC3C41D928A340011302E /* Controller */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -344,7 +353,7 @@
 			children = (
 				49BEC3BA1D9289DD0011302E /* Controller */,
 			);
-			name = Download;
+			path = Download;
 			sourceTree = "<group>";
 		};
 		49BEC3921D9275210011302E /* GuidePage */ = {
@@ -352,7 +361,7 @@
 			children = (
 				49BEC3931D92754B0011302E /* Controller */,
 			);
-			name = GuidePage;
+			path = GuidePage;
 			sourceTree = "<group>";
 		};
 		49BEC3931D92754B0011302E /* Controller */ = {
@@ -361,15 +370,15 @@
 				49BEC3B41D927C8F0011302E /* Glf_GuideViewController.h */,
 				49BEC3B51D927C8F0011302E /* Glf_GuideViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		49BEC39D1D92766C0011302E /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				49BEC39E1D9276770011302E /* Controller */,
 				49BEC3A01D9276860011302E /* Model */,
 				49BEC39F1D92767E0011302E /* View */,
-				49BEC39E1D9276770011302E /* Controller */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -380,21 +389,27 @@
 				49BEC3B71D927CA20011302E /* Glf_CourseViewController.h */,
 				49BEC3B81D927CA20011302E /* Glf_CourseViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		49BEC39F1D92767E0011302E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49BEA3F41D93D2A7001DED2E /* Glf_MyCollectionViewCell.h */,
+				49BEA3F51D93D2A7001DED2E /* Glf_MyCollectionViewCell.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		49BEC3A01D9276860011302E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49BEA3FA1D93F7B9001DED2E /* Glf_ModelOfCourse.h */,
+				49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */,
+				49BEA3FD1D941951001DED2E /* Glf_Datas.h */,
+				49BEA3FE1D941951001DED2E /* Glf_Datas.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		49BEC3A41D927AB60011302E /* Controller */ = {
@@ -412,7 +427,7 @@
 				49BEC3BB1D9289EC0011302E /* Glf_DownloadViewController.h */,
 				49BEC3BC1D9289EC0011302E /* Glf_DownloadViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		49BEC3BE1D928A020011302E /* Controller */ = {
@@ -421,21 +436,21 @@
 				49BEC3C11D928A2B0011302E /* Glf_DiscoverViewController.h */,
 				49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		49BEC3BF1D928A0F0011302E /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		49BEC3C01D928A160011302E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		49BEC3C41D928A340011302E /* Controller */ = {
@@ -444,21 +459,21 @@
 				49BEC3C71D928A530011302E /* Glf_MineViewController.h */,
 				49BEC3C81D928A530011302E /* Glf_MineViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		49BEC3C51D928A400011302E /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		49BEC3C61D928A450011302E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		49BEC3CA1D928EFA0011302E /* TabBar */ = {
@@ -466,7 +481,7 @@
 			children = (
 				49BEC3CB1D928F0B0011302E /* Controller */,
 			);
-			name = TabBar;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		49BEC3CB1D928F0B0011302E /* Controller */ = {
@@ -475,7 +490,7 @@
 				49BEC3CC1D928F1A0011302E /* Glf_TabBarViewController.h */,
 				49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5042E664FF8425CE58C016E7 /* Pods */ = {
@@ -614,6 +629,7 @@
 				49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */,
 				49BEC3831D9239FD0011302E /* NSString+Categories.m in Sources */,
 				49BEC38B1D9239FE0011302E /* HttpClient.m in Sources */,
+				49BEA3F61D93D2A7001DED2E /* Glf_MyCollectionViewCell.m in Sources */,
 				49BEC3521D9239F10011302E /* Glf_BaseView.m in Sources */,
 				49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */,
 				49BEC3841D9239FD0011302E /* NSString+Regex.m in Sources */,
@@ -636,8 +652,10 @@
 				49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */,
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */,
+				49BEA3FF1D941951001DED2E /* Glf_Datas.m in Sources */,
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
 				49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */,
+				49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +668,7 @@
 				49BEC3311D9238FC0011302E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		49BEC3351D9238FC0011302E /* LaunchScreen.storyboard */ = {
@@ -658,6 +677,7 @@
 				49BEC3361D9238FC0011302E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
