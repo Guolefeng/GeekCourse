@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49BEA3F61D93D2A7001DED2E /* Glf_MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3F51D93D2A7001DED2E /* Glf_MyCollectionViewCell.m */; };
+		4994FCBF1D954C1500673F17 /* Glf_MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4994FCBE1D954C1500673F17 /* Glf_MyTableViewCell.m */; };
 		49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */; };
-		49BEA3FF1D941951001DED2E /* Glf_Datas.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3FE1D941951001DED2E /* Glf_Datas.m */; };
 		49BEC3291D9238FC0011302E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3281D9238FC0011302E /* main.m */; };
 		49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC32B1D9238FC0011302E /* AppDelegate.m */; };
 		49BEC3321D9238FC0011302E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BEC3301D9238FC0011302E /* Main.storyboard */; };
@@ -17,7 +16,6 @@
 		49BEC3371D9238FC0011302E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BEC3351D9238FC0011302E /* LaunchScreen.storyboard */; };
 		49BEC3401D9239E30011302E /* AboutMe in Resources */ = {isa = PBXBuildFile; fileRef = 49BEC33F1D9239E30011302E /* AboutMe */; };
 		49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC34C1D9239F10011302E /* Glf_BaseModel.m */; };
-		49BEC3521D9239F10011302E /* Glf_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC34F1D9239F10011302E /* Glf_BaseView.m */; };
 		49BEC37E1D9239FD0011302E /* NSArray+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3581D9239FD0011302E /* NSArray+Categories.m */; };
 		49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC35A1D9239FD0011302E /* NSDate+Categories.m */; };
 		49BEC3801D9239FD0011302E /* NSDate+EasyExtend.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC35C1D9239FD0011302E /* NSDate+EasyExtend.mm */; };
@@ -42,17 +40,22 @@
 		49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */; };
 		49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3C81D928A530011302E /* Glf_MineViewController.m */; };
 		49BEC3CE1D928F1A0011302E /* Glf_TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */; };
+		49E189D21D962A49004A1706 /* Glf_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189D11D962A49004A1706 /* Glf_BaseView.m */; };
+		49E189D51D96312E004A1706 /* Glf_CoursesCatagoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189D41D96312E004A1706 /* Glf_CoursesCatagoryViewController.m */; };
+		49E189D81D9631B9004A1706 /* Glf_HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189D71D9631B9004A1706 /* Glf_HistoryViewController.m */; };
+		49E189DB1D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189DA1D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.m */; };
+		49E189DE1D965983004A1706 /* Glf_CourseCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189DD1D965983004A1706 /* Glf_CourseCollectionReusableView.m */; };
+		49E189E41D9661C3004A1706 /* Glf_CaregroiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189E31D9661C3004A1706 /* Glf_CaregroiesModel.m */; };
+		49E189E71D966394004A1706 /* Glf_SkillsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189E61D966394004A1706 /* Glf_SkillsModel.m */; };
 		7EDE260FEE911A1B94C954B9 /* libPods-GeekCourse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1201F1BEC3600C670E7C7D /* libPods-GeekCourse.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D1201F1BEC3600C670E7C7D /* libPods-GeekCourse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GeekCourse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		49BEA3F41D93D2A7001DED2E /* Glf_MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MyCollectionViewCell.h; sourceTree = "<group>"; };
-		49BEA3F51D93D2A7001DED2E /* Glf_MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MyCollectionViewCell.m; sourceTree = "<group>"; };
+		4994FCBD1D954C1500673F17 /* Glf_MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MyTableViewCell.h; sourceTree = "<group>"; };
+		4994FCBE1D954C1500673F17 /* Glf_MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MyTableViewCell.m; sourceTree = "<group>"; };
 		49BEA3FA1D93F7B9001DED2E /* Glf_ModelOfCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ModelOfCourse.h; sourceTree = "<group>"; };
 		49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ModelOfCourse.m; sourceTree = "<group>"; };
-		49BEA3FD1D941951001DED2E /* Glf_Datas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_Datas.h; sourceTree = "<group>"; };
-		49BEA3FE1D941951001DED2E /* Glf_Datas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_Datas.m; sourceTree = "<group>"; };
 		49BEC3241D9238FC0011302E /* GeekCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BEC3281D9238FC0011302E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49BEC32A1D9238FC0011302E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,8 +67,6 @@
 		49BEC33F1D9239E30011302E /* AboutMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AboutMe; sourceTree = "<group>"; };
 		49BEC34B1D9239F10011302E /* Glf_BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_BaseModel.h; sourceTree = "<group>"; };
 		49BEC34C1D9239F10011302E /* Glf_BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_BaseModel.m; sourceTree = "<group>"; };
-		49BEC34E1D9239F10011302E /* Glf_BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_BaseView.h; sourceTree = "<group>"; };
-		49BEC34F1D9239F10011302E /* Glf_BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_BaseView.m; sourceTree = "<group>"; };
 		49BEC3541D9239F60011302E /* EAMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAMacro.h; sourceTree = "<group>"; };
 		49BEC3571D9239FD0011302E /* NSArray+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Categories.h"; sourceTree = "<group>"; };
 		49BEC3581D9239FD0011302E /* NSArray+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Categories.m"; sourceTree = "<group>"; };
@@ -118,6 +119,20 @@
 		49BEC3C81D928A530011302E /* Glf_MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MineViewController.m; sourceTree = "<group>"; };
 		49BEC3CC1D928F1A0011302E /* Glf_TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_TabBarViewController.h; sourceTree = "<group>"; };
 		49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_TabBarViewController.m; sourceTree = "<group>"; };
+		49E189D01D962A49004A1706 /* Glf_BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_BaseView.h; sourceTree = "<group>"; };
+		49E189D11D962A49004A1706 /* Glf_BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_BaseView.m; sourceTree = "<group>"; };
+		49E189D31D96312E004A1706 /* Glf_CoursesCatagoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CoursesCatagoryViewController.h; sourceTree = "<group>"; };
+		49E189D41D96312E004A1706 /* Glf_CoursesCatagoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CoursesCatagoryViewController.m; sourceTree = "<group>"; };
+		49E189D61D9631B9004A1706 /* Glf_HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_HistoryViewController.h; sourceTree = "<group>"; };
+		49E189D71D9631B9004A1706 /* Glf_HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_HistoryViewController.m; sourceTree = "<group>"; };
+		49E189D91D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CoursesCatagoryCollectionViewCell.h; sourceTree = "<group>"; };
+		49E189DA1D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CoursesCatagoryCollectionViewCell.m; sourceTree = "<group>"; };
+		49E189DC1D965983004A1706 /* Glf_CourseCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CourseCollectionReusableView.h; sourceTree = "<group>"; };
+		49E189DD1D965983004A1706 /* Glf_CourseCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CourseCollectionReusableView.m; sourceTree = "<group>"; };
+		49E189E21D9661C3004A1706 /* Glf_CaregroiesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CaregroiesModel.h; sourceTree = "<group>"; };
+		49E189E31D9661C3004A1706 /* Glf_CaregroiesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CaregroiesModel.m; sourceTree = "<group>"; };
+		49E189E51D966394004A1706 /* Glf_SkillsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_SkillsModel.h; sourceTree = "<group>"; };
+		49E189E61D966394004A1706 /* Glf_SkillsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_SkillsModel.m; sourceTree = "<group>"; };
 		A7DD935470ECFDE9EE80DC31 /* Pods-GeekCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		C26F2FEB746A615176913B11 /* Pods-GeekCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,8 +274,8 @@
 		49BEC34D1D9239F10011302E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49BEC34E1D9239F10011302E /* Glf_BaseView.h */,
-				49BEC34F1D9239F10011302E /* Glf_BaseView.m */,
+				49E189D01D962A49004A1706 /* Glf_BaseView.h */,
+				49E189D11D962A49004A1706 /* Glf_BaseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,9 +391,12 @@
 		49BEC39D1D92766C0011302E /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				49BEC39E1D9276770011302E /* Controller */,
-				49BEC3A01D9276860011302E /* Model */,
-				49BEC39F1D92767E0011302E /* View */,
+				49E189E91D96B7FA004A1706 /* CorusesHistory */,
+				49E189E81D96B7DF004A1706 /* CoursesCategory */,
+				49E189EB1D96B88C004A1706 /* CoursesJobHunting */,
+				49E189EA1D96B82B004A1706 /* CoursesPrsctise */,
+				49E189EC1D96B8A2004A1706 /* CoursesSalaryRaise */,
+				49E189F01D96BAD9004A1706 /* Root */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -395,8 +413,8 @@
 		49BEC39F1D92767E0011302E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49BEA3F41D93D2A7001DED2E /* Glf_MyCollectionViewCell.h */,
-				49BEA3F51D93D2A7001DED2E /* Glf_MyCollectionViewCell.m */,
+				4994FCBD1D954C1500673F17 /* Glf_MyTableViewCell.h */,
+				4994FCBE1D954C1500673F17 /* Glf_MyTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,8 +424,6 @@
 			children = (
 				49BEA3FA1D93F7B9001DED2E /* Glf_ModelOfCourse.h */,
 				49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */,
-				49BEA3FD1D941951001DED2E /* Glf_Datas.h */,
-				49BEA3FE1D941951001DED2E /* Glf_Datas.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,6 +507,87 @@
 				49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49E189E81D96B7DF004A1706 /* CoursesCategory */ = {
+			isa = PBXGroup;
+			children = (
+				49E189ED1D96B8F0004A1706 /* Controller */,
+				49E189EE1D96B901004A1706 /* Model */,
+				49E189EF1D96B90D004A1706 /* View */,
+			);
+			path = CoursesCategory;
+			sourceTree = "<group>";
+		};
+		49E189E91D96B7FA004A1706 /* CorusesHistory */ = {
+			isa = PBXGroup;
+			children = (
+				49E189D61D9631B9004A1706 /* Glf_HistoryViewController.h */,
+				49E189D71D9631B9004A1706 /* Glf_HistoryViewController.m */,
+			);
+			path = CorusesHistory;
+			sourceTree = "<group>";
+		};
+		49E189EA1D96B82B004A1706 /* CoursesPrsctise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoursesPrsctise;
+			sourceTree = "<group>";
+		};
+		49E189EB1D96B88C004A1706 /* CoursesJobHunting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoursesJobHunting;
+			sourceTree = "<group>";
+		};
+		49E189EC1D96B8A2004A1706 /* CoursesSalaryRaise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoursesSalaryRaise;
+			sourceTree = "<group>";
+		};
+		49E189ED1D96B8F0004A1706 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49E189D31D96312E004A1706 /* Glf_CoursesCatagoryViewController.h */,
+				49E189D41D96312E004A1706 /* Glf_CoursesCatagoryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49E189EE1D96B901004A1706 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49E189E21D9661C3004A1706 /* Glf_CaregroiesModel.h */,
+				49E189E31D9661C3004A1706 /* Glf_CaregroiesModel.m */,
+				49E189E51D966394004A1706 /* Glf_SkillsModel.h */,
+				49E189E61D966394004A1706 /* Glf_SkillsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49E189EF1D96B90D004A1706 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49E189DC1D965983004A1706 /* Glf_CourseCollectionReusableView.h */,
+				49E189DD1D965983004A1706 /* Glf_CourseCollectionReusableView.m */,
+				49E189D91D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.h */,
+				49E189DA1D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49E189F01D96BAD9004A1706 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				49BEC39E1D9276770011302E /* Controller */,
+				49BEC3A01D9276860011302E /* Model */,
+				49BEC39F1D92767E0011302E /* View */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		5042E664FF8425CE58C016E7 /* Pods */ = {
@@ -626,17 +723,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BEC38E1D9239FE0011302E /* NSUserDefaultsUtils.m in Sources */,
+				49E189D21D962A49004A1706 /* Glf_BaseView.m in Sources */,
+				49E189E71D966394004A1706 /* Glf_SkillsModel.m in Sources */,
 				49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */,
+				49E189DB1D965782004A1706 /* Glf_CoursesCatagoryCollectionViewCell.m in Sources */,
 				49BEC3831D9239FD0011302E /* NSString+Categories.m in Sources */,
+				49E189E41D9661C3004A1706 /* Glf_CaregroiesModel.m in Sources */,
+				49E189D51D96312E004A1706 /* Glf_CoursesCatagoryViewController.m in Sources */,
 				49BEC38B1D9239FE0011302E /* HttpClient.m in Sources */,
-				49BEA3F61D93D2A7001DED2E /* Glf_MyCollectionViewCell.m in Sources */,
-				49BEC3521D9239F10011302E /* Glf_BaseView.m in Sources */,
 				49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */,
 				49BEC3841D9239FD0011302E /* NSString+Regex.m in Sources */,
 				49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */,
 				49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */,
 				49BEC3861D9239FD0011302E /* UIButton+Block.m in Sources */,
 				49BEC37E1D9239FD0011302E /* NSArray+Categories.m in Sources */,
+				4994FCBF1D954C1500673F17 /* Glf_MyTableViewCell.m in Sources */,
 				49BEC3801D9239FD0011302E /* NSDate+EasyExtend.mm in Sources */,
 				49BEC3CE1D928F1A0011302E /* Glf_TabBarViewController.m in Sources */,
 				49BEC3811D9239FD0011302E /* NSDictionary+Categories.m in Sources */,
@@ -649,13 +750,14 @@
 				49BEC38C1D9239FE0011302E /* AppStoreUtils.m in Sources */,
 				49BEC3871D9239FD0011302E /* UIColor+Categories.m in Sources */,
 				49BEC38D1D9239FE0011302E /* FileManagerUtils.m in Sources */,
+				49E189DE1D965983004A1706 /* Glf_CourseCollectionReusableView.m in Sources */,
 				49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */,
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */,
-				49BEA3FF1D941951001DED2E /* Glf_Datas.m in Sources */,
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
 				49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */,
 				49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */,
+				49E189D81D9631B9004A1706 /* Glf_HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

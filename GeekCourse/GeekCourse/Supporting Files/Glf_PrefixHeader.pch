@@ -9,6 +9,9 @@
 #ifndef Glf_PrefixHeader_pch
 #define Glf_PrefixHeader_pch
 
+#define WIDITH (NSInteger)self.view.bounds.size.width
+#define HEIGHT (NSInteger)self.view.bounds.size.height
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 

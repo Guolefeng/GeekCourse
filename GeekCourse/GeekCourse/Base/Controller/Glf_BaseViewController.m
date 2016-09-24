@@ -7,8 +7,7 @@
 //
 
 #import "Glf_BaseViewController.h"
-//#define WIDITH (NSInteger)[UIScreen mainScreen].bounds.size.width
-//#define HEIGHT (NSInteger)[UIScreen mainScreen].bounds.size.height
+#import "Glf_BaseView.h"
 
 @interface Glf_BaseViewController ()
 
@@ -53,6 +52,18 @@
     }];
     
     [dataTask resume];
+    
+}
+
+// 轮播图
+- (void)creatScrollViewWithImageNameArray:(NSMutableArray *)imageArray frame:(CGRect)frame view:(UIView *)view {
+    
+    NSLog(@"%@", imageArray);
+    
+    Glf_BaseView *carouselView = [[Glf_BaseView alloc] initWithFrame:frame];
+    carouselView.imageArray = imageArray;
+    
+    [view addSubview:carouselView];
     
 }
 

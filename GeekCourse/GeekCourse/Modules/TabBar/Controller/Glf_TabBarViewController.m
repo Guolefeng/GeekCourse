@@ -22,6 +22,11 @@ UITabBarControllerDelegate
 
 @implementation Glf_TabBarViewController
 
+- (void)dealloc {
+    // 代理的置空操作
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -77,6 +82,19 @@ UITabBarControllerDelegate
     self.tabBar.barTintColor = [UIColor whiteColor];
     //self.tabBar.translucent = NO;
     
+    // 添加观察者
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddenTabBarAction:) name:@"WhenPushPage" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showTabBarAction:) name:@"BackToTabBarViewController" object:nil];
+    
+}
+
+- (void)showTabBarAction:(NSNotification *)notification {
+    self.tabBar.hidden = NO;
+}
+
+- (void)hiddenTabBarAction:(NSNotification *)notification {
+    self.tabBar.hidden = YES;
 }
 
 
