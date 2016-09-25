@@ -7,9 +7,6 @@
 //
 
 #import "Glf_CourseViewController.h"
-#define WIDITH (NSInteger)self.view.bounds.size.width
-#define HEIGHT (NSInteger)self.view.bounds.size.height
-static NSString *const reuseableCell = @"cell";
 
 #import "Glf_ModelOfCourse.h"
 #import "Glf_MyTableViewCell.h"
@@ -21,13 +18,11 @@ static NSString *const reuseableCell = @"cell";
 UITableViewDataSource,
 UITableViewDelegate
 >
-@property (nonatomic, retain) NSMutableArray *array;
+
 @property (nonatomic, retain) UITableView *tableView;
 
-@property (nonatomic, retain) UIImageView *headerImageView;
 @property (nonatomic, retain) NSMutableArray *arrModel;
-@property (nonatomic, retain) NSMutableArray *arrScrollImage;
-@property(nonatomic, retain) SDCycleScrollView *cycleScrollView;
+
 @property (nonatomic, assign) NSInteger number;
 
 @end
@@ -45,19 +40,19 @@ UITableViewDelegate
     [self creatSearchFrameAndScan];
 
 }
-// 课程分类
+#pragma mark - 课程分类
 - (void)creatLeftBarButtonItem {
     
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sort"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemAction:)];
     
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
-// 历史记录
+#pragma mark - 历史记录
 - (void)creatRightBarButtonItem {
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"history"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
-// 搜索框 扫一扫
+#pragma mark - 搜索框 扫一扫
 - (void)creatSearchFrameAndScan {
     // 搜索
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -94,30 +89,56 @@ UITableViewDelegate
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor cyanColor];
     
-    self.array = [NSMutableArray array];
-    
     self.arrModel = [NSMutableArray array];
-    self.arrScrollImage = [NSMutableArray array];
-    self.number = 2;
+
+    self.number = 1;
     
     [self getTableViewCellData];
     [self creatTableView];
     [self creatHeaderView];
 }
 
+#pragma mark - 上拉刷新
 - (void)getUpData {
-    [_arrScrollImage removeAllObjects];
     [_arrModel removeAllObjects];
     
     [self.tableView reloadData];
     [self getTableViewCellData];
 }
 
+#pragma mark - 下拉加载
 - (void)getDownData {
     _number++;
     [self getTableViewCellData];
 }
 
+#pragma mark - 创建轮播图
+- (void)creatHeaderView {
+    // 获取轮播图资料
+    NSString *urlString = @"http://www.imooc.com/api3/getadv";
+    NSString *bodyString = @"uid=0&marking=banner&token=8301d54bbde33ffc9cce3317a51ecd13";
+    [super postWithURL:urlString body:bodyString block:^(id result) {
+        
+        NSMutableArray *imageNameArray = [NSMutableArray array];
+        NSArray *dataArray = [result objectForKey:@"data"];
+        for (NSDictionary *dic in dataArray) {
+            NSString *imageName = [dic objectForKey:@"pic"];
+            [imageNameArray addObject:imageName];
+        }
+        
+        [super creatScrollViewWithImageNameArray:imageNameArray frame:_tableView.tableHeaderView.bounds view:_tableView.tableHeaderView];
+        
+        [_tableView reloadData];
+        
+    }];
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, 200)];
+    headerView.backgroundColor = [UIColor cyanColor];
+    self.tableView.tableHeaderView = headerView;
+    
+}
+
+#pragma mark - TableView 及相关协议
 - (void)creatTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, HEIGHT - 64) style:0];
     _tableView.dataSource = self;
@@ -137,19 +158,18 @@ UITableViewDelegate
     }];
     
     [self.view addSubview:_tableView];
-    [_tableView registerClass:[Glf_MyTableViewCell class] forCellReuseIdentifier:reuseableCell];
+    [_tableView registerClass:[Glf_MyTableViewCell class] forCellReuseIdentifier:@"cell"];
 }
-
 - (void)getTableViewCellData {
-    NSString *string = [NSString stringWithFormat:@"http://www.imooc.com/api3/courselist_ver%ld", _number];
+    NSString *string = @"http://www.imooc.com/api3/courselist_ver2";
     NSURL *url = [NSURL URLWithString:string];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"mukewang/4.3.2 (iPhone; iOS 7.1.2; Scale/2.00) Paros/3.2.13" forHTTPHeaderField:@"User-Agent"];
-    
-    request.HTTPBody = [@"cat_type=0&easy_type=0&page=1&sort_type=0&token=ee6a63d322163f4b5940328228148a95&uid=3859703" dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *body = [NSString stringWithFormat:@"cat_type=0&easy_type=0&page=%ld&sort_type=0&token=ee6a63d322163f4b5940328228148a95&uid=3859703", _number];
+    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -161,8 +181,8 @@ UITableViewDelegate
                 id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                 
                 NSDictionary *dic = (NSDictionary *)result;
-                self.array = dic[@"data"];
-                for (NSDictionary *dic in _array) {
+                NSArray *array = dic[@"data"];
+                for (NSDictionary *dic in array) {
                     Glf_ModelOfCourse *model = [[Glf_ModelOfCourse alloc] init];
                     [model setValuesForKeysWithDictionary:dic];
                     [_arrModel addObject:model];
@@ -178,51 +198,26 @@ UITableViewDelegate
     [dataTask resume];
     
 }
-
-- (void)creatHeaderView {
-    // 获取轮播图资料
-    NSString *urlString = @"http://www.imooc.com/api3/getadv";
-    NSString *bodyString = @"uid=0&marking=banner&token=8301d54bbde33ffc9cce3317a51ecd13";
-    [super postWithURL:urlString body:bodyString block:^(id result) {
-        
-        NSMutableArray *imageNameArray = [NSMutableArray array];
-        NSArray *dataArray = [result objectForKey:@"data"];
-        for (NSDictionary *dic in dataArray) {
-            NSString *imageName = [dic objectForKey:@"pic"];
-            [imageNameArray addObject:imageName];
-        }
-        
-        [super creatScrollViewWithImageNameArray:imageNameArray frame:_tableView.tableHeaderView.bounds view:_tableView.tableHeaderView];
-        
-        [_tableView reloadData];
-        
-    }];
-
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, 200)];
-    headerView.backgroundColor = [UIColor cyanColor];
-    self.tableView.tableHeaderView = headerView;
-
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     return _arrModel.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Glf_MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseableCell];
+    Glf_MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (_arrModel.count != 0) {
         cell.tableViewCellModel = _arrModel[indexPath.row];
     }
-    
-    NSString *str = [NSString stringWithFormat:@"%@",[_array[indexPath.row] objectForKey:@"numbers"]];
-    cell.numbers = str;
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"第 %ld 行详情.", indexPath.row);
 }
-// 按要求设置 header 形式
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 150.f;
+}
+
+#pragma mark - 按要求设置 tableView header 形式
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, 150)];
     view.backgroundColor = [UIColor whiteColor];
@@ -260,6 +255,7 @@ UITableViewDelegate
     return view;
 }
 
+#pragma mark - 创建 course 的三个方向
 - (void)creatThreeItemsOfCareerPathWithView:(UIView *)view  {
     
     UIButton *practiseButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -350,10 +346,7 @@ UITableViewDelegate
     }];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 150.f;
-}
-
+#pragma mark -  course 界面的一些点击事件
 - (void)leftBarButtonItemAction:(UIBarButtonItem *)leftBarButton {
     NSLog(@"课程分类");
     

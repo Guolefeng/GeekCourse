@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <Masonry.h>
-#import <UIImageView+WebCache.h>
-#import <MJExtension.h>
-#import <SDCycleScrollView.h>
-#import <MJRefresh.h>
 
 @interface Glf_BaseViewController : UIViewController
 

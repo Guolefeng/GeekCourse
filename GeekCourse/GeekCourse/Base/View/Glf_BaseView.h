@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UIImageView+WebCache.h>
-#import <UIImageView+WebCache.h>
 
 @interface Glf_BaseView : UIView
 // 轮播图数组

@@ -7,8 +7,6 @@
 //
 
 #import "Glf_MyTableViewCell.h"
-#import "Masonry.h"
-#import <UIImageView+WebCache.h>
 #import "Glf_ModelOfCourse.h"
 
 @interface Glf_MyTableViewCell ()
@@ -79,13 +77,6 @@
     return self;
 }
 
-- (void)setNumbers:(NSString *)numbers {
-    if (_numbers != numbers) {
-        _numbers = numbers;
-        
-        _cellNumberLabel.text = numbers;
-    }
-}
 - (void)setTableViewCellModel:(Glf_ModelOfCourse *)tableViewCellModel {
     if (_tableViewCellModel != tableViewCellModel) {
         _tableViewCellModel = tableViewCellModel;
@@ -94,6 +85,7 @@
         [_cellImageView sd_setImageWithURL:url];
         
         _cellNameLabel.text = tableViewCellModel.name;
+        _cellNumberLabel.text= [NSString stringWithFormat:@"%ld", tableViewCellModel.numbers];
     }
 }
 

@@ -13,6 +13,5 @@
 
 @property (nonatomic, retain) Glf_ModelOfCourse *tableViewCellModel;
 
-@property (nonatomic, copy) NSString *numbers;
 
 @end

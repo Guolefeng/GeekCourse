@@ -14,5 +14,6 @@
 // 课程 cell
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *pic;
+@property (nonatomic, assign) NSInteger numbers;
 
 @end
