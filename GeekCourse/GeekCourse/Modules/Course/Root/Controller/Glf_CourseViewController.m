@@ -104,7 +104,7 @@ UITableViewDelegate
     [self creatHeaderView];
 }
 
-#pragma mark - 上拉刷新
+#pragma mark - 下拉刷新
 - (void)getUpData {
     [_arrModel removeAllObjects];
     
@@ -112,7 +112,7 @@ UITableViewDelegate
     [self getTableViewCellData];
 }
 
-#pragma mark - 下拉加载
+#pragma mark - 上拉加载
 - (void)getDownData {
     _number++;
     [self getTableViewCellData];
@@ -150,7 +150,6 @@ UITableViewDelegate
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.rowHeight = 120;
-    
     
     // 上啦加载
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

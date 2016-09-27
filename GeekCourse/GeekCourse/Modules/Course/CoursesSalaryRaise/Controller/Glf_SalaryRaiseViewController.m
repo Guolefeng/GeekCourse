@@ -8,7 +8,7 @@
 
 #import "Glf_SalaryRaiseViewController.h"
 #import "Glf_SalaryRaiseHeaderCollectionViewCell.h"
-#import "Glf_UpLayerCollectionViewCell.h"
+#import "Glf_SalaryCollectionViewCell.h"
 #import "Glf_SalaryRaiseModel.h"
 
 @interface Glf_SalaryRaiseViewController ()
@@ -20,11 +20,14 @@ UICollectionViewDelegate
 
 @property (nonatomic, retain) UICollectionView *headerCollectionView;
 @property (nonatomic, retain) UICollectionView *downLayerCollectionView;
-@property (nonatomic, retain) UICollectionView *upLayerCollectionView;
 
 @property (nonatomic, assign) NSInteger selectedItem;
 
 @property (nonatomic, retain) NSMutableArray *allCourseArray;
+@property (nonatomic, retain) NSMutableArray *frontEndArray;
+@property (nonatomic, retain) NSMutableArray *backEndArray;
+@property (nonatomic, retain) NSMutableArray *mobileArray;
+@property (nonatomic, retain) NSMutableArray *siteArray;
 @end
 
 @implementation Glf_SalaryRaiseViewController
@@ -48,14 +51,21 @@ UICollectionViewDelegate
     self.title = @"加薪利器计划";
     
     self.allCourseArray = [NSMutableArray array];
+    self.frontEndArray = [NSMutableArray array];
+    self.backEndArray = [NSMutableArray array];
+    self.mobileArray = [NSMutableArray array];
+    self.siteArray = [NSMutableArray array];
     
     [self getAllCoursesData];
+    [self getFrontEndData];
+    [self getBackEndData];
+    [self getMobileData];
+    [self getSiteData];
     
     [self creatHeaderCollectionView];
     
     [self creatDownLayerCollectionView];
     
-    [self creatUpLayerConllectionView];
 }
 
 #pragma mark - 获取全部课程数据
@@ -69,9 +79,69 @@ UICollectionViewDelegate
             Glf_SalaryRaiseModel *model = [Glf_SalaryRaiseModel modelWithDic:dic];
             [_allCourseArray addObject:model];
         }
-        [_upLayerCollectionView reloadData];
+        [_downLayerCollectionView reloadData];
     }];
     
+}
+
+#pragma mark - 获取前端数据
+- (void)getFrontEndData {
+    
+    [super postWithURL:@"http://www.imooc.com/api3/program" body:@" cid=fe&page=1&token=768dbcf2c0bc8198094feeb871ae6409&typeid=2&uid=3859703" block:^(id result) {
+        NSDictionary *dic = (NSDictionary *)result;
+        
+        NSArray *array = dic[@"data"];
+        for (NSDictionary *dic in array) {
+            Glf_SalaryRaiseModel *model = [Glf_SalaryRaiseModel modelWithDic:dic];
+            [_frontEndArray addObject:model];
+        }
+        [_downLayerCollectionView reloadData];
+    }];
+}
+
+#pragma mark - 获取后端数据
+- (void)getBackEndData {
+    
+    [super postWithURL:@"http://www.imooc.com/api3/program" body:@" cid=be&page=1&token=75bb61c5cc8a38557388304d64a1b246&typeid=2&uid=4017288" block:^(id result) {
+        NSDictionary *dic = (NSDictionary *)result;
+        
+        NSArray *array = dic[@"data"];
+        for (NSDictionary *dic in array) {
+            Glf_SalaryRaiseModel *model = [Glf_SalaryRaiseModel modelWithDic:dic];
+            [_backEndArray addObject:model];
+        }
+        [_downLayerCollectionView reloadData];
+    }];
+}
+
+#pragma mark - 获取移动数据
+- (void)getMobileData {
+    
+    [super postWithURL:@"http://www.imooc.com/api3/program" body:@" cid=mobile&page=1&token=768dbcf2c0bc8198094feeb871ae6409&typeid=2&uid=3859703" block:^(id result) {
+        NSDictionary *dic = (NSDictionary *)result;
+        
+        NSArray *array = dic[@"data"];
+        for (NSDictionary *dic in array) {
+            Glf_SalaryRaiseModel *model = [Glf_SalaryRaiseModel modelWithDic:dic];
+            [_mobileArray addObject:model];
+        }
+        [_downLayerCollectionView reloadData];
+    }];
+}
+
+#pragma mark - 获取整站数据
+- (void)getSiteData {
+    
+    [super postWithURL:@"http://www.imooc.com/api3/program" body:@"  cid=fsd&page=1&token=768dbcf2c0bc8198094feeb871ae6409&typeid=2&uid=3859703" block:^(id result) {
+        NSDictionary *dic = (NSDictionary *)result;
+        
+        NSArray *array = dic[@"data"];
+        for (NSDictionary *dic in array) {
+            Glf_SalaryRaiseModel *model = [Glf_SalaryRaiseModel modelWithDic:dic];
+            [_siteArray addObject:model];
+        }
+        [_downLayerCollectionView reloadData];
+    }];
 }
 
 #pragma mark - 创建 header collectionView
@@ -96,6 +166,7 @@ UICollectionViewDelegate
     UICollectionViewFlowLayout *downLayerFlowlayout = [[UICollectionViewFlowLayout alloc] init];
     downLayerFlowlayout.itemSize = CGSizeMake(WIDTH_SCREEN, HEIGHT_SCREEN - _headerCollectionView.frame.size.height);
     downLayerFlowlayout.minimumLineSpacing = 0;
+    downLayerFlowlayout.minimumInteritemSpacing = 0;
     downLayerFlowlayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     self.downLayerCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _headerCollectionView.frame.size.height, WIDTH_SCREEN, HEIGHT_SCREEN - _headerCollectionView.frame.size.height - 64) collectionViewLayout:downLayerFlowlayout];
@@ -105,39 +176,17 @@ UICollectionViewDelegate
     _downLayerCollectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_downLayerCollectionView];
     
-    [_downLayerCollectionView registerClass:[Glf_UpLayerCollectionViewCell class] forCellWithReuseIdentifier:@"downLayerCell"];
+    [_downLayerCollectionView registerClass:[Glf_SalaryCollectionViewCell class] forCellWithReuseIdentifier:@"allCourseCell"];
+    [_downLayerCollectionView registerClass:[Glf_SalaryCollectionViewCell class] forCellWithReuseIdentifier:@"frontEndCell"];
+    [_downLayerCollectionView registerClass: [Glf_SalaryCollectionViewCell class]forCellWithReuseIdentifier:@"backEndCell"];
+    [_downLayerCollectionView registerClass:[Glf_SalaryCollectionViewCell class] forCellWithReuseIdentifier:@"mobileCell"];
+    [_downLayerCollectionView registerClass:[Glf_SalaryCollectionViewCell class] forCellWithReuseIdentifier:@"siteCell"];
 }
 
-#pragma mark - 创建 upLayerConllectionView
-- (void)creatUpLayerConllectionView {
-    UICollectionViewFlowLayout *upLayerFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    upLayerFlowLayout.itemSize = CGSizeMake((WIDTH_SCREEN - 10 * 3) / 2, (HEIGHT_SCREEN - 64 - _headerCollectionView.bounds.size.height - 10 * 3) / 2);
-    upLayerFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
-    
-    self.upLayerCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, HEIGHT_SCREEN - _headerCollectionView.bounds.size.height - 64) collectionViewLayout:upLayerFlowLayout];
-    _upLayerCollectionView.backgroundColor = [UIColor lightGrayColor];
-    _upLayerCollectionView.dataSource = self;
-    _upLayerCollectionView.delegate = self;
-    
-    [_downLayerCollectionView addSubview:_upLayerCollectionView];
-    
-    [_upLayerCollectionView registerClass:[Glf_UpLayerCollectionViewCell class] forCellWithReuseIdentifier:@"allCourseCell"];
-    
-}
 
 #pragma mark - collectionView 协议
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSInteger num = 0;
-    if (collectionView == _headerCollectionView) {
-        num = 5;
-    }
-    if (collectionView == _downLayerCollectionView) {
-        num = 5;
-    }
-    if (collectionView == _upLayerCollectionView) {
-        num = _allCourseArray.count;
-    }
-    return num;
+    return 5;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -148,20 +197,42 @@ UICollectionViewDelegate
         return cell;
     }
     
-    if (collectionView == _downLayerCollectionView) {
-        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downLayerCell" forIndexPath:indexPath];
-        cell.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 255.f green:arc4random() % 256 / 255.f blue:arc4random() % 256 / 255.f alpha:1.f];
+    if (indexPath.item == 0) {
+        Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"allCourseCell" forIndexPath:indexPath];
+        
+        if (_allCourseArray.count != 0) {
+            
+            cell.array = _allCourseArray;
+        }
+        
         return cell;
     }
-    
-    if (collectionView == _upLayerCollectionView) {
-        Glf_UpLayerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"allCourseCell" forIndexPath:indexPath];
-        Glf_SalaryRaiseModel *model = _allCourseArray[indexPath.row];
-        cell.salaryRaiseModel = model;
+    if (indexPath.item == 1) {
+        Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"frontEndCell" forIndexPath:indexPath];
+        
+        if (_frontEndArray.count != 0) {
+            cell.array = _frontEndArray;
+        }
+        
         return cell;
     }
-    
-    return nil;
+    if (indexPath.item == 2) {
+        Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"backEndCell" forIndexPath:indexPath];
+        cell.array = _backEndArray;
+        
+        return cell;
+    }
+    if (indexPath.item == 3) {
+        Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"mobileCell" forIndexPath:indexPath];
+        cell.array = _mobileArray;
+        
+        return cell;
+    }
+    else {
+        Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"siteCell" forIndexPath:indexPath];
+        cell.array = _siteArray;
+        return cell;
+    }
 }
 
 #pragma mark - headerCollectionView 关联 downLayerConllectionView

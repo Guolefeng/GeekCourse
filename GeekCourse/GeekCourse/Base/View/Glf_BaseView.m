@@ -86,9 +86,14 @@ UIScrollViewDelegate
             CGSize imageViewSize = self.bounds.size;
             CGRect imageViewFrame = {imageViewOrigin, imageViewSize};
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:imageViewFrame];
-    
-            NSURL *url = [NSURL URLWithString:_currentImageArray[i]];
-            [imageView sd_setImageWithURL:url];
+            
+            NSString *str = _currentImageArray[i];
+            if ([str hasPrefix:@"http"]) {
+                NSURL *url = [NSURL URLWithString:_currentImageArray[i]];
+                [imageView sd_setImageWithURL:url];
+            } else {
+                imageView.image = [UIImage imageNamed:str];
+            }
             
             [_scrollView addSubview:imageView];
             

@@ -10,4 +10,7 @@
 
 @interface Glf_PractiseModel : Glf_BaseModel
 
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *pic;
+
 @end

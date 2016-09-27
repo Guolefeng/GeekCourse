@@ -85,7 +85,6 @@ UICollectionViewDelegate
     
     _collectionView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
     
-    
     [self.view addSubview:_collectionView];
     _collectionView.backgroundColor = [UIColor whiteColor];
     [_collectionView registerClass:[Glf_CourseCategoryCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
