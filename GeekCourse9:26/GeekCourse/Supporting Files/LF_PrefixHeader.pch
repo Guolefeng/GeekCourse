@@ -1,0 +1,35 @@
+//
+//  LF_PrefixHeader.pch
+//  GeekCourse
+//
+//  Created by dllo on 16/9/26.
+//  Copyright © 2016年 Guolefeng. All rights reserved.
+//
+
+#ifndef LF_PrefixHeader_pch
+#define LF_PrefixHeader_pch
+
+
+#define WIDITH (NSInteger)self.view.bounds.size.width
+#define HEIGHT (NSInteger)self.view.bounds.size.height
+
+#define WIDTH_SCREEN [UIScreen mainScreen].bounds.size.width
+#define HEIGHT_SCREEN [UIScreen mainScreen].bounds.size.height
+
+
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import <MJExtension.h>
+#import <SDCycleScrollView.h>
+#import <MJRefresh.h>
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* LF_PrefixHeader_pch */
