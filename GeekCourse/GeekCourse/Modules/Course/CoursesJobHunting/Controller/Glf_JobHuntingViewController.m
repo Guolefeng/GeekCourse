@@ -9,6 +9,7 @@
 #import "Glf_JobHuntingViewController.h"
 #import "Glf_JobHuntingModel.h"
 #import "Glf_UpCollectionViewCell.h"
+#import "Glf_MyCollectionViewFlowLayout.h"
 
 @interface Glf_JobHuntingViewController ()
 <
@@ -40,21 +41,8 @@ UICollectionViewDelegate
     
     [self getJobHuntingData];
     
-    // 创建背景图片
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    _backgroundImageView.backgroundColor = [UIColor whiteColor];
-    
     NSArray *arr = [self getBackgroundimageData];
-    
-    NSURL *url = [NSURL URLWithString:arr[1]];
-    [_backgroundImageView sd_setImageWithURL:url];
-    
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    effectView.frame = _backgroundImageView.bounds;
-    [_backgroundImageView addSubview:effectView];
-    
-    [self.view addSubview:_backgroundImageView];
+    [self creatBackgroudImageViewWith:arr index:0];
     
     [self creatUpCollectionView];
     
@@ -63,7 +51,7 @@ UICollectionViewDelegate
 #pragma mark - 求职路线的数据
 - (void)getJobHuntingData {
     [super postWithURL:@"http://www.imooc.com/api3/program" body:@"token=81743025655027bc74b20b49ff5a56f5&typeid=1&uid=0" block:^(id result) {
-        NSLog(@"result %@", result);
+
         NSDictionary *dic = (NSDictionary *)result;
         NSArray *array = dic[@"data"];
         
@@ -75,6 +63,24 @@ UICollectionViewDelegate
     }];
 }
 
+#pragma mark - 创建背景图片
+- (void)creatBackgroudImageViewWith:(NSArray *)array index:(NSInteger)index {
+    
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    NSURL *url = [NSURL URLWithString:array[index]];
+    [_backgroundImageView sd_setImageWithURL:url];
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    effectView.frame = _backgroundImageView.bounds;
+    [_backgroundImageView addSubview:effectView];
+    
+    [self.view addSubview:_backgroundImageView];
+    
+}
+
+#pragma mark - 获取背景图片数据
 - (NSArray *)getBackgroundimageData {
     NSArray *array = @[
                        @"http://img.mukewang.com/56551e2800014fa909600720-960-720.jpg",
@@ -88,17 +94,21 @@ UICollectionViewDelegate
 
 #pragma mark - 创建 upCollectionView
 - (void)creatUpCollectionView {
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(WIDTH_SCREEN - 100, HEIGHT_SCREEN * 0.7);
-    flowLayout.minimumLineSpacing = 30;
+    Glf_MyCollectionViewFlowLayout *flowLayout = [[Glf_MyCollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = CGSizeMake(WIDTH_SCREEN - 150, HEIGHT_SCREEN * 0.5);
+    flowLayout.minimumLineSpacing = 50;
     flowLayout.minimumInteritemSpacing = 10;
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
     
     self.UpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, HEIGHT_SCREEN * 0.2, WIDTH_SCREEN, HEIGHT_SCREEN * 0.6) collectionViewLayout:flowLayout];
     _UpCollectionView.dataSource = self;
     _UpCollectionView.delegate = self;
     _UpCollectionView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0];
+
+    // 滚动减速效果
+    _UpCollectionView.decelerationRate = UIScrollViewDecelerationRateNormal;
+    
     _UpCollectionView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:_UpCollectionView];
     
@@ -118,11 +128,23 @@ UICollectionViewDelegate
         cell.backgroundColor = [UIColor whiteColor];
         Glf_JobHuntingModel *model = _modelArray[indexPath.row];
         cell.model = model;
+        
         return cell;
     }
     
     return nil;
 }
+
+#pragma mark - collectionView 关联 背景图片
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    
+//    [_backgroundImageView removeFromSuperview];
+//    
+//    NSInteger count = scrollView.contentOffset.x / WIDTH_SCREEN;
+//    NSLog(@"%ld", count);
+//    NSArray *arr = [self getBackgroundimageData];
+//    [self creatBackgroudImageViewWith:arr index:count];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

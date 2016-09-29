@@ -18,6 +18,8 @@
 #import "Glf_CustomizedCoursesViewController.h"
 #import "Glf_SearchCoursesViewController.h"
 #import "Glf_ScanViewController.h"
+#import "Glf_BaseModel.h"
+#import "Glf_PlayerViewController.h"
 
 @interface Glf_CourseViewController ()
 <
@@ -217,6 +219,8 @@ UITableViewDelegate
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"第 %ld 行详情.", indexPath.row);
+    Glf_PlayerViewController *playerVC = [[Glf_PlayerViewController alloc] init];
+    [self.navigationController pushViewController:playerVC animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 150.f;

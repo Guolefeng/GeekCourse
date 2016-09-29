@@ -54,7 +54,7 @@ UICollectionViewDelegate
 
 - (void)getPractiseData {
     
-    [super postWithURL:@"http://coding.imooc.com/api/szlist" body:@"cid=0&page=1&pagesize=20&timestamp=1474965704256&token=86aa6bf8c20b9a5a872e3ffd14cbb109&uid=4017288" block:^(id result) {
+    [super postWithURL:@"http://coding.imooc.com/api/szlist" body:@"cid=0&page=1&pagesize=20&timestamp=1475052268020&token=585658070b8fa1c272d58119bbce4f50&uid=0" block:^(id result) {
         
         NSDictionary *dic = (NSDictionary *)result;
         

@@ -16,8 +16,6 @@
 #define WIDTH_SCREEN [UIScreen mainScreen].bounds.size.width
 #define HEIGHT_SCREEN [UIScreen mainScreen].bounds.size.height
 
-
-
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 

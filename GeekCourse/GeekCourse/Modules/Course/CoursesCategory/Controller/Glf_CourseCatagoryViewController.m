@@ -46,7 +46,7 @@ UICollectionViewDelegate
     [self creatCollectionView];
     
 }
-
+#pragma mark - 获取数据
 - (void)getCoursesData {
     [super postWithURL:@"http://www.imooc.com/api3/newcourseskill" body:@"token=0a1b7dc4a13ff17db61048ab50bb5509&uid=0" block:^(id result) {
         
@@ -70,6 +70,7 @@ UICollectionViewDelegate
     }];
 }
 
+#pragma mark - 创建collectionView
 - (void)creatCollectionView {
     self.flowlayout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -93,9 +94,12 @@ UICollectionViewDelegate
     
 }
 
+#pragma mark - tableView header 的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 100;
 }
+
+#pragma mark - 创建全部课程
 - (void)creatAllCourseView {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(30, -60, 50, 50)];
     NSURL *url = [NSURL URLWithString:[_dataDic objectForKey:@"pic"]];
@@ -113,6 +117,7 @@ UICollectionViewDelegate
     [_collectionView addSubview:numberLabel];
 }
 
+#pragma mark - collectionView header
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return _categoriesModelArray.count;
 }
@@ -126,6 +131,7 @@ UICollectionViewDelegate
     return headerView;
 }
 
+#pragma mark - collectionView 协议方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     Glf_CategroiesModel *categoriesModel = _categoriesModelArray[section];
     return categoriesModel.skills.count;
