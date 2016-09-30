@@ -40,7 +40,7 @@ UICollectionViewDelegate
 - (void)viewWillAppear:(BOOL)animated {
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
-    
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
 }
 
 - (void)viewDidLoad {

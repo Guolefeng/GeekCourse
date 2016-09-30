@@ -23,19 +23,21 @@ UICollectionViewDelegate
 
 @implementation Glf_SalaryCollectionViewCell
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-        
+- (void)setArray:(NSMutableArray *)array {
+    if (_array != array) {
+        _array = array;
     }
-    return self;
+    
+    [_upLayerCollectionView reloadData];
+    
 }
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
 #pragma mark - 创建 upLayerConllectionView
+    
     UICollectionViewFlowLayout *upLayerFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     upLayerFlowLayout.itemSize = CGSizeMake((self.contentView.frame.size.width - 10 * 3) / 2, (self.contentView.frame.size.height - 64 - 50 - 10 * 3) / 2);
     upLayerFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
@@ -51,14 +53,6 @@ UICollectionViewDelegate
 
 }
 
-- (void)setArray:(NSMutableArray *)array {
-    if (_array != array) {
-        _array = array;
-    }
-    
-    [_upLayerCollectionView reloadData];
-    
-}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _array.count;

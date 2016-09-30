@@ -30,12 +30,10 @@ UICollectionViewDelegate
     
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
-    
     self.view.backgroundColor = [UIColor cyanColor];
     self.title = @"课程分类";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];

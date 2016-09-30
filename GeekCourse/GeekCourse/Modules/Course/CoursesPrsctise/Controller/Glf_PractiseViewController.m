@@ -26,7 +26,7 @@ UICollectionViewDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     self.title = @"实战课程";
-    
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }

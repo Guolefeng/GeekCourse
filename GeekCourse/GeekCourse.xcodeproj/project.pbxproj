@@ -24,7 +24,7 @@
 		499782131D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m in Sources */ = {isa = PBXBuildFile; fileRef = 499782121D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m */; };
 		4997823A1D9C0314006D0629 /* XCAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997822B1D9C0314006D0629 /* XCAVPlayerView.m */; };
 		4997823B1D9C0314006D0629 /* XZPlayProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997822D1D9C0314006D0629 /* XZPlayProgressView.m */; };
-		4997823E1D9C0345006D0629 /* Glf_PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997823D1D9C0345006D0629 /* Glf_PlayerViewController.m */; };
+		49AA4DB51D9E0E3E0084801F /* Glf_CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AA4DB41D9E0E3E0084801F /* Glf_CommentModel.m */; };
 		49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */; };
 		49BEC3291D9238FC0011302E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3281D9238FC0011302E /* main.m */; };
 		49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC32B1D9238FC0011302E /* AppDelegate.m */; };
@@ -60,6 +60,15 @@
 		49DC1B011D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B001D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m */; };
 		49DC1B2C1D9A711800476592 /* Glf_JobHuntingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B2B1D9A711800476592 /* Glf_JobHuntingModel.m */; };
 		49DC1B321D9A9DFE00476592 /* Glf_UpCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B311D9A9DFE00476592 /* Glf_UpCollectionViewCell.m */; };
+		49E0B79E1D9CBF330052E699 /* Glf_RootPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B79D1D9CBF330052E699 /* Glf_RootPlayerViewController.m */; };
+		49E0B7A11D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7A01D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m */; };
+		49E0B7D31D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7D21D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m */; };
+		49E0B7D61D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7D51D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m */; };
+		49E0B7D91D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7D81D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m */; };
+		49E0B7DC1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7DB1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m */; };
+		49E0B7DF1D9D116E0052E699 /* Glf_CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7DE1D9D116E0052E699 /* Glf_CommentTableViewCell.m */; };
+		49E0B7EB1D9D2BD30052E699 /* Glf_ChaptersDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7EA1D9D2BD30052E699 /* Glf_ChaptersDataModel.m */; };
+		49E0B7EE1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7ED1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m */; };
 		49E189D21D962A49004A1706 /* Glf_BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E189D11D962A49004A1706 /* Glf_BaseView.m */; };
 		49E3AFC31D97A1B400DA29DF /* Glf_HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3AFC21D97A1B400DA29DF /* Glf_HistoryViewController.m */; };
 		49E3AFC61D97A22100DA29DF /* Glf_CourseCatagoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3AFC51D97A22100DA29DF /* Glf_CourseCatagoryViewController.m */; };
@@ -109,8 +118,8 @@
 		4997822B1D9C0314006D0629 /* XCAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCAVPlayerView.m; sourceTree = "<group>"; };
 		4997822C1D9C0314006D0629 /* XZPlayProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZPlayProgressView.h; sourceTree = "<group>"; };
 		4997822D1D9C0314006D0629 /* XZPlayProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZPlayProgressView.m; sourceTree = "<group>"; };
-		4997823C1D9C0345006D0629 /* Glf_PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_PlayerViewController.h; sourceTree = "<group>"; };
-		4997823D1D9C0345006D0629 /* Glf_PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_PlayerViewController.m; sourceTree = "<group>"; };
+		49AA4DB31D9E0E3E0084801F /* Glf_CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CommentModel.h; sourceTree = "<group>"; };
+		49AA4DB41D9E0E3E0084801F /* Glf_CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CommentModel.m; sourceTree = "<group>"; };
 		49BEA3FA1D93F7B9001DED2E /* Glf_ModelOfCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ModelOfCourse.h; sourceTree = "<group>"; };
 		49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ModelOfCourse.m; sourceTree = "<group>"; };
 		49BEC3241D9238FC0011302E /* GeekCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +190,24 @@
 		49DC1B2B1D9A711800476592 /* Glf_JobHuntingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Glf_JobHuntingModel.m; path = GeekCourse/Modules/Course/CoursesJobHunting/Glf_JobHuntingModel.m; sourceTree = SOURCE_ROOT; };
 		49DC1B301D9A9DFE00476592 /* Glf_UpCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glf_UpCollectionViewCell.h; path = GeekCourse/Modules/Course/CoursesJobHunting/Glf_UpCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
 		49DC1B311D9A9DFE00476592 /* Glf_UpCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Glf_UpCollectionViewCell.m; path = GeekCourse/Modules/Course/CoursesJobHunting/Glf_UpCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		49E0B79C1D9CBF330052E699 /* Glf_RootPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_RootPlayerViewController.h; sourceTree = "<group>"; };
+		49E0B79D1D9CBF330052E699 /* Glf_RootPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_RootPlayerViewController.m; sourceTree = "<group>"; };
+		49E0B79F1D9CC5BB0052E699 /* Glf_NavCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_NavCollectionViewCell.h; sourceTree = "<group>"; };
+		49E0B7A01D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_NavCollectionViewCell.m; sourceTree = "<group>"; };
+		49E0B7D11D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ChaptersCollectionViewCell.h; sourceTree = "<group>"; };
+		49E0B7D21D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ChaptersCollectionViewCell.m; sourceTree = "<group>"; };
+		49E0B7D41D9CFACE0052E699 /* Glf_CommentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CommentCollectionViewCell.h; sourceTree = "<group>"; };
+		49E0B7D51D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CommentCollectionViewCell.m; sourceTree = "<group>"; };
+		49E0B7D71D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DetailInfoCollectionView.h; sourceTree = "<group>"; };
+		49E0B7D81D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DetailInfoCollectionView.m; sourceTree = "<group>"; };
+		49E0B7DA1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ChaptersTableViewCell.h; sourceTree = "<group>"; };
+		49E0B7DB1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ChaptersTableViewCell.m; sourceTree = "<group>"; };
+		49E0B7DD1D9D116E0052E699 /* Glf_CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CommentTableViewCell.h; sourceTree = "<group>"; };
+		49E0B7DE1D9D116E0052E699 /* Glf_CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CommentTableViewCell.m; sourceTree = "<group>"; };
+		49E0B7E91D9D2BD30052E699 /* Glf_ChaptersDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ChaptersDataModel.h; sourceTree = "<group>"; };
+		49E0B7EA1D9D2BD30052E699 /* Glf_ChaptersDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ChaptersDataModel.m; sourceTree = "<group>"; };
+		49E0B7EC1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ChaptersMediaModel.h; sourceTree = "<group>"; };
+		49E0B7ED1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ChaptersMediaModel.m; sourceTree = "<group>"; };
 		49E189D01D962A49004A1706 /* Glf_BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_BaseView.h; sourceTree = "<group>"; };
 		49E189D11D962A49004A1706 /* Glf_BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_BaseView.m; sourceTree = "<group>"; };
 		49E3AFC11D97A1B400DA29DF /* Glf_HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_HistoryViewController.h; sourceTree = "<group>"; };
@@ -320,35 +347,10 @@
 		499782191D9C02DC006D0629 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				49E0B7981D9CBEEC0052E699 /* Root */,
 				4997821D1D9C0314006D0629 /* SuportFile */,
-				4997821C1D9C02EF006D0629 /* View */,
-				4997821B1D9C02EA006D0629 /* Model */,
-				4997821A1D9C02E4006D0629 /* Controller */,
 			);
 			name = Player;
-			sourceTree = "<group>";
-		};
-		4997821A1D9C02E4006D0629 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				4997823C1D9C0345006D0629 /* Glf_PlayerViewController.h */,
-				4997823D1D9C0345006D0629 /* Glf_PlayerViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		4997821B1D9C02EA006D0629 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		4997821C1D9C02EF006D0629 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		4997821D1D9C0314006D0629 /* SuportFile */ = {
@@ -720,6 +722,57 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		49E0B7981D9CBEEC0052E699 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				49E0B79B1D9CBF0D0052E699 /* Model */,
+				49E0B79A1D9CBF080052E699 /* View */,
+				49E0B7991D9CBEFD0052E699 /* Cotroller */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		49E0B7991D9CBEFD0052E699 /* Cotroller */ = {
+			isa = PBXGroup;
+			children = (
+				49E0B79C1D9CBF330052E699 /* Glf_RootPlayerViewController.h */,
+				49E0B79D1D9CBF330052E699 /* Glf_RootPlayerViewController.m */,
+			);
+			name = Cotroller;
+			sourceTree = "<group>";
+		};
+		49E0B79A1D9CBF080052E699 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49E0B79F1D9CC5BB0052E699 /* Glf_NavCollectionViewCell.h */,
+				49E0B7A01D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m */,
+				49E0B7D11D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.h */,
+				49E0B7D21D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m */,
+				49E0B7D41D9CFACE0052E699 /* Glf_CommentCollectionViewCell.h */,
+				49E0B7D51D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m */,
+				49E0B7D71D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.h */,
+				49E0B7D81D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m */,
+				49E0B7DA1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.h */,
+				49E0B7DB1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m */,
+				49E0B7DD1D9D116E0052E699 /* Glf_CommentTableViewCell.h */,
+				49E0B7DE1D9D116E0052E699 /* Glf_CommentTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49E0B79B1D9CBF0D0052E699 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49E0B7E91D9D2BD30052E699 /* Glf_ChaptersDataModel.h */,
+				49E0B7EA1D9D2BD30052E699 /* Glf_ChaptersDataModel.m */,
+				49E0B7EC1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.h */,
+				49E0B7ED1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m */,
+				49AA4DB31D9E0E3E0084801F /* Glf_CommentModel.h */,
+				49AA4DB41D9E0E3E0084801F /* Glf_CommentModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		49E189E81D96B7DF004A1706 /* CoursesCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -965,6 +1018,7 @@
 				TargetAttributes = {
 					49BEC3231D9238FC0011302E = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = QWKQAE7W9B;
 					};
 				};
 			};
@@ -1055,8 +1109,10 @@
 			files = (
 				49BEC38E1D9239FE0011302E /* NSUserDefaultsUtils.m in Sources */,
 				49E189D21D962A49004A1706 /* Glf_BaseView.m in Sources */,
+				49E0B7EE1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m in Sources */,
 				49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */,
 				49913E1C1D9807E800C436EC /* Glf_SearchCoursesViewController.m in Sources */,
+				49E0B7D31D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m in Sources */,
 				49BEC3831D9239FD0011302E /* NSString+Categories.m in Sources */,
 				4997823B1D9C0314006D0629 /* XZPlayProgressView.m in Sources */,
 				499782131D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m in Sources */,
@@ -1064,10 +1120,12 @@
 				49DC1B2C1D9A711800476592 /* Glf_JobHuntingModel.m in Sources */,
 				49E3AFC91D97A32900DA29DF /* Glf_CategroiesModel.m in Sources */,
 				49913E0F1D98068600C436EC /* Glf_CustomizedCoursesViewController.m in Sources */,
+				49AA4DB51D9E0E3E0084801F /* Glf_CommentModel.m in Sources */,
 				49BEC38B1D9239FE0011302E /* HttpClient.m in Sources */,
 				49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */,
 				49DC1B011D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m in Sources */,
 				49BEC3841D9239FD0011302E /* NSString+Regex.m in Sources */,
+				49E0B7D61D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m in Sources */,
 				49E3AFCF1D97A6B700DA29DF /* Glf_CoursesCollectionReusableView.m in Sources */,
 				49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */,
 				49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */,
@@ -1085,8 +1143,9 @@
 				49BEC3811D9239FD0011302E /* NSDictionary+Categories.m in Sources */,
 				49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */,
 				49913DFC1D98038700C436EC /* Glf_SalaryRaiseViewController.m in Sources */,
-				4997823E1D9C0345006D0629 /* Glf_PlayerViewController.m in Sources */,
+				49E0B79E1D9CBF330052E699 /* Glf_RootPlayerViewController.m in Sources */,
 				49BEC38A1D9239FD0011302E /* DataBaseManager.m in Sources */,
+				49E0B7EB1D9D2BD30052E699 /* Glf_ChaptersDataModel.m in Sources */,
 				49E3AFCC1D97A34900DA29DF /* Glf_SkillModel.m in Sources */,
 				49913DFF1D9803C600C436EC /* Glf_SalaryRaiseModel.m in Sources */,
 				49BEC3821D9239FD0011302E /* NSNumber+Extend.m in Sources */,
@@ -1094,15 +1153,18 @@
 				4997823A1D9C0314006D0629 /* XCAVPlayerView.m in Sources */,
 				49E3AFC61D97A22100DA29DF /* Glf_CourseCatagoryViewController.m in Sources */,
 				49BEC3851D9239FD0011302E /* NSUserDefaults+Categories.m in Sources */,
+				49E0B7DC1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m in Sources */,
 				49DC1B321D9A9DFE00476592 /* Glf_UpCollectionViewCell.m in Sources */,
 				49BEC3881D9239FD0011302E /* UIImage+Categories.m in Sources */,
 				49BEC38C1D9239FE0011302E /* AppStoreUtils.m in Sources */,
 				4997820D1D9BDBE9006D0629 /* Glf_CustomizedCoursesCollectionViewCell.m in Sources */,
 				49BEC3871D9239FD0011302E /* UIColor+Categories.m in Sources */,
+				49E0B7DF1D9D116E0052E699 /* Glf_CommentTableViewCell.m in Sources */,
 				499782101D9BE4E3006D0629 /* Glf_CustomizedCollectionReusableView.m in Sources */,
 				49BEC38D1D9239FE0011302E /* FileManagerUtils.m in Sources */,
 				4997820A1D9BC178006D0629 /* Glf_CourseTypeModel.m in Sources */,
 				49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */,
+				49E0B7A11D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m in Sources */,
 				49913E191D9807CD00C436EC /* Glf_ScanViewController.m in Sources */,
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49913E051D9804F200C436EC /* Glf_PractiseModel.m in Sources */,
@@ -1111,6 +1173,7 @@
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
 				49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */,
 				49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */,
+				49E0B7D91D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m in Sources */,
 				49E3AFC31D97A1B400DA29DF /* Glf_HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1224,6 +1287,8 @@
 			baseConfigurationReference = A7DD935470ECFDE9EE80DC31 /* Pods-GeekCourse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "/Users/dllo/Desktop/极课/GeekCourse/GeekCourse/Supporting Files/LF_PrefixHeader.pch";
 				INFOPLIST_FILE = GeekCourse/Info.plist;
@@ -1231,6 +1296,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.GeekCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1239,6 +1305,8 @@
 			baseConfigurationReference = C26F2FEB746A615176913B11 /* Pods-GeekCourse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "/Users/dllo/Desktop/极课/GeekCourse/GeekCourse/Supporting Files/LF_PrefixHeader.pch";
 				INFOPLIST_FILE = GeekCourse/Info.plist;
@@ -1246,6 +1314,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.GeekCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

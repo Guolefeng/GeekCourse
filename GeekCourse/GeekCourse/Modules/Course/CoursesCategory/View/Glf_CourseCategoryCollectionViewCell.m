@@ -56,7 +56,6 @@
     }
 }
 
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     _imageView.frame = CGRectMake(10, 10, 40, 40);

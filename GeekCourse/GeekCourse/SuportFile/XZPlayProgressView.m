@@ -24,6 +24,7 @@
     if (_playBtn && _currentTimeLabel) {
         CGFloat btnWidth = self.bounds.size.height - 10.0;
         NSString *timeString = @"00:00:00";
+        
         CGFloat timeWidth = ceilf([timeString boundingRectWithSize:CGSizeMake(100, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_currentTimeLabel.font} context:nil].size.width);
         _playBtn.frame = CGRectMake(10.0, 5.0, btnWidth, btnWidth);
         _currentTimeLabel.frame = CGRectMake(_playBtn.frame.origin.x + _playBtn.bounds.size.width + 5.0, 0, timeWidth, self.bounds.size.height);

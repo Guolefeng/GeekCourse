@@ -19,7 +19,7 @@
 #import "Glf_SearchCoursesViewController.h"
 #import "Glf_ScanViewController.h"
 #import "Glf_BaseModel.h"
-#import "Glf_PlayerViewController.h"
+#import "Glf_RootPlayerViewController.h"
 
 @interface Glf_CourseViewController ()
 <
@@ -40,7 +40,7 @@ UITableViewDelegate
 - (void)viewWillAppear:(BOOL)animated {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BackToTabBarViewController" object:nil];
-    
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
     self.navigationController.navigationBar.translucent = NO;
 
     [self creatLeftBarButtonItem];
@@ -62,34 +62,51 @@ UITableViewDelegate
 }
 #pragma mark - 搜索框 扫一扫
 - (void)creatSearchFrameAndScan {
-    // 搜索
-    UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    searchButton.frame = CGRectMake(0, 0, self.view.frame.size.width - 120, 30);
-    searchButton.backgroundColor = [UIColor cyanColor];
     
-    searchButton.layer.cornerRadius = 10;
-    [searchButton setTitle:@"🔍 搜索相关课程" forState:UIControlStateNormal];
-    // 设置 seatchButton 文字对齐方式
-    searchButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    // 这行代码可以让按钮的内容距离左边10个像素.
-    searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-    [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 120, 40)];
+    label.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
+    label.layer.cornerRadius = 10;
+    label.clipsToBounds = YES;
+    self.navigationItem.titleView = label;
     
-    self.navigationItem.titleView = searchButton;
+    UIImageView *searchImageView = [[UIImageView alloc] init];
+    searchImageView.image = [UIImage imageNamed:@"search"];
+    [label addSubview:searchImageView];
+    [searchImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(label).offset(10);
+        make.top.equalTo(label).offset(5);
+        make.bottom.equalTo(label.mas_bottom).offset(-5);
+        make.width.equalTo(@30);
+    }];
     
     // 扫一扫
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [scanButton setImage:[UIImage imageNamed:@"scan"] forState:UIControlStateNormal];
-    [searchButton addSubview:scanButton];
-    [searchButton addTarget:self action:@selector(scanButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [label addSubview:scanButton];
+    [scanButton addTarget:self action:@selector(scanButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [scanButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@30);
-        make.height.equalTo(@30);
-        make.top.equalTo(searchButton).offset(0);
-        make.right.equalTo(searchButton).offset(-5);
+        make.top.equalTo(label).offset(5);
+        make.right.equalTo(label).offset(-5);
+        make.width.height.equalTo(@30);
     }];
     
+    // 搜索
+    UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [searchButton setTitle:@"搜索相关课程" forState:UIControlStateNormal];
+    [searchButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    // 设置 searchButton 文字对齐方式
+    searchButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    // 这行代码可以让按钮的内容距离左边10个像素.
+    searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [label addSubview:searchButton];
+    [searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(searchImageView.mas_right).offset(5);
+        make.right.equalTo(scanButton.mas_left).offset(-5);
+        make.top.equalTo(label).offset(5);
+        make.bottom.equalTo(label.mas_bottom).offset(-5);
+    }];
+
 }
 
 - (void)viewDidLoad {
@@ -208,6 +225,7 @@ UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     return _arrModel.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Glf_MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
@@ -217,10 +235,11 @@ UITableViewDelegate
     
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"第 %ld 行详情.", indexPath.row);
-    Glf_PlayerViewController *playerVC = [[Glf_PlayerViewController alloc] init];
-    [self.navigationController pushViewController:playerVC animated:YES];
+    Glf_RootPlayerViewController *rootPlayerVC = [[Glf_RootPlayerViewController alloc] init];
+    [self.navigationController pushViewController:rootPlayerVC animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 150.f;

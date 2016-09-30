@@ -27,21 +27,19 @@ typedef NS_ENUM(NSInteger,XCAVPlayerStatues){
 
 @end
 
-
 /** 播放器视图请添加到一个 view 上，不要直接添加在 self.view 上 */
 @interface XCAVPlayerView : UIView
-
 
 @property (nonatomic, strong) NSURL *playerUrl;/**< 播放链接 */
 
 @property (nonatomic, assign) id<XCAVPlayerDelegate> delegate;
+
 @property (nonatomic, assign) Float64 currentPlayTime;/**< current play time */
 @property (nonatomic, assign) Float64 totalDuration;/**< video duration */
 @property (nonatomic, assign) Float64 timeInterval;/**< available Duration (cached) */
 
-@property (nonatomic, assign) BOOL    isShowBottomProgressView;/**< default is YES */
-@property (nonatomic, assign) BOOL    isShowResumViewAtPlayEnd;/**< default is YES */
-
+@property (nonatomic, assign) BOOL isShowBottomProgressView;/**< default is YES */
+@property (nonatomic, assign) BOOL isShowResumViewAtPlayEnd;/**< default is YES */
 
 /** 播放状态 */
 - (BOOL)isPlaying;

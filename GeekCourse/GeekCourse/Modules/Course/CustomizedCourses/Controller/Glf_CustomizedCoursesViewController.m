@@ -30,7 +30,6 @@ UICollectionViewDelegate
 - (void)viewWillAppear:(BOOL)animated {
     self.view.backgroundColor = [UIColor cyanColor];
     self.title = @"定制课程";
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }
 

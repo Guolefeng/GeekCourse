@@ -65,12 +65,11 @@
         
         self.cellUpDataLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _cellUpDataLabel.backgroundColor = [UIColor whiteColor];
-        _cellUpDataLabel.text = @"更新完成";
         [self.contentView addSubview:_cellUpDataLabel];
         [_cellUpDataLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self).offset(-20);
             make.top.equalTo(_cellNameLabel).offset(70);
-            make.left.equalTo(_cellNumberLabel).offset(110);
+            make.left.equalTo(_cellNumberLabel.mas_right).offset(0);
             make.height.equalTo(@30);
         }];
     }
@@ -86,6 +85,7 @@
         
         _cellNameLabel.text = tableViewCellModel.name;
         _cellNumberLabel.text= [NSString stringWithFormat:@"%ld", tableViewCellModel.numbers];
+        _cellUpDataLabel.text = [NSString stringWithFormat:@"更新至 %ld-%ld", tableViewCellModel.max_chapter_seq, tableViewCellModel.max_media_seq];
     }
 }
 

@@ -16,4 +16,7 @@
 @property (nonatomic, copy) NSString *pic;
 @property (nonatomic, assign) NSInteger numbers;
 
+@property (nonatomic, assign) NSInteger max_chapter_seq;
+@property (nonatomic, assign) NSInteger max_media_seq;
+
 @end

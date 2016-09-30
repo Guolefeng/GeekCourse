@@ -30,6 +30,7 @@ UICollectionViewDelegate
     self.view.backgroundColor = [UIColor cyanColor];
     self.title = @"求职路线计划";
     
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }
 
@@ -66,7 +67,7 @@ UICollectionViewDelegate
 #pragma mark - 创建背景图片
 - (void)creatBackgroudImageViewWith:(NSArray *)array index:(NSInteger)index {
     
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -64, WIDTH_SCREEN, HEIGHT_SCREEN)];
     
     NSURL *url = [NSURL URLWithString:array[index]];
     [_backgroundImageView sd_setImageWithURL:url];
