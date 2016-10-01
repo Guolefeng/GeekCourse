@@ -81,7 +81,7 @@ UITableViewDelegate
     
     // 扫一扫
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [scanButton setImage:[UIImage imageNamed:@"scan"] forState:UIControlStateNormal];
+    [scanButton setBackgroundImage:[UIImage imageNamed:@"scan"] forState:UIControlStateNormal];
     [label addSubview:scanButton];
     [scanButton addTarget:self action:@selector(scanButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [scanButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -236,11 +236,11 @@ UITableViewDelegate
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"第 %ld 行详情.", indexPath.row);
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Glf_RootPlayerViewController *rootPlayerVC = [[Glf_RootPlayerViewController alloc] init];
     [self.navigationController pushViewController:rootPlayerVC animated:YES];
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 150.f;
 }

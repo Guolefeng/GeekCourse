@@ -24,6 +24,8 @@
 		499782131D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m in Sources */ = {isa = PBXBuildFile; fileRef = 499782121D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m */; };
 		4997823A1D9C0314006D0629 /* XCAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997822B1D9C0314006D0629 /* XCAVPlayerView.m */; };
 		4997823B1D9C0314006D0629 /* XZPlayProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997822D1D9C0314006D0629 /* XZPlayProgressView.m */; };
+		499D83FA1D9E654C0049DFA7 /* Glf_DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499D83F91D9E654C0049DFA7 /* Glf_DiscoverViewController.m */; };
+		499D83FD1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 499D83FC1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m */; };
 		49AA4DB51D9E0E3E0084801F /* Glf_CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AA4DB41D9E0E3E0084801F /* Glf_CommentModel.m */; };
 		49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEA3FB1D93F7B9001DED2E /* Glf_ModelOfCourse.m */; };
 		49BEC3291D9238FC0011302E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3281D9238FC0011302E /* main.m */; };
@@ -54,9 +56,17 @@
 		49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3B51D927C8F0011302E /* Glf_GuideViewController.m */; };
 		49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3B81D927CA20011302E /* Glf_CourseViewController.m */; };
 		49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3BC1D9289EC0011302E /* Glf_DownloadViewController.m */; };
-		49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */; };
 		49BEC3C91D928A530011302E /* Glf_MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3C81D928A530011302E /* Glf_MineViewController.m */; };
 		49BEC3CE1D928F1A0011302E /* Glf_TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */; };
+		49C3A50D1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A50C1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m */; };
+		49C3A5101D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A50F1D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.m */; };
+		49C3A5161D9F7999001850A9 /* Glf_deepCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5151D9F7999001850A9 /* Glf_deepCollectionViewCell.m */; };
+		49C3A5191D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5181D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m */; };
+		49C3A51C1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A51B1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m */; };
+		49C3A51F1D9F91B0001850A9 /* Glf_HandRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A51E1D9F91B0001850A9 /* Glf_HandRecordModel.m */; };
+		49C3A5221D9F960E001850A9 /* Glf_HandRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5211D9F960E001850A9 /* Glf_HandRecordTableViewCell.m */; };
+		49C3A5251D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5241D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m */; };
+		49C3A5281D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5271D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m */; };
 		49DC1B011D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B001D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m */; };
 		49DC1B2C1D9A711800476592 /* Glf_JobHuntingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B2B1D9A711800476592 /* Glf_JobHuntingModel.m */; };
 		49DC1B321D9A9DFE00476592 /* Glf_UpCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B311D9A9DFE00476592 /* Glf_UpCollectionViewCell.m */; };
@@ -118,6 +128,10 @@
 		4997822B1D9C0314006D0629 /* XCAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCAVPlayerView.m; sourceTree = "<group>"; };
 		4997822C1D9C0314006D0629 /* XZPlayProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZPlayProgressView.h; sourceTree = "<group>"; };
 		4997822D1D9C0314006D0629 /* XZPlayProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZPlayProgressView.m; sourceTree = "<group>"; };
+		499D83F81D9E654C0049DFA7 /* Glf_DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DiscoverViewController.h; sourceTree = "<group>"; };
+		499D83F91D9E654C0049DFA7 /* Glf_DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DiscoverViewController.m; sourceTree = "<group>"; };
+		499D83FB1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_navUpCollectionViewCell.h; sourceTree = "<group>"; };
+		499D83FC1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_navUpCollectionViewCell.m; sourceTree = "<group>"; };
 		49AA4DB31D9E0E3E0084801F /* Glf_CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_CommentModel.h; sourceTree = "<group>"; };
 		49AA4DB41D9E0E3E0084801F /* Glf_CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CommentModel.m; sourceTree = "<group>"; };
 		49BEA3FA1D93F7B9001DED2E /* Glf_ModelOfCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ModelOfCourse.h; sourceTree = "<group>"; };
@@ -178,12 +192,28 @@
 		49BEC3B81D927CA20011302E /* Glf_CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_CourseViewController.m; sourceTree = "<group>"; };
 		49BEC3BB1D9289EC0011302E /* Glf_DownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DownloadViewController.h; sourceTree = "<group>"; };
 		49BEC3BC1D9289EC0011302E /* Glf_DownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DownloadViewController.m; sourceTree = "<group>"; };
-		49BEC3C11D928A2B0011302E /* Glf_DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DiscoverViewController.h; sourceTree = "<group>"; };
-		49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DiscoverViewController.m; sourceTree = "<group>"; };
 		49BEC3C71D928A530011302E /* Glf_MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MineViewController.h; sourceTree = "<group>"; };
 		49BEC3C81D928A530011302E /* Glf_MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MineViewController.m; sourceTree = "<group>"; };
 		49BEC3CC1D928F1A0011302E /* Glf_TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_TabBarViewController.h; sourceTree = "<group>"; };
 		49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_TabBarViewController.m; sourceTree = "<group>"; };
+		49C3A50B1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ProgrammerQuestionCollectionViewCell.h; sourceTree = "<group>"; };
+		49C3A50C1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgrammerQuestionCollectionViewCell.m; sourceTree = "<group>"; };
+		49C3A50E1D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_HandRecordCollectionViewCell.h; sourceTree = "<group>"; };
+		49C3A50F1D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_HandRecordCollectionViewCell.m; sourceTree = "<group>"; };
+		49C3A5141D9F7999001850A9 /* Glf_deepCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_deepCollectionViewCell.h; sourceTree = "<group>"; };
+		49C3A5151D9F7999001850A9 /* Glf_deepCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_deepCollectionViewCell.m; sourceTree = "<group>"; };
+		49C3A5171D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ProgrammerDeepCollectionViewCell.h; sourceTree = "<group>"; };
+		49C3A5181D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgrammerDeepCollectionViewCell.m; sourceTree = "<group>"; };
+		49C3A51A1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_HandRecordCategoryViewController.h; sourceTree = "<group>"; };
+		49C3A51B1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_HandRecordCategoryViewController.m; sourceTree = "<group>"; };
+		49C3A51D1D9F91B0001850A9 /* Glf_HandRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_HandRecordModel.h; sourceTree = "<group>"; };
+		49C3A51E1D9F91B0001850A9 /* Glf_HandRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_HandRecordModel.m; sourceTree = "<group>"; };
+		49C3A5201D9F960E001850A9 /* Glf_HandRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_HandRecordTableViewCell.h; sourceTree = "<group>"; };
+		49C3A5211D9F960E001850A9 /* Glf_HandRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_HandRecordTableViewCell.m; sourceTree = "<group>"; };
+		49C3A5231D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ProgrammerTableViewCell.h; sourceTree = "<group>"; };
+		49C3A5241D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgrammerTableViewCell.m; sourceTree = "<group>"; };
+		49C3A5261D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ProgrammerQuestionModel.h; sourceTree = "<group>"; };
+		49C3A5271D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgrammerQuestionModel.m; sourceTree = "<group>"; };
 		49DC1AFF1D9A1A5600476592 /* Glf_PractiseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glf_PractiseCollectionViewCell.h; path = GeekCourse/Modules/Course/CoursesPrsctise/Glf_PractiseCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
 		49DC1B001D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Glf_PractiseCollectionViewCell.m; path = GeekCourse/Modules/Course/CoursesPrsctise/Glf_PractiseCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		49DC1B2A1D9A711800476592 /* Glf_JobHuntingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glf_JobHuntingModel.h; path = GeekCourse/Modules/Course/CoursesJobHunting/Glf_JobHuntingModel.h; sourceTree = SOURCE_ROOT; };
@@ -364,6 +394,33 @@
 			path = SuportFile;
 			sourceTree = "<group>";
 		};
+		499D83F41D9E64D10049DFA7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				499D83F61D9E64E30049DFA7 /* View */,
+				499D83F51D9E64DD0049DFA7 /* Controller */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		499D83F51D9E64DD0049DFA7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				499D83F81D9E654C0049DFA7 /* Glf_DiscoverViewController.h */,
+				499D83F91D9E654C0049DFA7 /* Glf_DiscoverViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		499D83F61D9E64E30049DFA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				499D83FB1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.h */,
+				499D83FC1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		49BEC31B1D9238FC0011302E = {
 			isa = PBXGroup;
 			children = (
@@ -436,9 +493,9 @@
 		49BEC3431D9239EC0011302E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				49BEC3BE1D928A020011302E /* Controller */,
-				49BEC3C01D928A160011302E /* Model */,
-				49BEC3BF1D928A0F0011302E /* View */,
+				49C3A5011D9F6BE7001850A9 /* ProgrammerQuestion */,
+				49C3A5001D9F6BD7001850A9 /* HandRecord */,
+				499D83F41D9E64D10049DFA7 /* Root */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -659,29 +716,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		49BEC3BE1D928A020011302E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				49BEC3C11D928A2B0011302E /* Glf_DiscoverViewController.h */,
-				49BEC3C21D928A2B0011302E /* Glf_DiscoverViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		49BEC3BF1D928A0F0011302E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		49BEC3C01D928A160011302E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		49BEC3C41D928A340011302E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +754,86 @@
 				49BEC3CD1D928F1A0011302E /* Glf_TabBarViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49C3A5001D9F6BD7001850A9 /* HandRecord */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A5051D9F6C0C001850A9 /* View */,
+				49C3A5071D9F6C17001850A9 /* Controller */,
+				49C3A5061D9F6C11001850A9 /* Model */,
+			);
+			name = HandRecord;
+			sourceTree = "<group>";
+		};
+		49C3A5011D9F6BE7001850A9 /* ProgrammerQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A5021D9F6BF7001850A9 /* View */,
+				49C3A5041D9F6C05001850A9 /* Model */,
+				49C3A5031D9F6BFE001850A9 /* Controller */,
+			);
+			name = ProgrammerQuestion;
+			sourceTree = "<group>";
+		};
+		49C3A5021D9F6BF7001850A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A50B1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.h */,
+				49C3A50C1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m */,
+				49C3A5171D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.h */,
+				49C3A5181D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m */,
+				49C3A5231D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.h */,
+				49C3A5241D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49C3A5031D9F6BFE001850A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49C3A5041D9F6C05001850A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A5261D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.h */,
+				49C3A5271D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49C3A5051D9F6C0C001850A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A50E1D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.h */,
+				49C3A50F1D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.m */,
+				49C3A5141D9F7999001850A9 /* Glf_deepCollectionViewCell.h */,
+				49C3A5151D9F7999001850A9 /* Glf_deepCollectionViewCell.m */,
+				49C3A5201D9F960E001850A9 /* Glf_HandRecordTableViewCell.h */,
+				49C3A5211D9F960E001850A9 /* Glf_HandRecordTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49C3A5061D9F6C11001850A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A51D1D9F91B0001850A9 /* Glf_HandRecordModel.h */,
+				49C3A51E1D9F91B0001850A9 /* Glf_HandRecordModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49C3A5071D9F6C17001850A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49C3A51A1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.h */,
+				49C3A51B1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		49E0B7981D9CBEEC0052E699 /* Root */ = {
@@ -1107,10 +1221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C3A5251D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m in Sources */,
+				49C3A5101D9F6E49001850A9 /* Glf_HandRecordCollectionViewCell.m in Sources */,
 				49BEC38E1D9239FE0011302E /* NSUserDefaultsUtils.m in Sources */,
 				49E189D21D962A49004A1706 /* Glf_BaseView.m in Sources */,
 				49E0B7EE1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m in Sources */,
 				49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */,
+				49C3A5221D9F960E001850A9 /* Glf_HandRecordTableViewCell.m in Sources */,
 				49913E1C1D9807E800C436EC /* Glf_SearchCoursesViewController.m in Sources */,
 				49E0B7D31D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m in Sources */,
 				49BEC3831D9239FD0011302E /* NSString+Categories.m in Sources */,
@@ -1126,12 +1243,15 @@
 				49DC1B011D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m in Sources */,
 				49BEC3841D9239FD0011302E /* NSString+Regex.m in Sources */,
 				49E0B7D61D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m in Sources */,
+				49C3A5161D9F7999001850A9 /* Glf_deepCollectionViewCell.m in Sources */,
 				49E3AFCF1D97A6B700DA29DF /* Glf_CoursesCollectionReusableView.m in Sources */,
+				499D83FD1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m in Sources */,
+				49C3A5281D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m in Sources */,
 				49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */,
-				49BEC3C31D928A2B0011302E /* Glf_DiscoverViewController.m in Sources */,
 				49BEC3861D9239FD0011302E /* UIButton+Block.m in Sources */,
 				499782071D9BC160006D0629 /* Glf_DataModel.m in Sources */,
 				49BEC37E1D9239FD0011302E /* NSArray+Categories.m in Sources */,
+				49C3A51F1D9F91B0001850A9 /* Glf_HandRecordModel.m in Sources */,
 				4994FCBF1D954C1500673F17 /* Glf_MyTableViewCell.m in Sources */,
 				49913E081D9805B700C436EC /* Glf_JobHuntingViewController.m in Sources */,
 				49E3FECC1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m in Sources */,
@@ -1144,6 +1264,7 @@
 				49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */,
 				49913DFC1D98038700C436EC /* Glf_SalaryRaiseViewController.m in Sources */,
 				49E0B79E1D9CBF330052E699 /* Glf_RootPlayerViewController.m in Sources */,
+				49C3A50D1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m in Sources */,
 				49BEC38A1D9239FD0011302E /* DataBaseManager.m in Sources */,
 				49E0B7EB1D9D2BD30052E699 /* Glf_ChaptersDataModel.m in Sources */,
 				49E3AFCC1D97A34900DA29DF /* Glf_SkillModel.m in Sources */,
@@ -1160,6 +1281,7 @@
 				4997820D1D9BDBE9006D0629 /* Glf_CustomizedCoursesCollectionViewCell.m in Sources */,
 				49BEC3871D9239FD0011302E /* UIColor+Categories.m in Sources */,
 				49E0B7DF1D9D116E0052E699 /* Glf_CommentTableViewCell.m in Sources */,
+				49C3A51C1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m in Sources */,
 				499782101D9BE4E3006D0629 /* Glf_CustomizedCollectionReusableView.m in Sources */,
 				49BEC38D1D9239FE0011302E /* FileManagerUtils.m in Sources */,
 				4997820A1D9BC178006D0629 /* Glf_CourseTypeModel.m in Sources */,
@@ -1168,11 +1290,13 @@
 				49913E191D9807CD00C436EC /* Glf_ScanViewController.m in Sources */,
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49913E051D9804F200C436EC /* Glf_PractiseModel.m in Sources */,
+				49C3A5191D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m in Sources */,
 				49E3FE891D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m in Sources */,
 				49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */,
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
 				49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */,
 				49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */,
+				499D83FA1D9E654C0049DFA7 /* Glf_DiscoverViewController.m in Sources */,
 				49E0B7D91D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m in Sources */,
 				49E3AFC31D97A1B400DA29DF /* Glf_HistoryViewController.m in Sources */,
 			);

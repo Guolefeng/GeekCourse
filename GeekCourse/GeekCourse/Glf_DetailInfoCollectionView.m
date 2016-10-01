@@ -50,7 +50,6 @@ UITableViewDelegate
         NSDictionary *dic = (NSDictionary *)result;
         _dataDic = dic[@"data"];
         
-        
         [_tableView reloadData];
         
         [self creatCourseHeaderInfo];
