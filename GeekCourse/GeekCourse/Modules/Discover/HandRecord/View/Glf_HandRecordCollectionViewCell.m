@@ -49,7 +49,6 @@ UICollectionViewDelegate
     return self;
 }
 
-
 #pragma mark - 获取推荐数据
 - (void)getHandRecordRecommendData {
     NSString *url = @"http://www.imooc.com/api3/articlelist";

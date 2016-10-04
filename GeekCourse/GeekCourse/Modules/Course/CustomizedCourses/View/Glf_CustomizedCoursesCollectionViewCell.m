@@ -7,11 +7,10 @@
 //
 
 #import "Glf_CustomizedCoursesCollectionViewCell.h"
-#import "UILabel+Glf_SizeToFit_W_H.h"
 
 @interface Glf_CustomizedCoursesCollectionViewCell ()
 
-@property (nonatomic, retain) UILabel *nameLabel;
+
 
 @end
 
@@ -22,7 +21,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        self.nameLabel = [[UILabel alloc] init];
         _nameLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_nameLabel];
         
@@ -32,15 +31,19 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.clipsToBounds = YES;
-    self.layer.cornerRadius = 20;
-    self.layer.borderWidth = 2.0;
-    self.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    _nameLabel.frame = self.contentView.bounds;
     
-//    _nameLabel.font = [UIFont systemFontOfSize:20];
-//    CGFloat width = [UILabel getWidthWithTitle:_nameLabel.text font:_nameLabel.font];
-//    _nameLabel.frame = CGRectMake(0, 0, width, self.contentView.frame.size.height);
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 10;
+    self.layer.borderWidth = 2.0;
+    self.layer.borderColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.2].CGColor;
+    
+    CGSize sizeForLabel = [_model.name boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, __FLT_MAX__) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType, NSFontAttributeName:[UIFont systemFontOfSize:35]} context:nil].size;
+    CGRect labelFrame = _nameLabel.frame;
+    labelFrame.size = sizeForLabel;
+    
+    _nameLabel.frame = labelFrame;
+    
+    
 }
 
 - (void)setModel:(Glf_CourseTypeModel *)model {

@@ -13,4 +13,6 @@
 
 @property (nonatomic ,retain) Glf_CourseTypeModel *model;
 
+@property (nonatomic, retain) UILabel *nameLabel;
+
 @end

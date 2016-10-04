@@ -18,6 +18,7 @@ UICollectionViewDelegate
 >
 @property (nonatomic, retain) UIImageView *backgroundImageView;
 
+@property (nonatomic, retain) Glf_MyCollectionViewFlowLayout *flowLayout;
 @property (nonatomic, retain) UICollectionView *UpCollectionView;
 
 @property (nonatomic, retain) NSMutableArray *modelArray;
@@ -68,6 +69,7 @@ UICollectionViewDelegate
 - (void)creatBackgroudImageViewWith:(NSArray *)array index:(NSInteger)index {
     
     self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -64, WIDTH_SCREEN, HEIGHT_SCREEN)];
+    _backgroundImageView.userInteractionEnabled = YES;
     
     NSURL *url = [NSURL URLWithString:array[index]];
     [_backgroundImageView sd_setImageWithURL:url];
@@ -95,23 +97,22 @@ UICollectionViewDelegate
 
 #pragma mark - 创建 upCollectionView
 - (void)creatUpCollectionView {
-    Glf_MyCollectionViewFlowLayout *flowLayout = [[Glf_MyCollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(WIDTH_SCREEN - 150, HEIGHT_SCREEN * 0.5);
-    flowLayout.minimumLineSpacing = 50;
-    flowLayout.minimumInteritemSpacing = 10;
+    self.flowLayout = [[Glf_MyCollectionViewFlowLayout alloc] init];
+    _flowLayout.itemSize = CGSizeMake(WIDTH_SCREEN - 150, HEIGHT_SCREEN * 0.5);
+    _flowLayout.minimumLineSpacing = 50;
+    _flowLayout.minimumInteritemSpacing = 10;
     
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
+    _flowLayout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
     
-    self.UpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, HEIGHT_SCREEN * 0.2, WIDTH_SCREEN, HEIGHT_SCREEN * 0.6) collectionViewLayout:flowLayout];
+    self.UpCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, HEIGHT_SCREEN * 0.2, WIDTH_SCREEN, HEIGHT_SCREEN * 0.6) collectionViewLayout:_flowLayout];
     _UpCollectionView.dataSource = self;
     _UpCollectionView.delegate = self;
     _UpCollectionView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0];
-
     // 滚动减速效果
     _UpCollectionView.decelerationRate = UIScrollViewDecelerationRateNormal;
     
     _UpCollectionView.showsHorizontalScrollIndicator = NO;
-    [self.view addSubview:_UpCollectionView];
+    [_backgroundImageView addSubview:_UpCollectionView];
     
     [_UpCollectionView registerClass:[Glf_UpCollectionViewCell class] forCellWithReuseIdentifier:@"upCell"];
 
@@ -135,17 +136,15 @@ UICollectionViewDelegate
     
     return nil;
 }
-
 #pragma mark - collectionView 关联 背景图片
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    
-//    [_backgroundImageView removeFromSuperview];
-//    
-//    NSInteger count = scrollView.contentOffset.x / WIDTH_SCREEN;
-//    NSLog(@"%ld", count);
-//    NSArray *arr = [self getBackgroundimageData];
-//    [self creatBackgroudImageViewWith:arr index:count];
-//}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    NSInteger count = scrollView.contentOffset.x / _flowLayout.itemSize.width;
+    NSLog(@"%ld", count);
+    NSArray *arr = [self getBackgroundimageData];
+    NSURL *url = [NSURL URLWithString:arr[count]];
+    [_backgroundImageView sd_setImageWithURL:url];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

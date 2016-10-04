@@ -11,11 +11,13 @@
 #import "Glf_CourseTypeModel.h"
 #import "Glf_CustomizedCoursesCollectionViewCell.h"
 #import "Glf_CustomizedCollectionReusableView.h"
+#import "UIButton+Block.h"
 
 @interface Glf_CustomizedCoursesViewController ()
 <
 UICollectionViewDataSource,
-UICollectionViewDelegate
+UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout
 >
 @property (nonatomic, retain) NSMutableArray *modelArray;
 
@@ -39,10 +41,32 @@ UICollectionViewDelegate
     
     self.modelArray = [NSMutableArray array];
     
+    [self creatNavBar];
     [self getCustomizedCoursesData];
     [self creatCollectionView];
     [self creatAllCourseSortView];
 }
+
+#pragma mark - 创建导航栏
+- (void)creatNavBar {
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, 64)];
+    nameLabel.backgroundColor = [UIColor blackColor];
+    nameLabel.text = @"我的定制";
+    nameLabel.font = [UIFont systemFontOfSize:20];
+    nameLabel.textAlignment = NSTextAlignmentCenter;
+    nameLabel.textColor = [UIColor whiteColor];
+    [self.view addSubview:nameLabel];
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(WIDTH_SCREEN - 70, 18, 60, 30);
+    [backButton setTitle:@"确定" forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [backButton handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self.view addSubview:backButton];
+}
+
 #pragma mark - 获取数据
 - (void)getCustomizedCoursesData {
     
@@ -66,7 +90,7 @@ UICollectionViewDelegate
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH_SCREEN, 30);
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, HEIGHT_SCREEN - 64) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, WIDTH_SCREEN, HEIGHT_SCREEN - 64) collectionViewLayout:flowLayout];
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
@@ -76,16 +100,17 @@ UICollectionViewDelegate
     [_collectionView registerClass:[Glf_CustomizedCoursesCollectionViewCell class] forCellWithReuseIdentifier:@"customCell"];
     [_collectionView registerClass:[Glf_CustomizedCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"customHeaderCell"];
 }
+
 #pragma mark - 创建全部分类
 - (void)creatAllCourseSortView {
 
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, -60, 200, 50)];
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, -50, 100, 40)];
     nameLabel.textAlignment = NSTextAlignmentCenter;
     nameLabel.text = @"全部分类";
     nameLabel.font = [UIFont systemFontOfSize:22];
-    nameLabel.layer.cornerRadius = 20;
+    nameLabel.layer.cornerRadius = 10;
     nameLabel.layer.borderWidth = 2.0;
-    nameLabel.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    nameLabel.layer.borderColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.2].CGColor;
     [_collectionView addSubview:nameLabel];
 }
 #pragma mark - collectionView header
@@ -108,10 +133,21 @@ UICollectionViewDelegate
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     Glf_CustomizedCoursesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCell" forIndexPath:indexPath];
+    
     Glf_DataModel *dataModel = _modelArray[indexPath.section];
     Glf_CourseTypeModel *model = dataModel.coursetype[indexPath.item];
     cell.model = model;
+    
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Glf_DataModel *dataModel = _modelArray[indexPath.section];
+    Glf_CourseTypeModel *model = dataModel.coursetype[indexPath.item];
+    
+    CGSize sizeForLabel = [model.name boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, __FLT_MAX__) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType, NSFontAttributeName:[UIFont systemFontOfSize:35]} context:nil].size;
+    return CGSizeMake(sizeForLabel.width, sizeForLabel.height);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -222,6 +222,7 @@ UITableViewDelegate
     [dataTask resume];
     
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     return _arrModel.count;
 }
@@ -405,7 +406,7 @@ UITableViewDelegate
 - (void)addButtonAction:(UIButton *)button {
     NSLog(@"定制课程");
     Glf_CustomizedCoursesViewController *customizedCoursesVC = [[Glf_CustomizedCoursesViewController alloc] init];
-    [self.navigationController pushViewController:customizedCoursesVC animated:YES];
+    [self presentViewController:customizedCoursesVC animated:YES completion:nil];
 }
 
 - (void)practiseButtonAction:(UIButton *)button {
