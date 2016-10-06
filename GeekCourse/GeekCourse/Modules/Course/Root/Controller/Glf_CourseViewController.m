@@ -39,9 +39,11 @@ UITableViewDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BackToTabBarViewController" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
 
     [self creatLeftBarButtonItem];
     [self creatRightBarButtonItem];
@@ -64,7 +66,7 @@ UITableViewDelegate
 - (void)creatSearchFrameAndScan {
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 120, 40)];
-    label.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
+    label.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
     label.layer.cornerRadius = 10;
     label.clipsToBounds = YES;
     self.navigationItem.titleView = label;

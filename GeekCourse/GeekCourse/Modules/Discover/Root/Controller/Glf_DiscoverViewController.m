@@ -30,7 +30,6 @@ Glf_HandRecordCollectionViewCellDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
-    
     self.array = [[NSArray alloc] initWithObjects:@"手记", @"猿问", nil];
     
     [self creatNavCollectionView];

@@ -10,6 +10,7 @@
 #import "Glf_GuideViewController.h"
 #import "Glf_CourseViewController.h"
 #import "Glf_TabBarViewController.h"
+#import "Glf_RegisterAndLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -34,7 +35,11 @@
 //        _window.rootViewController = [[Glf_CourseViewController alloc] init];
 //    }
     
-    self.window.rootViewController = [[Glf_TabBarViewController alloc] init];
+//    self.window.rootViewController = [[Glf_TabBarViewController alloc] init];
+    
+    Glf_RegisterAndLoginViewController *regAndLogVC = [[Glf_RegisterAndLoginViewController alloc] init];
+    UINavigationController *rootNC = [[UINavigationController alloc] initWithRootViewController:regAndLogVC];
+    self.window.rootViewController = rootNC;
     
     return YES;
 }

@@ -73,6 +73,7 @@
 		49DC1B011D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B001D9A1A5600476592 /* Glf_PractiseCollectionViewCell.m */; };
 		49DC1B2C1D9A711800476592 /* Glf_JobHuntingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B2B1D9A711800476592 /* Glf_JobHuntingModel.m */; };
 		49DC1B321D9A9DFE00476592 /* Glf_UpCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC1B311D9A9DFE00476592 /* Glf_UpCollectionViewCell.m */; };
+		49DFC3611DA3AE2600CB5A03 /* Glf_ProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFC3601DA3AE2600CB5A03 /* Glf_ProgressBarView.m */; };
 		49E0B79E1D9CBF330052E699 /* Glf_RootPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B79D1D9CBF330052E699 /* Glf_RootPlayerViewController.m */; };
 		49E0B7A11D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7A01D9CC5BB0052E699 /* Glf_NavCollectionViewCell.m */; };
 		49E0B7D31D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0B7D21D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m */; };
@@ -92,6 +93,11 @@
 		49E3FE891D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3FE881D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m */; };
 		49E3FEC91D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3FEC81D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m */; };
 		49E3FECC1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3FECB1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m */; };
+		49FC58341DA638DC0032706C /* Glf_RegisterAndLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC58331DA638DC0032706C /* Glf_RegisterAndLoginViewController.m */; };
+		49FC58371DA640380032706C /* Glf_RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC58361DA640380032706C /* Glf_RegisterViewController.m */; };
+		49FC583A1DA640BF0032706C /* Glf_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC58391DA640BF0032706C /* Glf_LoginViewController.m */; };
+		49FC583D1DA65AF00032706C /* Glf_PhoneRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */; };
+		49FC58401DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */; };
 		7EDE260FEE911A1B94C954B9 /* libPods-GeekCourse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1201F1BEC3600C670E7C7D /* libPods-GeekCourse.a */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +235,8 @@
 		49DC1B2B1D9A711800476592 /* Glf_JobHuntingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_JobHuntingModel.m; sourceTree = "<group>"; };
 		49DC1B301D9A9DFE00476592 /* Glf_UpCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_UpCollectionViewCell.h; sourceTree = "<group>"; };
 		49DC1B311D9A9DFE00476592 /* Glf_UpCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_UpCollectionViewCell.m; sourceTree = "<group>"; };
+		49DFC35F1DA3AE2600CB5A03 /* Glf_ProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ProgressBarView.h; sourceTree = "<group>"; };
+		49DFC3601DA3AE2600CB5A03 /* Glf_ProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgressBarView.m; sourceTree = "<group>"; };
 		49E0B79C1D9CBF330052E699 /* Glf_RootPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_RootPlayerViewController.h; sourceTree = "<group>"; };
 		49E0B79D1D9CBF330052E699 /* Glf_RootPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_RootPlayerViewController.m; sourceTree = "<group>"; };
 		49E0B79F1D9CC5BB0052E699 /* Glf_NavCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_NavCollectionViewCell.h; sourceTree = "<group>"; };
@@ -268,6 +276,16 @@
 		49E3FEC81D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_UpLayerCollectionViewCell.m; sourceTree = "<group>"; };
 		49E3FECA1D99668000036DF5 /* Glf_SalaryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_SalaryCollectionViewCell.h; sourceTree = "<group>"; };
 		49E3FECB1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_SalaryCollectionViewCell.m; sourceTree = "<group>"; };
+		49FC58321DA638DC0032706C /* Glf_RegisterAndLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_RegisterAndLoginViewController.h; sourceTree = "<group>"; };
+		49FC58331DA638DC0032706C /* Glf_RegisterAndLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_RegisterAndLoginViewController.m; sourceTree = "<group>"; };
+		49FC58351DA640380032706C /* Glf_RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_RegisterViewController.h; sourceTree = "<group>"; };
+		49FC58361DA640380032706C /* Glf_RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_RegisterViewController.m; sourceTree = "<group>"; };
+		49FC58381DA640BF0032706C /* Glf_LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_LoginViewController.h; sourceTree = "<group>"; };
+		49FC58391DA640BF0032706C /* Glf_LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_LoginViewController.m; sourceTree = "<group>"; };
+		49FC583B1DA65AF00032706C /* Glf_PhoneRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_PhoneRegisterViewController.h; sourceTree = "<group>"; };
+		49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_PhoneRegisterViewController.m; sourceTree = "<group>"; };
+		49FC583E1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MailBoxRegisterViewController.h; sourceTree = "<group>"; };
+		49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MailBoxRegisterViewController.m; sourceTree = "<group>"; };
 		A7DD935470ECFDE9EE80DC31 /* Pods-GeekCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		C26F2FEB746A615176913B11 /* Pods-GeekCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,11 +506,11 @@
 		49BEC3411D9239EC0011302E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				49FC582E1DA638920032706C /* RegisterAndLogin */,
 				49BEC39D1D92766C0011302E /* Course */,
 				49BEC3431D9239EC0011302E /* Discover */,
 				49BEC3901D923B6F0011302E /* Download */,
 				49BEC3921D9275210011302E /* GuidePage */,
-				49BEC3441D9239EC0011302E /* LoginAndRegister */,
 				49BEC3451D9239EC0011302E /* Mine */,
 				49BEC3CA1D928EFA0011302E /* TabBar */,
 			);
@@ -507,13 +525,6 @@
 				499D83F41D9E64D10049DFA7 /* Root */,
 			);
 			path = Discover;
-			sourceTree = "<group>";
-		};
-		49BEC3441D9239EC0011302E /* LoginAndRegister */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LoginAndRegister;
 			sourceTree = "<group>";
 		};
 		49BEC3451D9239EC0011302E /* Mine */ = {
@@ -640,6 +651,7 @@
 		49BEC3901D923B6F0011302E /* Download */ = {
 			isa = PBXGroup;
 			children = (
+				49DFC35E1DA3ADFE00CB5A03 /* View */,
 				49BEC3BA1D9289DD0011302E /* Controller */,
 			);
 			path = Download;
@@ -857,6 +869,15 @@
 				49D6D2121DA10AD8006660A2 /* Glf_MineViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49DFC35E1DA3ADFE00CB5A03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49DFC35F1DA3AE2600CB5A03 /* Glf_ProgressBarView.h */,
+				49DFC3601DA3AE2600CB5A03 /* Glf_ProgressBarView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		49E0B7981D9CBEEC0052E699 /* Root */ = {
@@ -1111,6 +1132,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		49FC582E1DA638920032706C /* RegisterAndLogin */ = {
+			isa = PBXGroup;
+			children = (
+				49FC58311DA638BE0032706C /* Model */,
+				49FC58301DA638B90032706C /* Controller */,
+				49FC582F1DA638B40032706C /* View */,
+			);
+			name = RegisterAndLogin;
+			sourceTree = "<group>";
+		};
+		49FC582F1DA638B40032706C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49FC58301DA638B90032706C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49FC58321DA638DC0032706C /* Glf_RegisterAndLoginViewController.h */,
+				49FC58331DA638DC0032706C /* Glf_RegisterAndLoginViewController.m */,
+				49FC58351DA640380032706C /* Glf_RegisterViewController.h */,
+				49FC58361DA640380032706C /* Glf_RegisterViewController.m */,
+				49FC583B1DA65AF00032706C /* Glf_PhoneRegisterViewController.h */,
+				49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */,
+				49FC583E1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.h */,
+				49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */,
+				49FC58381DA640BF0032706C /* Glf_LoginViewController.h */,
+				49FC58391DA640BF0032706C /* Glf_LoginViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49FC58311DA638BE0032706C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5042E664FF8425CE58C016E7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1269,11 +1331,13 @@
 				49D6D20C1DA103E9006660A2 /* Glf_ChooseToSortCell.m in Sources */,
 				49E0B7D61D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m in Sources */,
 				49C3A5161D9F7999001850A9 /* Glf_deepCollectionViewCell.m in Sources */,
+				49DFC3611DA3AE2600CB5A03 /* Glf_ProgressBarView.m in Sources */,
 				49E3AFCF1D97A6B700DA29DF /* Glf_CoursesCollectionReusableView.m in Sources */,
 				499D83FD1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m in Sources */,
 				49C3A5281D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m in Sources */,
 				49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */,
 				49BEC3861D9239FD0011302E /* UIButton+Block.m in Sources */,
+				49FC58371DA640380032706C /* Glf_RegisterViewController.m in Sources */,
 				499782071D9BC160006D0629 /* Glf_DataModel.m in Sources */,
 				49BEC37E1D9239FD0011302E /* NSArray+Categories.m in Sources */,
 				49C3A51F1D9F91B0001850A9 /* Glf_HandRecordModel.m in Sources */,
@@ -1290,6 +1354,7 @@
 				49913DFC1D98038700C436EC /* Glf_SalaryRaiseViewController.m in Sources */,
 				49E0B79E1D9CBF330052E699 /* Glf_RootPlayerViewController.m in Sources */,
 				49C3A50D1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m in Sources */,
+				49FC583A1DA640BF0032706C /* Glf_LoginViewController.m in Sources */,
 				49BEC38A1D9239FD0011302E /* DataBaseManager.m in Sources */,
 				49E0B7EB1D9D2BD30052E699 /* Glf_ChaptersDataModel.m in Sources */,
 				49E3AFCC1D97A34900DA29DF /* Glf_SkillModel.m in Sources */,
@@ -1297,10 +1362,12 @@
 				49BEC3821D9239FD0011302E /* NSNumber+Extend.m in Sources */,
 				49BEC3891D9239FD0011302E /* UIView+Frame.m in Sources */,
 				4997823A1D9C0314006D0629 /* XCAVPlayerView.m in Sources */,
+				49FC583D1DA65AF00032706C /* Glf_PhoneRegisterViewController.m in Sources */,
 				49E3AFC61D97A22100DA29DF /* Glf_CourseCatagoryViewController.m in Sources */,
 				49BEC3851D9239FD0011302E /* NSUserDefaults+Categories.m in Sources */,
 				49E0B7DC1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m in Sources */,
 				49DC1B321D9A9DFE00476592 /* Glf_UpCollectionViewCell.m in Sources */,
+				49FC58341DA638DC0032706C /* Glf_RegisterAndLoginViewController.m in Sources */,
 				49BEC3881D9239FD0011302E /* UIImage+Categories.m in Sources */,
 				49D6D2091DA1012F006660A2 /* Glf_ChooseToSortModel.m in Sources */,
 				49BEC38C1D9239FE0011302E /* AppStoreUtils.m in Sources */,
@@ -1317,6 +1384,7 @@
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49913E051D9804F200C436EC /* Glf_PractiseModel.m in Sources */,
 				49C3A5191D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m in Sources */,
+				49FC58401DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m in Sources */,
 				49E3FE891D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m in Sources */,
 				49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */,
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
