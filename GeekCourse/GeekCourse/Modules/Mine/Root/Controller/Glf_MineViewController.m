@@ -30,15 +30,19 @@ UICollectionViewDelegate
     
     self.imageViewNameArray = [[NSMutableArray alloc] initWithObjects:@"curriculum.png", @"plan.png", @"messages.png", @"notebook.png", @"Bloc_notes.png", @"questions.png", nil];
     self.labelNameArray = [[NSMutableArray alloc] initWithObjects:@"关注的课程", @"我的计划", @"我的消息", @"我的手记", @"我的笔记", @"我的猿问", nil];
-
-    [self creatBackgroundImageView];
+    
+    [self creatBackgroundImageViewAndMyInfo];
     
     [self creatDownCollectionView];
 }
-
+#pragma mark - 创建登录按钮
+- (void)creatLoginButton {
+   // UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+}
 
 #pragma mark - 创建背景图片 及 我的信息布局
-- (void)creatBackgroundImageView {
+- (void)creatBackgroundImageViewAndMyInfo {
     // 背景
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -64, WIDTH_SCREEN, HEIGHT_SCREEN * 0.6)];
     imageView.image = [UIImage imageNamed:@"Hope"];

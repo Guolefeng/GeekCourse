@@ -12,6 +12,5 @@
 @interface Glf_CourseCategoryCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, retain) Glf_SkillModel *skillsModel;
-@property (nonatomic, copy) NSString *number;
 
 @end

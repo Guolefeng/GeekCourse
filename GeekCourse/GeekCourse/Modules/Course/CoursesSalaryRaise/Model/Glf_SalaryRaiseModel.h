@@ -10,6 +10,7 @@
 
 @interface Glf_SalaryRaiseModel : Glf_BaseModel
 
+@property (nonatomic, copy) NSString *id_list;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *path_pic_fmt;
 @property (nonatomic, assign) NSInteger study_persons;

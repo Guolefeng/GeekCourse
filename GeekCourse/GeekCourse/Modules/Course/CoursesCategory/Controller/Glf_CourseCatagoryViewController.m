@@ -12,6 +12,7 @@
 #import "Glf_CoursesCollectionReusableView.h"
 #import "Glf_CategroiesModel.h"
 #import "Glf_SkillModel.h"
+#import "Glf_DetailCourseCategory.h"
 
 @interface Glf_CourseCatagoryViewController ()
 <
@@ -30,9 +31,11 @@ UICollectionViewDelegate
     
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 1.0;
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
     self.title = @"课程分类";
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [super setLeftBarButtonItem];
 }
 
 - (void)viewDidLoad {
@@ -135,15 +138,29 @@ UICollectionViewDelegate
     return categoriesModel.skills.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     Glf_CourseCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
     Glf_CategroiesModel *categoriesModel = _categoriesModelArray[indexPath.section];
     Glf_SkillModel *skillsModel = categoriesModel.skills[indexPath.item];
     cell.skillsModel = skillsModel;
-    cell.number = [NSString stringWithFormat:@"%@", skillsModel.numbers];
+    
     return cell;
 }
 
+#pragma mark- collectionViewCell 点击方法
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Glf_DetailCourseCategory *detailVC = [[Glf_DetailCourseCategory alloc] init];
+    
+    Glf_CategroiesModel *categoriesModel = _categoriesModelArray[indexPath.section];
+    Glf_SkillModel *skillsModel = categoriesModel.skills[indexPath.item];
+    
+    detailVC.cat_type = skillsModel.id_list;
+    detailVC.picUrlString = skillsModel.pic;
+    detailVC.name = skillsModel.name;
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

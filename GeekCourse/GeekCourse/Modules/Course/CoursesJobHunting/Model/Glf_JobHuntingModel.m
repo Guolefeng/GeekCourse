@@ -10,4 +10,11 @@
 
 @implementation Glf_JobHuntingModel
 
+- (void)setValue:(id)value forKey:(NSString *)key {
+    if ([key isEqualToString:@"id"]) {
+        self.id_list = value;
+    }
+    [super setValue:value forKey:key];
+}
+
 @end

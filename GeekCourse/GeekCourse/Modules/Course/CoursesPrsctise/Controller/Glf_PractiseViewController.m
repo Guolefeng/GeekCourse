@@ -27,6 +27,9 @@ UICollectionViewDelegate
 - (void)viewWillAppear:(BOOL)animated {
     self.title = @"实战课程";
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [super setLeftBarButtonItem];
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }
@@ -54,7 +57,7 @@ UICollectionViewDelegate
 
 - (void)getPractiseData {
     
-    [super postWithURL:@"http://coding.imooc.com/api/szlist" body:@"cid=0&page=1&pagesize=20&timestamp=1475052268020&token=585658070b8fa1c272d58119bbce4f50&uid=0" block:^(id result) {
+    [super postWithURL:@"http://coding.imooc.com/api/szlist" body:@"cid=0&page=1&pagesize=20&timestamp=1475889688200&token=f36593bacd79f78cc11e5a85451351ac&uid=0" block:^(id result) {
         
         NSDictionary *dic = (NSDictionary *)result;
         

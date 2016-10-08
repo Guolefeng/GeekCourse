@@ -160,6 +160,10 @@
     self.phoneTextField = [[UITextField alloc] init];
     _phoneTextField.placeholder = @"请输入手机号码";
     _phoneTextField.backgroundColor = [UIColor whiteColor];
+    _phoneTextField.clearButtonMode = UITextFieldViewModeAlways;
+    
+    //_phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    
     [self.view addSubview:_phoneTextField];
     [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(view).offset(50);

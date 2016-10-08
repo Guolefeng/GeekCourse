@@ -85,10 +85,15 @@
         
         _cellNameLabel.text = tableViewCellModel.name;
         _cellNumberLabel.text= [NSString stringWithFormat:@"%ld", tableViewCellModel.numbers];
-        _cellUpDataLabel.text = [NSString stringWithFormat:@"更新至 %ld-%ld", tableViewCellModel.max_chapter_seq, tableViewCellModel.max_media_seq];
+        
+        if (tableViewCellModel.finished) {
+            _cellUpDataLabel.text = @"更新完成";
+        } else {
+            _cellUpDataLabel.text = [NSString stringWithFormat:@"更新至 %ld-%ld", tableViewCellModel.max_chapter_seq, tableViewCellModel.max_media_seq];
+        }
+    
     }
 }
-
 
 - (void)awakeFromNib {
     // Initialization code

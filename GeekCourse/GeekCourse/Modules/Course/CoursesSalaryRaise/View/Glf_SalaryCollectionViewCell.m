@@ -9,6 +9,7 @@
 #import "Glf_SalaryCollectionViewCell.h"
 #import "Glf_UpLayerCollectionViewCell.h"
 #import "Glf_SalaryRaiseModel.h"
+#import "Glf_UIWebViewController.h"
 
 @interface Glf_SalaryCollectionViewCell ()
 
@@ -65,5 +66,8 @@ UICollectionViewDelegate
     return cell;
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate pushWebViewWith:indexPath.item array:_array];
+    
+}
 @end

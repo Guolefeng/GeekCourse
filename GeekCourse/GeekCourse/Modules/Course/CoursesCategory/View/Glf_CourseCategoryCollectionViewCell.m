@@ -39,12 +39,7 @@
     }
     return self;
 }
-- (void)setNumber:(NSString *)number {
-    if (_number != number) {
-        _number = number;
-        _numberLabel.text = number;
-    }
-}
+
 
 - (void)setSkillsModel:(Glf_SkillModel *)skillsModel {
     if (_skillsModel != skillsModel) {
@@ -53,6 +48,7 @@
         NSURL *url = [NSURL URLWithString:skillsModel.pic];
         [_imageView sd_setImageWithURL:url];
         _nameLabel.text = skillsModel.name;
+        _numberLabel.text = [NSString stringWithFormat:@"%ld", skillsModel.numbers];
     }
 }
 

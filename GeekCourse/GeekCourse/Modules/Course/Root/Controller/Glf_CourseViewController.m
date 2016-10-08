@@ -65,35 +65,38 @@ UITableViewDelegate
 #pragma mark - 搜索框 扫一扫
 - (void)creatSearchFrameAndScan {
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 120, 40)];
-    label.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
-    label.layer.cornerRadius = 10;
-    label.clipsToBounds = YES;
-    self.navigationItem.titleView = label;
+    UIView *view = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 120, 40)];
+    view.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
+    view.layer.cornerRadius = 10;
+    view.clipsToBounds = YES;
     
+    self.navigationItem.titleView = view;
+
     UIImageView *searchImageView = [[UIImageView alloc] init];
     searchImageView.image = [UIImage imageNamed:@"search"];
-    [label addSubview:searchImageView];
+    [view addSubview:searchImageView];
     [searchImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(label).offset(10);
-        make.top.equalTo(label).offset(5);
-        make.bottom.equalTo(label.mas_bottom).offset(-5);
+        make.left.equalTo(view).offset(10);
+        make.top.equalTo(view).offset(5);
+        make.bottom.equalTo(view.mas_bottom).offset(-5);
         make.width.equalTo(@30);
     }];
     
     // 扫一扫
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [scanButton setBackgroundImage:[UIImage imageNamed:@"scan"] forState:UIControlStateNormal];
-    [label addSubview:scanButton];
+    //scanButton.backgroundColor = [UIColor redColor];
+    [view addSubview:scanButton];
     [scanButton addTarget:self action:@selector(scanButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [scanButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(label).offset(5);
-        make.right.equalTo(label).offset(-5);
+        make.top.equalTo(view).offset(5);
+        make.right.equalTo(view).offset(-5);
         make.width.height.equalTo(@30);
     }];
     
     // 搜索
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //searchButton.backgroundColor = [UIColor blueColor];
     [searchButton setTitle:@"搜索相关课程" forState:UIControlStateNormal];
     [searchButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     // 设置 searchButton 文字对齐方式
@@ -101,17 +104,18 @@ UITableViewDelegate
     // 这行代码可以让按钮的内容距离左边10个像素.
     searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     [searchButton addTarget:self action:@selector(searchButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [label addSubview:searchButton];
+    [view addSubview:searchButton];
     [searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(searchImageView.mas_right).offset(5);
         make.right.equalTo(scanButton.mas_left).offset(-5);
-        make.top.equalTo(label).offset(5);
-        make.bottom.equalTo(label.mas_bottom).offset(-5);
+        make.top.equalTo(view).offset(5);
+        make.bottom.equalTo(view.mas_bottom).offset(-5);
     }];
 
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor cyanColor];

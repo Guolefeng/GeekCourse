@@ -13,5 +13,6 @@
 
 - (void)postWithURL:(NSString *)URL body:(NSString *)body block:(void (^) (id result))block;
 - (void)creatScrollViewWithImageNameArray:(NSMutableArray *)imageArray frame:(CGRect)frame view:(UIView *)view;
+- (void)setLeftBarButtonItem;
 
 @end

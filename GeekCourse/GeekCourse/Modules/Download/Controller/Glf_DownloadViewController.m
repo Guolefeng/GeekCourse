@@ -9,6 +9,7 @@
 #import "Glf_DownloadViewController.h"
 #import "UIButton+Block.h"
 #import "Glf_ProgressBarView.h"
+#import "Glf_CourseCatagoryViewController.h"
 
 @interface Glf_DownloadViewController ()
 
@@ -17,6 +18,10 @@
 @end
 
 @implementation Glf_DownloadViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"BackToTabBarViewController" object:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +38,6 @@
     
 }
 
-
 #pragma mark - 创建下载图片
 - (void)creatBackImage {
     self.backgroundImageView = [[UIImageView alloc] init];
@@ -46,7 +50,7 @@
     }];
 }
 
-#pragma mark - 创建想在按钮
+#pragma mark - 创建下载按钮
 - (void)creatDownloadButton {
     UIButton *downloadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     downloadButton.backgroundColor = [UIColor whiteColor];
@@ -59,7 +63,8 @@
     [downloadButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     
     [downloadButton handleControlEvent:UIControlEventTouchUpInside withBlock:^{
-        NSLog(@"下载");
+        Glf_CourseCatagoryViewController *courseVC = [[Glf_CourseCatagoryViewController alloc] init];
+        [self.navigationController pushViewController:courseVC animated:YES];
     }];
     
     [self.view addSubview:downloadButton];
@@ -73,6 +78,7 @@
 
 #pragma mark - 创建设备容量说明 Label
 - (void)creatDescSpaceOfDeviceLabel {
+    
     UILabel *deviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, WIDTH_SCREEN - 60, 50)];
     
     CGFloat total = [self totalDiskSpace];
@@ -88,6 +94,7 @@
    // 换算成屏幕的宽度的比例
     progressBar.usedSpace = (NSInteger)((used / total) * (WIDTH_SCREEN - 60));
     [self.view addSubview:progressBar];
+    
 }
 
 #pragma mark - 获取当前设备的总容量 (单位 GB)

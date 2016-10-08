@@ -10,8 +10,9 @@
 
 @interface Glf_SkillModel : Glf_BaseModel
 
+@property (nonatomic, copy) NSString *id_list;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *pic;
-@property (nonatomic, copy) NSString *numbers;
+@property (nonatomic, assign) NSInteger numbers;
 
 @end

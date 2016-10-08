@@ -10,12 +10,14 @@
 #import "Glf_SalaryRaiseHeaderCollectionViewCell.h"
 #import "Glf_SalaryCollectionViewCell.h"
 #import "Glf_SalaryRaiseModel.h"
+#import "Glf_UIWebViewController.h"
 
 @interface Glf_SalaryRaiseViewController ()
 
 <
 UICollectionViewDataSource,
-UICollectionViewDelegate
+UICollectionViewDelegate,
+Glf_SalaryCollectionViewCellDelegate
 >
 
 @property (nonatomic, retain) UICollectionView *headerCollectionView;
@@ -41,6 +43,10 @@ UICollectionViewDelegate
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [super setLeftBarButtonItem];
 }
 
 - (void)viewDidLoad {
@@ -67,7 +73,6 @@ UICollectionViewDelegate
     [self creatDownLayerCollectionView];
     
 }
-
 #pragma mark - 获取全部课程数据
 - (void)getAllCoursesData {
     
@@ -183,7 +188,6 @@ UICollectionViewDelegate
     [_downLayerCollectionView registerClass:[Glf_SalaryCollectionViewCell class] forCellWithReuseIdentifier:@"siteCell"];
 }
 
-
 #pragma mark - collectionView 协议
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 5;
@@ -199,7 +203,7 @@ UICollectionViewDelegate
     
     if (indexPath.item == 0) {
         Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"allCourseCell" forIndexPath:indexPath];
-        
+        cell.delegate = self;
         if (_allCourseArray.count != 0) {
             
             cell.array = _allCourseArray;
@@ -209,7 +213,7 @@ UICollectionViewDelegate
     }
     if (indexPath.item == 1) {
         Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"frontEndCell" forIndexPath:indexPath];
-        
+        cell.delegate = self;
         if (_frontEndArray.count != 0) {
             cell.array = _frontEndArray;
         }
@@ -219,20 +223,31 @@ UICollectionViewDelegate
     if (indexPath.item == 2) {
         Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"backEndCell" forIndexPath:indexPath];
         cell.array = _backEndArray;
-        
+        cell.delegate = self;
         return cell;
     }
     if (indexPath.item == 3) {
         Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"mobileCell" forIndexPath:indexPath];
         cell.array = _mobileArray;
-        
+        cell.delegate = self;
         return cell;
     }
     else {
         Glf_SalaryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"siteCell" forIndexPath:indexPath];
+        cell.delegate = self;
         cell.array = _siteArray;
         return cell;
     }
+}
+
+#pragma mark - 自定义协议方法
+- (void)pushWebViewWith:(NSInteger)item array:(NSMutableArray *)array {
+    
+    Glf_SalaryRaiseModel *model = array[item];
+    Glf_UIWebViewController *webVC = [[Glf_UIWebViewController alloc] init];
+    webVC.urlString = [NSString stringWithFormat:@"http://www.imooc.com/course/programdetail/pid/%@", model.id_list];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
 }
 
 #pragma mark - headerCollectionView 关联 downLayerConllectionView
@@ -255,7 +270,6 @@ UICollectionViewDelegate
     
     NSInteger count = (NSInteger)_downLayerCollectionView.contentOffset.x / WIDITH;
     
-    [self.headerCollectionView setContentOffset:CGPointMake(count, 0)];
     
     NSIndexPath *index = [NSIndexPath indexPathForItem:count inSection:0];
     

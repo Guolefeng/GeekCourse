@@ -67,6 +67,15 @@
 		49C3A5221D9F960E001850A9 /* Glf_HandRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5211D9F960E001850A9 /* Glf_HandRecordTableViewCell.m */; };
 		49C3A5251D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5241D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m */; };
 		49C3A5281D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C3A5271D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m */; };
+		49C9CDC51DA7768700E36005 /* Glf_NextStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C9CDC41DA7768700E36005 /* Glf_NextStepViewController.m */; };
+		49C9CDC81DA7875700E36005 /* Glf_FindBackPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C9CDC71DA7875700E36005 /* Glf_FindBackPasswordViewController.m */; };
+		49C9CDCB1DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C9CDCA1DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.m */; };
+		49C9CDCE1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C9CDCD1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.m */; };
+		49CEC1F11DA894FD006A6A36 /* Glf_UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC1F01DA894FD006A6A36 /* Glf_UIWebViewController.m */; };
+		49CEC25C1DA8FA15006A6A36 /* Glf_DetailCourseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC25B1DA8FA15006A6A36 /* Glf_DetailCourseCategory.m */; };
+		49CEC25F1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC25E1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.m */; };
+		49CEC2621DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC2611DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.m */; };
+		49CEC2651DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEC2641DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.m */; };
 		49D6D2091DA1012F006660A2 /* Glf_ChooseToSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D6D2081DA1012F006660A2 /* Glf_ChooseToSortModel.m */; };
 		49D6D20C1DA103E9006660A2 /* Glf_ChooseToSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D6D20B1DA103E9006660A2 /* Glf_ChooseToSortCell.m */; };
 		49D6D2131DA10AD8006660A2 /* Glf_MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D6D2121DA10AD8006660A2 /* Glf_MineViewController.m */; };
@@ -223,6 +232,24 @@
 		49C3A5241D9FAE6D001850A9 /* Glf_ProgrammerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgrammerTableViewCell.m; sourceTree = "<group>"; };
 		49C3A5261D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ProgrammerQuestionModel.h; sourceTree = "<group>"; };
 		49C3A5271D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ProgrammerQuestionModel.m; sourceTree = "<group>"; };
+		49C9CDC31DA7768700E36005 /* Glf_NextStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_NextStepViewController.h; sourceTree = "<group>"; };
+		49C9CDC41DA7768700E36005 /* Glf_NextStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_NextStepViewController.m; sourceTree = "<group>"; };
+		49C9CDC61DA7875700E36005 /* Glf_FindBackPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_FindBackPasswordViewController.h; sourceTree = "<group>"; };
+		49C9CDC71DA7875700E36005 /* Glf_FindBackPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_FindBackPasswordViewController.m; sourceTree = "<group>"; };
+		49C9CDC91DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_FindBackPasswordNextViewController.h; sourceTree = "<group>"; };
+		49C9CDCA1DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_FindBackPasswordNextViewController.m; sourceTree = "<group>"; };
+		49C9CDCC1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_FindBackPasswordFinalStepViewController.h; sourceTree = "<group>"; };
+		49C9CDCD1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_FindBackPasswordFinalStepViewController.m; sourceTree = "<group>"; };
+		49CEC1EF1DA894FD006A6A36 /* Glf_UIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_UIWebViewController.h; sourceTree = "<group>"; };
+		49CEC1F01DA894FD006A6A36 /* Glf_UIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_UIWebViewController.m; sourceTree = "<group>"; };
+		49CEC25A1DA8FA15006A6A36 /* Glf_DetailCourseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DetailCourseCategory.h; sourceTree = "<group>"; };
+		49CEC25B1DA8FA15006A6A36 /* Glf_DetailCourseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DetailCourseCategory.m; sourceTree = "<group>"; };
+		49CEC25D1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SetImage_Click.h"; sourceTree = "<group>"; };
+		49CEC25E1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SetImage_Click.m"; sourceTree = "<group>"; };
+		49CEC2601DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DetailCourseNavCollectionViewCell.h; sourceTree = "<group>"; };
+		49CEC2611DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DetailCourseNavCollectionViewCell.m; sourceTree = "<group>"; };
+		49CEC2631DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_DetailCourseDownCollectionViewCell.h; sourceTree = "<group>"; };
+		49CEC2641DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_DetailCourseDownCollectionViewCell.m; sourceTree = "<group>"; };
 		49D6D2071DA1012F006660A2 /* Glf_ChooseToSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ChooseToSortModel.h; sourceTree = "<group>"; };
 		49D6D2081DA1012F006660A2 /* Glf_ChooseToSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ChooseToSortModel.m; sourceTree = "<group>"; };
 		49D6D20A1DA103E9006660A2 /* Glf_ChooseToSortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ChooseToSortCell.h; sourceTree = "<group>"; };
@@ -506,13 +533,14 @@
 		49BEC3411D9239EC0011302E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				49FC582E1DA638920032706C /* RegisterAndLogin */,
 				49BEC39D1D92766C0011302E /* Course */,
 				49BEC3431D9239EC0011302E /* Discover */,
 				49BEC3901D923B6F0011302E /* Download */,
 				49BEC3921D9275210011302E /* GuidePage */,
 				49BEC3451D9239EC0011302E /* Mine */,
+				49FC582E1DA638920032706C /* RegisterAndLogin */,
 				49BEC3CA1D928EFA0011302E /* TabBar */,
+				49CEC1EC1DA8949E006A6A36 /* WebView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -601,6 +629,8 @@
 				49BEC3641D9239FD0011302E /* NSString+Regex.m */,
 				49BEC3651D9239FD0011302E /* NSUserDefaults+Categories.h */,
 				49BEC3661D9239FD0011302E /* NSUserDefaults+Categories.m */,
+				49CEC25D1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.h */,
+				49CEC25E1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.m */,
 				49BEC3671D9239FD0011302E /* UIButton+Block.h */,
 				49BEC3681D9239FD0011302E /* UIButton+Block.m */,
 				49BEC3691D9239FD0011302E /* UIColor+Categories.h */,
@@ -651,8 +681,8 @@
 		49BEC3901D923B6F0011302E /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				49DFC35E1DA3ADFE00CB5A03 /* View */,
 				49BEC3BA1D9289DD0011302E /* Controller */,
+				49DFC35E1DA3ADFE00CB5A03 /* View */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -836,6 +866,60 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		49CEC1EC1DA8949E006A6A36 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				49CEC1EE1DA894BC006A6A36 /* Controller */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		49CEC1EE1DA894BC006A6A36 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49CEC1EF1DA894FD006A6A36 /* Glf_UIWebViewController.h */,
+				49CEC1F01DA894FD006A6A36 /* Glf_UIWebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49CEC2561DA8F7FB006A6A36 /* DetailCourseCategory */ = {
+			isa = PBXGroup;
+			children = (
+				49CEC2591DA8F822006A6A36 /* Controller */,
+				49CEC2581DA8F81B006A6A36 /* Model */,
+				49CEC2571DA8F817006A6A36 /* View */,
+			);
+			path = DetailCourseCategory;
+			sourceTree = "<group>";
+		};
+		49CEC2571DA8F817006A6A36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49CEC2631DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.h */,
+				49CEC2641DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.m */,
+				49CEC2601DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.h */,
+				49CEC2611DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49CEC2581DA8F81B006A6A36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49CEC2591DA8F822006A6A36 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49CEC25A1DA8FA15006A6A36 /* Glf_DetailCourseCategory.h */,
+				49CEC25B1DA8FA15006A6A36 /* Glf_DetailCourseCategory.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		49D6D20D1DA10A9D006660A2 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,7 +961,7 @@
 				49DFC35F1DA3AE2600CB5A03 /* Glf_ProgressBarView.h */,
 				49DFC3601DA3AE2600CB5A03 /* Glf_ProgressBarView.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		49E0B7981D9CBEEC0052E699 /* Root */ = {
@@ -935,6 +1019,7 @@
 			isa = PBXGroup;
 			children = (
 				49E189ED1D96B8F0004A1706 /* Controller */,
+				49CEC2561DA8F7FB006A6A36 /* DetailCourseCategory */,
 				49E189EE1D96B901004A1706 /* Model */,
 				49E189EF1D96B90D004A1706 /* View */,
 			);
@@ -1135,42 +1220,50 @@
 		49FC582E1DA638920032706C /* RegisterAndLogin */ = {
 			isa = PBXGroup;
 			children = (
-				49FC58311DA638BE0032706C /* Model */,
 				49FC58301DA638B90032706C /* Controller */,
+				49FC58311DA638BE0032706C /* Model */,
 				49FC582F1DA638B40032706C /* View */,
 			);
-			name = RegisterAndLogin;
+			path = RegisterAndLogin;
 			sourceTree = "<group>";
 		};
 		49FC582F1DA638B40032706C /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		49FC58301DA638B90032706C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49C9CDCC1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.h */,
+				49C9CDCD1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.m */,
+				49C9CDC91DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.h */,
+				49C9CDCA1DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.m */,
+				49C9CDC61DA7875700E36005 /* Glf_FindBackPasswordViewController.h */,
+				49C9CDC71DA7875700E36005 /* Glf_FindBackPasswordViewController.m */,
+				49FC58381DA640BF0032706C /* Glf_LoginViewController.h */,
+				49FC58391DA640BF0032706C /* Glf_LoginViewController.m */,
+				49FC583E1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.h */,
+				49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */,
+				49C9CDC31DA7768700E36005 /* Glf_NextStepViewController.h */,
+				49C9CDC41DA7768700E36005 /* Glf_NextStepViewController.m */,
+				49FC583B1DA65AF00032706C /* Glf_PhoneRegisterViewController.h */,
+				49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */,
 				49FC58321DA638DC0032706C /* Glf_RegisterAndLoginViewController.h */,
 				49FC58331DA638DC0032706C /* Glf_RegisterAndLoginViewController.m */,
 				49FC58351DA640380032706C /* Glf_RegisterViewController.h */,
 				49FC58361DA640380032706C /* Glf_RegisterViewController.m */,
-				49FC583B1DA65AF00032706C /* Glf_PhoneRegisterViewController.h */,
-				49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */,
-				49FC583E1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.h */,
-				49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */,
-				49FC58381DA640BF0032706C /* Glf_LoginViewController.h */,
-				49FC58391DA640BF0032706C /* Glf_LoginViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		49FC58311DA638BE0032706C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5042E664FF8425CE58C016E7 /* Pods */ = {
@@ -1319,6 +1412,7 @@
 				49E0B7D31D9CFA930052E699 /* Glf_ChaptersCollectionViewCell.m in Sources */,
 				49BEC3831D9239FD0011302E /* NSString+Categories.m in Sources */,
 				4997823B1D9C0314006D0629 /* XZPlayProgressView.m in Sources */,
+				49CEC25C1DA8FA15006A6A36 /* Glf_DetailCourseCategory.m in Sources */,
 				499782131D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m in Sources */,
 				49E3AFD21D97A7BA00DA29DF /* Glf_CourseCategoryCollectionViewCell.m in Sources */,
 				49DC1B2C1D9A711800476592 /* Glf_JobHuntingModel.m in Sources */,
@@ -1344,6 +1438,7 @@
 				4994FCBF1D954C1500673F17 /* Glf_MyTableViewCell.m in Sources */,
 				49913E081D9805B700C436EC /* Glf_JobHuntingViewController.m in Sources */,
 				49E3FECC1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m in Sources */,
+				49C9CDC81DA7875700E36005 /* Glf_FindBackPasswordViewController.m in Sources */,
 				49913E021D9804DA00C436EC /* Glf_PractiseViewController.m in Sources */,
 				49E3FEC91D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m in Sources */,
 				499781DB1D9B6F5C006D0629 /* Glf_MyCollectionViewFlowLayout.m in Sources */,
@@ -1363,7 +1458,10 @@
 				49BEC3891D9239FD0011302E /* UIView+Frame.m in Sources */,
 				4997823A1D9C0314006D0629 /* XCAVPlayerView.m in Sources */,
 				49FC583D1DA65AF00032706C /* Glf_PhoneRegisterViewController.m in Sources */,
+				49C9CDC51DA7768700E36005 /* Glf_NextStepViewController.m in Sources */,
+				49CEC1F11DA894FD006A6A36 /* Glf_UIWebViewController.m in Sources */,
 				49E3AFC61D97A22100DA29DF /* Glf_CourseCatagoryViewController.m in Sources */,
+				49CEC2651DA91C5E006A6A36 /* Glf_DetailCourseDownCollectionViewCell.m in Sources */,
 				49BEC3851D9239FD0011302E /* NSUserDefaults+Categories.m in Sources */,
 				49E0B7DC1D9D0F1E0052E699 /* Glf_ChaptersTableViewCell.m in Sources */,
 				49DC1B321D9A9DFE00476592 /* Glf_UpCollectionViewCell.m in Sources */,
@@ -1383,9 +1481,13 @@
 				49913E191D9807CD00C436EC /* Glf_ScanViewController.m in Sources */,
 				49BEC37F1D9239FD0011302E /* NSDate+Categories.m in Sources */,
 				49913E051D9804F200C436EC /* Glf_PractiseModel.m in Sources */,
+				49C9CDCE1DA78B4C00E36005 /* Glf_FindBackPasswordFinalStepViewController.m in Sources */,
 				49C3A5191D9F83B7001850A9 /* Glf_ProgrammerDeepCollectionViewCell.m in Sources */,
+				49CEC2621DA91818006A6A36 /* Glf_DetailCourseNavCollectionViewCell.m in Sources */,
 				49FC58401DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m in Sources */,
 				49E3FE891D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m in Sources */,
+				49C9CDCB1DA78A6D00E36005 /* Glf_FindBackPasswordNextViewController.m in Sources */,
+				49CEC25F1DA908F9006A6A36 /* UIBarButtonItem+SetImage_Click.m in Sources */,
 				49BEC3B91D927CA20011302E /* Glf_CourseViewController.m in Sources */,
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
 				49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */,

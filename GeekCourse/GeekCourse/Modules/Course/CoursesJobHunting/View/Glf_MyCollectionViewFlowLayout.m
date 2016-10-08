@@ -20,8 +20,9 @@
 
 // ------ 有问题 -------
 
-// 居中图片放大显示
+// 间隔
 static CGFloat const ActiveDistance = 50;
+// 放大倍数
 static CGFloat const ScaleFactor = 0.2;
 // 设置放大范围
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
@@ -76,5 +77,9 @@ static CGFloat const ScaleFactor = 0.2;
     return CGPointMake(proposedContentOffset.x + offsetAdjustment, proposedContentOffset.y);
 }
 
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    return YES;
+}
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Glf_BaseViewController.h"
 #import "Glf_BaseView.h"
+#import "UIBarButtonItem+SetImage_Click.h"
 
 @interface Glf_BaseViewController ()
 
@@ -65,6 +66,12 @@
     
 }
 
+#pragma mark - 自定义 leftBarButtonItem
+- (void)setLeftBarButtonItem {
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem getBarButtonItemWithImage:[UIImage imageNamed:@"back-1"] target:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

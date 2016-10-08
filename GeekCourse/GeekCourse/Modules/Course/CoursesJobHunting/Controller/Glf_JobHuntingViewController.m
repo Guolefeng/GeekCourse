@@ -10,6 +10,7 @@
 #import "Glf_JobHuntingModel.h"
 #import "Glf_UpCollectionViewCell.h"
 #import "Glf_MyCollectionViewFlowLayout.h"
+#import "Glf_UIWebViewController.h"
 
 @interface Glf_JobHuntingViewController ()
 <
@@ -29,7 +30,7 @@ UICollectionViewDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     self.view.backgroundColor = [UIColor cyanColor];
-    self.title = @"求职路线计划";
+    [super setLeftBarButtonItem];
     
     self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
@@ -40,6 +41,7 @@ UICollectionViewDelegate
     // Do any additional setup after loading the view.
     self.modelArray = [NSMutableArray array];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     
     [self getJobHuntingData];
     
@@ -80,6 +82,19 @@ UICollectionViewDelegate
     [_backgroundImageView addSubview:effectView];
     
     [self.view addSubview:_backgroundImageView];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    label.text = @"求职路线计划";
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:30];
+    [_backgroundImageView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX).offset(0);
+        make.top.equalTo(self.view).offset(20);
+        make.width.equalTo(@200);
+        make.height.equalTo(@50);
+    }];
     
 }
 
@@ -140,10 +155,26 @@ UICollectionViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
     NSInteger count = scrollView.contentOffset.x / _flowLayout.itemSize.width;
-    NSLog(@"%ld", count);
     NSArray *arr = [self getBackgroundimageData];
     NSURL *url = [NSURL URLWithString:arr[count]];
     [_backgroundImageView sd_setImageWithURL:url];
+}
+
+#pragma mark - collectionViewCell 点击事件
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 添加一个点击 cell, 将其滚动到中间
+    [self.UpCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+    [self.UpCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    
+//    Glf_JobHuntingModel *model = _modelArray[indexPath.item];
+//    NSLog(@"%@, %ld", model.id_list, indexPath.item);
+//    
+//    Glf_UIWebViewController *webVC = [[Glf_UIWebViewController alloc] init];
+//    webVC.urlString = [NSString stringWithFormat:@"http://www.imooc.com/course/programdetail/pid/%@", model.id_list];
+//    [self.navigationController pushViewController:webVC animated:YES];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {

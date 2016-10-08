@@ -10,6 +10,7 @@
 
 @interface Glf_JobHuntingModel : Glf_BaseModel
 
+@property (nonatomic, copy) NSString *id_list;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger study_persons;
 @property (nonatomic, assign) NSInteger courses;
