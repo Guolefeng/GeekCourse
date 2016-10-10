@@ -17,13 +17,14 @@ UIWebViewDelegate
     UIWebView *webView;
 }
 
-
 @end
 
 @implementation Glf_UIWebViewController
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
     [super setLeftBarButtonItem];
 }
@@ -38,6 +39,8 @@ UIWebViewDelegate
     [webView loadRequest:request];
     webView.scalesPageToFit = YES;
     webView.delegate = self;
+    
 }
+
 
 @end

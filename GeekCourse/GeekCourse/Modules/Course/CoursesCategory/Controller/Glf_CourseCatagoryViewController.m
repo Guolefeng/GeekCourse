@@ -28,19 +28,22 @@ UICollectionViewDelegate
 @implementation Glf_CourseCatagoryViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1.0;
-    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-    self.title = @"课程分类";
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [super setLeftBarButtonItem];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    self.title = @"课程分类";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [super setLeftBarButtonItem];
+    
     self.categoriesModelArray = [NSMutableArray array];
     
     [self getCoursesData];

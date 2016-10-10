@@ -10,6 +10,7 @@
 #import "UIButton+Block.h"
 #import "Glf_ChooseToSortModel.h"
 #import "Glf_ChooseToSortCell.h"
+#import "Glf_SortCoursesDetailViewController.h"
 
 
 @interface Glf_HandRecordCategoryViewController ()
@@ -50,7 +51,7 @@ UICollectionViewDelegateFlowLayout
     [self.view addSubview:nameLabel];
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(10, 18, 30, 30);
+    backButton.frame = CGRectMake(20, 20, 20, 20);
     [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backButton handleControlEvent:UIControlEventTouchUpInside withBlock:^{
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -99,6 +100,7 @@ UICollectionViewDelegateFlowLayout
     return cell;
 }
 
+#pragma mark - 自定义布局
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     Glf_ChooseToSortModel *model = _modelArray[indexPath.item];
@@ -106,6 +108,14 @@ UICollectionViewDelegateFlowLayout
     CGSize sizeForLabel = [model.name boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, __FLT_MAX__) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType, NSFontAttributeName:[UIFont systemFontOfSize:40]} context:nil].size;
     return CGSizeMake(sizeForLabel.width, sizeForLabel.height);
 }
-
+#pragma mark - cell 点击事件
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld", indexPath.item);
+    
+    Glf_ChooseToSortModel *model = _modelArray[indexPath.item];
+    Glf_SortCoursesDetailViewController *sortVC = [[Glf_SortCoursesDetailViewController alloc] init];
+    sortVC.typeid_list = model.id_list;
+    [self.navigationController pushViewController:sortVC animated:YES];
+}
 
 @end

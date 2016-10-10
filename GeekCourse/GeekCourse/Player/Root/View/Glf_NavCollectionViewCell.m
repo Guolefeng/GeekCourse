@@ -51,8 +51,9 @@
     
     _titleLabel.frame = self.contentView.bounds;
     [_lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self).offset(0);
+        make.centerX.equalTo(self.mas_centerX).offset(0);
         make.bottom.equalTo(self).offset(0);
+        make.width.equalTo(@50);
         make.height.equalTo(@2);
     }];
 }

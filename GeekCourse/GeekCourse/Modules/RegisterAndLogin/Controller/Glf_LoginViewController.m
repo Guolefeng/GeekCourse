@@ -22,9 +22,12 @@
 @implementation Glf_LoginViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1.0;
     self.title = @"登录";
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
     
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;

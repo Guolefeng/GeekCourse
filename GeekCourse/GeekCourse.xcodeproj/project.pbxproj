@@ -102,11 +102,21 @@
 		49E3FE891D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3FE881D98C30C00036DF5 /* Glf_SalaryRaiseHeaderCollectionViewCell.m */; };
 		49E3FEC91D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3FEC81D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m */; };
 		49E3FECC1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3FECB1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m */; };
+		49EFAF281DAB2B0E00854372 /* Glf_SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF271DAB2B0E00854372 /* Glf_SettingViewController.m */; };
+		49EFAF2C1DAB308B00854372 /* Glf_NightModeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF2B1DAB308B00854372 /* Glf_NightModeTableViewCell.m */; };
+		49EFAF331DAB341E00854372 /* JXLDayAndNightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF2F1DAB341E00854372 /* JXLDayAndNightManager.m */; };
+		49EFAF341DAB341E00854372 /* UIView+JXLDAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF321DAB341E00854372 /* UIView+JXLDAN.m */; };
+		49EFAF631DAB780000854372 /* Glf_ClearCacheTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF621DAB780000854372 /* Glf_ClearCacheTableViewCell.m */; };
+		49EFAF661DABB09400854372 /* Glf_HotRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF651DABB09400854372 /* Glf_HotRecommendModel.m */; };
+		49EFAF691DABB16700854372 /* Glf_HotRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF681DABB16700854372 /* Glf_HotRecommendTableViewCell.m */; };
+		49EFAF6C1DABC30600854372 /* Glf_SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF6B1DABC30600854372 /* Glf_SearchModel.m */; };
+		49EFAF6F1DABCE6600854372 /* Glf_SearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAF6E1DABCE6600854372 /* Glf_SearchDetailViewController.m */; };
 		49FC58341DA638DC0032706C /* Glf_RegisterAndLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC58331DA638DC0032706C /* Glf_RegisterAndLoginViewController.m */; };
 		49FC58371DA640380032706C /* Glf_RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC58361DA640380032706C /* Glf_RegisterViewController.m */; };
 		49FC583A1DA640BF0032706C /* Glf_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC58391DA640BF0032706C /* Glf_LoginViewController.m */; };
 		49FC583D1DA65AF00032706C /* Glf_PhoneRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */; };
 		49FC58401DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */; };
+		49FE11961DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FE11951DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.m */; };
 		7EDE260FEE911A1B94C954B9 /* libPods-GeekCourse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1201F1BEC3600C670E7C7D /* libPods-GeekCourse.a */; };
 /* End PBXBuildFile section */
 
@@ -303,6 +313,25 @@
 		49E3FEC81D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_UpLayerCollectionViewCell.m; sourceTree = "<group>"; };
 		49E3FECA1D99668000036DF5 /* Glf_SalaryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_SalaryCollectionViewCell.h; sourceTree = "<group>"; };
 		49E3FECB1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_SalaryCollectionViewCell.m; sourceTree = "<group>"; };
+		49EFAF261DAB2B0E00854372 /* Glf_SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_SettingViewController.h; sourceTree = "<group>"; };
+		49EFAF271DAB2B0E00854372 /* Glf_SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_SettingViewController.m; sourceTree = "<group>"; };
+		49EFAF2A1DAB308B00854372 /* Glf_NightModeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_NightModeTableViewCell.h; sourceTree = "<group>"; };
+		49EFAF2B1DAB308B00854372 /* Glf_NightModeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_NightModeTableViewCell.m; sourceTree = "<group>"; };
+		49EFAF2E1DAB341E00854372 /* JXLDayAndNightManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLDayAndNightManager.h; sourceTree = "<group>"; };
+		49EFAF2F1DAB341E00854372 /* JXLDayAndNightManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLDayAndNightManager.m; sourceTree = "<group>"; };
+		49EFAF301DAB341E00854372 /* JXLDayAndNightMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLDayAndNightMode.h; sourceTree = "<group>"; };
+		49EFAF311DAB341E00854372 /* UIView+JXLDAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXLDAN.h"; sourceTree = "<group>"; };
+		49EFAF321DAB341E00854372 /* UIView+JXLDAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXLDAN.m"; sourceTree = "<group>"; };
+		49EFAF611DAB780000854372 /* Glf_ClearCacheTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_ClearCacheTableViewCell.h; sourceTree = "<group>"; };
+		49EFAF621DAB780000854372 /* Glf_ClearCacheTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_ClearCacheTableViewCell.m; sourceTree = "<group>"; };
+		49EFAF641DABB09400854372 /* Glf_HotRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glf_HotRecommendModel.h; path = GeekCourse/Modules/Mine/Glf_HotRecommendModel.h; sourceTree = SOURCE_ROOT; };
+		49EFAF651DABB09400854372 /* Glf_HotRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Glf_HotRecommendModel.m; path = GeekCourse/Modules/Mine/Glf_HotRecommendModel.m; sourceTree = SOURCE_ROOT; };
+		49EFAF671DABB16700854372 /* Glf_HotRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glf_HotRecommendTableViewCell.h; path = GeekCourse/Modules/Mine/Glf_HotRecommendTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		49EFAF681DABB16700854372 /* Glf_HotRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Glf_HotRecommendTableViewCell.m; path = GeekCourse/Modules/Mine/Glf_HotRecommendTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		49EFAF6A1DABC30600854372 /* Glf_SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Glf_SearchModel.h; path = GeekCourse/Modules/Mine/Glf_SearchModel.h; sourceTree = SOURCE_ROOT; };
+		49EFAF6B1DABC30600854372 /* Glf_SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Glf_SearchModel.m; path = GeekCourse/Modules/Mine/Glf_SearchModel.m; sourceTree = SOURCE_ROOT; };
+		49EFAF6D1DABCE6600854372 /* Glf_SearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_SearchDetailViewController.h; sourceTree = "<group>"; };
+		49EFAF6E1DABCE6600854372 /* Glf_SearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_SearchDetailViewController.m; sourceTree = "<group>"; };
 		49FC58321DA638DC0032706C /* Glf_RegisterAndLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_RegisterAndLoginViewController.h; sourceTree = "<group>"; };
 		49FC58331DA638DC0032706C /* Glf_RegisterAndLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_RegisterAndLoginViewController.m; sourceTree = "<group>"; };
 		49FC58351DA640380032706C /* Glf_RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_RegisterViewController.h; sourceTree = "<group>"; };
@@ -313,6 +342,8 @@
 		49FC583C1DA65AF00032706C /* Glf_PhoneRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_PhoneRegisterViewController.m; sourceTree = "<group>"; };
 		49FC583E1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_MailBoxRegisterViewController.h; sourceTree = "<group>"; };
 		49FC583F1DA65B5F0032706C /* Glf_MailBoxRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_MailBoxRegisterViewController.m; sourceTree = "<group>"; };
+		49FE11941DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glf_SortCoursesDetailViewController.h; sourceTree = "<group>"; };
+		49FE11951DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glf_SortCoursesDetailViewController.m; sourceTree = "<group>"; };
 		A7DD935470ECFDE9EE80DC31 /* Pods-GeekCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		C26F2FEB746A615176913B11 /* Pods-GeekCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekCourse.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekCourse/Pods-GeekCourse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,6 +424,8 @@
 			children = (
 				49913E1A1D9807E800C436EC /* Glf_SearchCoursesViewController.h */,
 				49913E1B1D9807E800C436EC /* Glf_SearchCoursesViewController.m */,
+				49EFAF6D1DABCE6600854372 /* Glf_SearchDetailViewController.h */,
+				49EFAF6E1DABCE6600854372 /* Glf_SearchDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -400,6 +433,8 @@
 		49913E121D98074200C436EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49EFAF671DABB16700854372 /* Glf_HotRecommendTableViewCell.h */,
+				49EFAF681DABB16700854372 /* Glf_HotRecommendTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,6 +442,10 @@
 		49913E131D98074700C436EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49EFAF641DABB09400854372 /* Glf_HotRecommendModel.h */,
+				49EFAF651DABB09400854372 /* Glf_HotRecommendModel.m */,
+				49EFAF6A1DABC30600854372 /* Glf_SearchModel.h */,
+				49EFAF6B1DABC30600854372 /* Glf_SearchModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -516,6 +555,7 @@
 		49BEC3271D9238FC0011302E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49EFAF2D1DAB341E00854372 /* JXLDayAndNightMode */,
 				49E3FE8A1D98D3CE00036DF5 /* LF_PrefixHeader.pch */,
 				49BEC3281D9238FC0011302E /* main.m */,
 			);
@@ -558,6 +598,7 @@
 		49BEC3451D9239EC0011302E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				49EFAF241DAB2ADC00854372 /* Setting */,
 				49D6D20D1DA10A9D006660A2 /* Root */,
 			);
 			path = Mine;
@@ -862,6 +903,8 @@
 			children = (
 				49C3A51A1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.h */,
 				49C3A51B1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m */,
+				49FE11941DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.h */,
+				49FE11951DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1217,6 +1260,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		49EFAF241DAB2ADC00854372 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				49EFAF291DAB304400854372 /* View */,
+				49EFAF251DAB2AE500854372 /* Controller */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		49EFAF251DAB2AE500854372 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49EFAF261DAB2B0E00854372 /* Glf_SettingViewController.h */,
+				49EFAF271DAB2B0E00854372 /* Glf_SettingViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49EFAF291DAB304400854372 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49EFAF2A1DAB308B00854372 /* Glf_NightModeTableViewCell.h */,
+				49EFAF2B1DAB308B00854372 /* Glf_NightModeTableViewCell.m */,
+				49EFAF611DAB780000854372 /* Glf_ClearCacheTableViewCell.h */,
+				49EFAF621DAB780000854372 /* Glf_ClearCacheTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49EFAF2D1DAB341E00854372 /* JXLDayAndNightMode */ = {
+			isa = PBXGroup;
+			children = (
+				49EFAF2E1DAB341E00854372 /* JXLDayAndNightManager.h */,
+				49EFAF2F1DAB341E00854372 /* JXLDayAndNightManager.m */,
+				49EFAF301DAB341E00854372 /* JXLDayAndNightMode.h */,
+				49EFAF311DAB341E00854372 /* UIView+JXLDAN.h */,
+				49EFAF321DAB341E00854372 /* UIView+JXLDAN.m */,
+			);
+			path = JXLDayAndNightMode;
+			sourceTree = "<group>";
+		};
 		49FC582E1DA638920032706C /* RegisterAndLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1405,6 +1489,8 @@
 				49D6D2131DA10AD8006660A2 /* Glf_MineViewController.m in Sources */,
 				49E189D21D962A49004A1706 /* Glf_BaseView.m in Sources */,
 				49E0B7EE1D9D2C1C0052E699 /* Glf_ChaptersMediaModel.m in Sources */,
+				49EFAF6F1DABCE6600854372 /* Glf_SearchDetailViewController.m in Sources */,
+				49EFAF661DABB09400854372 /* Glf_HotRecommendModel.m in Sources */,
 				49BEC3B61D927C8F0011302E /* Glf_GuideViewController.m in Sources */,
 				49C3A5221D9F960E001850A9 /* Glf_HandRecordTableViewCell.m in Sources */,
 				492904C31DA2179400388E6B /* Glf_MineCollectionViewCell.m in Sources */,
@@ -1415,6 +1501,7 @@
 				49CEC25C1DA8FA15006A6A36 /* Glf_DetailCourseCategory.m in Sources */,
 				499782131D9BF315006D0629 /* UILabel+Glf_SizeToFit_W_H.m in Sources */,
 				49E3AFD21D97A7BA00DA29DF /* Glf_CourseCategoryCollectionViewCell.m in Sources */,
+				49EFAF6C1DABC30600854372 /* Glf_SearchModel.m in Sources */,
 				49DC1B2C1D9A711800476592 /* Glf_JobHuntingModel.m in Sources */,
 				49E3AFC91D97A32900DA29DF /* Glf_CategroiesModel.m in Sources */,
 				49913E0F1D98068600C436EC /* Glf_CustomizedCoursesViewController.m in Sources */,
@@ -1426,9 +1513,11 @@
 				49E0B7D61D9CFACE0052E699 /* Glf_CommentCollectionViewCell.m in Sources */,
 				49C3A5161D9F7999001850A9 /* Glf_deepCollectionViewCell.m in Sources */,
 				49DFC3611DA3AE2600CB5A03 /* Glf_ProgressBarView.m in Sources */,
+				49EFAF281DAB2B0E00854372 /* Glf_SettingViewController.m in Sources */,
 				49E3AFCF1D97A6B700DA29DF /* Glf_CoursesCollectionReusableView.m in Sources */,
 				499D83FD1D9E6E390049DFA7 /* Glf_navUpCollectionViewCell.m in Sources */,
 				49C3A5281D9FAFD7001850A9 /* Glf_ProgrammerQuestionModel.m in Sources */,
+				49EFAF341DAB341E00854372 /* UIView+JXLDAN.m in Sources */,
 				49BEC3511D9239F10011302E /* Glf_BaseModel.m in Sources */,
 				49BEC3861D9239FD0011302E /* UIButton+Block.m in Sources */,
 				49FC58371DA640380032706C /* Glf_RegisterViewController.m in Sources */,
@@ -1438,6 +1527,7 @@
 				4994FCBF1D954C1500673F17 /* Glf_MyTableViewCell.m in Sources */,
 				49913E081D9805B700C436EC /* Glf_JobHuntingViewController.m in Sources */,
 				49E3FECC1D99668000036DF5 /* Glf_SalaryCollectionViewCell.m in Sources */,
+				49EFAF2C1DAB308B00854372 /* Glf_NightModeTableViewCell.m in Sources */,
 				49C9CDC81DA7875700E36005 /* Glf_FindBackPasswordViewController.m in Sources */,
 				49913E021D9804DA00C436EC /* Glf_PractiseViewController.m in Sources */,
 				49E3FEC91D9936F200036DF5 /* Glf_UpLayerCollectionViewCell.m in Sources */,
@@ -1445,9 +1535,11 @@
 				49BEC3801D9239FD0011302E /* NSDate+EasyExtend.mm in Sources */,
 				49BEC3CE1D928F1A0011302E /* Glf_TabBarViewController.m in Sources */,
 				49BEC3811D9239FD0011302E /* NSDictionary+Categories.m in Sources */,
+				49EFAF691DABB16700854372 /* Glf_HotRecommendTableViewCell.m in Sources */,
 				49BEC32C1D9238FC0011302E /* AppDelegate.m in Sources */,
 				49913DFC1D98038700C436EC /* Glf_SalaryRaiseViewController.m in Sources */,
 				49E0B79E1D9CBF330052E699 /* Glf_RootPlayerViewController.m in Sources */,
+				49FE11961DAA41D300EBC5ED /* Glf_SortCoursesDetailViewController.m in Sources */,
 				49C3A50D1D9F6E22001850A9 /* Glf_ProgrammerQuestionCollectionViewCell.m in Sources */,
 				49FC583A1DA640BF0032706C /* Glf_LoginViewController.m in Sources */,
 				49BEC38A1D9239FD0011302E /* DataBaseManager.m in Sources */,
@@ -1474,6 +1566,7 @@
 				49E0B7DF1D9D116E0052E699 /* Glf_CommentTableViewCell.m in Sources */,
 				49C3A51C1D9F8AEF001850A9 /* Glf_HandRecordCategoryViewController.m in Sources */,
 				499782101D9BE4E3006D0629 /* Glf_CustomizedCollectionReusableView.m in Sources */,
+				49EFAF331DAB341E00854372 /* JXLDayAndNightManager.m in Sources */,
 				49BEC38D1D9239FE0011302E /* FileManagerUtils.m in Sources */,
 				4997820A1D9BC178006D0629 /* Glf_CourseTypeModel.m in Sources */,
 				49BEC3BD1D9289EC0011302E /* Glf_DownloadViewController.m in Sources */,
@@ -1492,6 +1585,7 @@
 				49BEC3291D9238FC0011302E /* main.m in Sources */,
 				49BEC3A71D927B2E0011302E /* Glf_BaseViewController.m in Sources */,
 				49BEA3FC1D93F7B9001DED2E /* Glf_ModelOfCourse.m in Sources */,
+				49EFAF631DAB780000854372 /* Glf_ClearCacheTableViewCell.m in Sources */,
 				499D83FA1D9E654C0049DFA7 /* Glf_DiscoverViewController.m in Sources */,
 				49E0B7D91D9CFAFF0052E699 /* Glf_DetailInfoCollectionView.m in Sources */,
 				49E3AFC31D97A1B400DA29DF /* Glf_HistoryViewController.m in Sources */,

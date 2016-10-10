@@ -22,6 +22,8 @@
 @implementation Glf_RegisterViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1.0;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];

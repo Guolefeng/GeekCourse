@@ -23,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // 引导页
 //    // 使用 NSUserDefaults 读取用户数据
 //    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
 //    
@@ -35,11 +36,13 @@
 //        _window.rootViewController = [[Glf_CourseViewController alloc] init];
 //    }
     
-//    self.window.rootViewController = [[Glf_TabBarViewController alloc] init];
+    // 直接去 course 模块
+    self.window.rootViewController = [[Glf_TabBarViewController alloc] init];
     
-    Glf_RegisterAndLoginViewController *regAndLogVC = [[Glf_RegisterAndLoginViewController alloc] init];
-    UINavigationController *rootNC = [[UINavigationController alloc] initWithRootViewController:regAndLogVC];
-    self.window.rootViewController = rootNC;
+    // 登录注册
+//    Glf_RegisterAndLoginViewController *regAndLogVC = [[Glf_RegisterAndLoginViewController alloc] init];
+//    UINavigationController *rootNC = [[UINavigationController alloc] initWithRootViewController:regAndLogVC];
+//    self.window.rootViewController = rootNC;
     
     return YES;
 }

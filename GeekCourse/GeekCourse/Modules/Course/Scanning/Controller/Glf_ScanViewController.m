@@ -15,6 +15,7 @@
 @implementation Glf_ScanViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     self.view.backgroundColor = [UIColor redColor];
     
 }

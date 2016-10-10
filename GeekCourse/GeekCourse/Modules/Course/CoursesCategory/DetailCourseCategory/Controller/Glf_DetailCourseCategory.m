@@ -35,14 +35,16 @@ Glf_DetailCourseDownCollectionViewCellDelegate
 @implementation Glf_DetailCourseCategory
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.view.backgroundColor = [UIColor cyanColor];
-    self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
+    [super viewWillAppear:YES];
     
-    [super setLeftBarButtonItem];
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [super setLeftBarButtonItem];
+    
     self.navArray = [NSArray arrayWithObjects:@"全部", @"初级", @"中级", @"高级", nil];
     self.allArray = [NSMutableArray array];
     self.primaryArray = [NSMutableArray array];
@@ -60,58 +62,77 @@ Glf_DetailCourseDownCollectionViewCellDelegate
 }
 
 - (void)getAllData {
-    NSInteger allInteger = 0;
-    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, allInteger];
+    NSInteger integer = 0;
+    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        NSArray *arr = dic[@"data"];
-        for (NSDictionary *dic in arr) {
-            Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-            [_allArray addObject:model];
+        if (dic.count) {
+            NSArray *arr = dic[@"data"];
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                    [_allArray addObject:model];
+                }
+                [_downCollectionView reloadData];
+            }
         }
-        [_downCollectionView reloadData];
+        
     }];
 }
 
 - (void)getPrimaryData {
-    NSInteger allInteger = 1;
-    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, allInteger];
+    NSInteger integer = 1;
+    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        NSArray *arr = dic[@"data"];
-        for (NSDictionary *dic in arr) {
-            Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-            [_primaryArray addObject:model];
+        if (dic.count) {
+            NSArray *arr = dic[@"data"];
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                    [_primaryArray addObject:model];
+                }
+                [_downCollectionView reloadData];
+            }
         }
-        [_downCollectionView reloadData];
+        
     }];
 }
 
 - (void)getMiddleData {
-    NSInteger allInteger = 2;
-    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, allInteger];
+    NSInteger integer = 2;
+    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        NSArray *arr = dic[@"data"];
-        for (NSDictionary *dic in arr) {
-            Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-            [_middleArray addObject:model];
+        if (dic.count) {
+            NSArray *arr = dic[@"data"];
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                    [_middleArray addObject:model];
+                }
+                [_downCollectionView reloadData];
+            }
         }
-        [_downCollectionView reloadData];
+        
     }];
 }
 
 - (void)getSeniorData {
-    NSInteger allInteger = 3;
-    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, allInteger];
+    NSInteger integer = 3;
+    NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        NSArray *arr = dic[@"data"];
-        for (NSDictionary *dic in arr) {
-            Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-            [_seniorArray addObject:model];
+        if (dic.count) {
+            NSArray *arr = dic[@"data"];
+            if (arr.count) {
+                for (NSDictionary *dic in arr) {
+                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                    [_seniorArray addObject:model];
+                }
+                [_downCollectionView reloadData];
+            }
         }
-        [_downCollectionView reloadData];
     }];
 }
 
@@ -183,39 +204,44 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     return _navArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (collectionView == _navCollectionView) {
         Glf_DetailCourseNavCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"navCell" forIndexPath:indexPath];
         cell.title = _navArray[indexPath.item];
         return cell;
     }
+    
     if (indexPath.item == 0) {
         Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
         cell.delegate = self;
-        if (_allArray.count != 0) {
+        if (_allArray.count) {
             
             cell.array = _allArray;
         }
         
         return cell;
     }
+    
     if (indexPath.item == 1) {
         Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
         cell.delegate = self;
-        if (_primaryArray.count != 0) {
+        if (_primaryArray.count) {
             
             cell.array = _primaryArray;
         }
         return cell;
     }
+    
     if (indexPath.item == 2) {
         Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
         cell.delegate = self;
-        if (_middleArray.count != 0) {
+        if (_middleArray.count) {
             
             cell.array = _middleArray;
         }
         return cell;
     }
+    
     else {
         Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
         cell.delegate = self;
@@ -260,8 +286,12 @@ Glf_DetailCourseDownCollectionViewCellDelegate
 }
 
 #pragma mark - 自定义协议
-- (void)pushPlayerViewController {
+- (void)pushPlayerViewControllerWith:(NSInteger)row array:(NSMutableArray *)array {
+    
+    Glf_ModelOfCourse *model = array[row];
     Glf_RootPlayerViewController *rootPlayerVC = [[Glf_RootPlayerViewController alloc] init];
+    rootPlayerVC.cid = model.id_list;
+    
     [self.navigationController pushViewController:rootPlayerVC animated:YES];
 }
 

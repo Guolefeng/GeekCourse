@@ -23,6 +23,8 @@
 @implementation Glf_RegisterAndLoginViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
     self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
     self.navigationController.navigationBar.translucent = YES;
 }

@@ -118,14 +118,20 @@
         [self hiddenProgressView:NO];
         self.canEditProgressView = NO;
         [self.activityView startAnimating];
+        
         _playerItem = [[AVPlayerItem alloc]initWithURL:playerUrl];
+        
         _avPlayer = [[AVPlayer alloc]initWithPlayerItem:_playerItem];
         _avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:_avPlayer];
         _avPlayerLayer.backgroundColor = [UIColor blackColor].CGColor;
         [(AVPlayerLayer *)self.layer addSublayer:_avPlayerLayer];
+        
         [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];//监听status属性
+        
         [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];//监听loadedTimeRanges属性
+        
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(currentXCPlayerTime) object:nil];
+        
         [self currentXCPlayerTime];
         
         [self bringSubviewToFront:self.progressView];
@@ -312,9 +318,9 @@
         self.currentPlayTime = 0.0;
     }
     if (self.avPlayer.rate != 0) {
-        [self.progressView.playBtn setImage:[UIImage imageNamed:@"icon_play"] forState:UIControlStateNormal];
-    }else{
         [self.progressView.playBtn setImage:[UIImage imageNamed:@"icon_pause"] forState:UIControlStateNormal];
+    }else{
+        [self.progressView.playBtn setImage:[UIImage imageNamed:@"icon_play"] forState:UIControlStateNormal];
     }
     if (!_isDragSlider) {
         self.progressView.progressSlider.value = self.currentPlayTime;

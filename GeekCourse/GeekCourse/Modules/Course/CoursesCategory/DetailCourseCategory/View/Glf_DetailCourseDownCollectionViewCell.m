@@ -50,13 +50,15 @@ UITableViewDelegate
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Glf_MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    Glf_ModelOfCourse *model = _array[indexPath.row];
-    cell.tableViewCellModel = model;
+    if (_array.count) {
+        Glf_ModelOfCourse *model = _array[indexPath.row];
+        cell.tableViewCellModel = model;
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.delegate pushPlayerViewController];
+    [self.delegate pushPlayerViewControllerWith:indexPath.row array:_array];
 }
 
 @end

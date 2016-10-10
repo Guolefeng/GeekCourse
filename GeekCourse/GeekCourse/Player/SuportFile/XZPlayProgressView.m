@@ -42,6 +42,7 @@
 }
 
 - (void)resetAllSubviews{
+    
     for (UIView *subView in self.subviews) {
         [subView removeFromSuperview];
     }
@@ -81,7 +82,7 @@
     _fullBtn.backgroundColor = [UIColor clearColor];
     [_fullBtn setImage:[UIImage imageNamed:@"icon_full"] forState:UIControlStateNormal];
     [self addSubview:_fullBtn];
-
+    
 }
 
 @end

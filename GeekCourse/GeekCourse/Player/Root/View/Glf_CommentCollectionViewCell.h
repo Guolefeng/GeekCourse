@@ -10,4 +10,6 @@
 
 @interface Glf_CommentCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, copy) NSString *cid;
+
 @end

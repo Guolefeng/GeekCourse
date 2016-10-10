@@ -17,12 +17,15 @@
 #import "Glf_DetailInfoCollectionView.h"
 #import "Glf_ChaptersDataModel.h"
 #import "Glf_ChaptersMediaModel.h"
+#import "UIBarButtonItem+SetImage_Click.h"
 
 @interface Glf_RootPlayerViewController ()
 
 <
 UICollectionViewDataSource,
-UICollectionViewDelegate
+UICollectionViewDelegate,
+Glf_ChaptersCollectionViewCellDelegate,
+Glf_DetailInfoCollectionViewDelegate
 >
 @property (nonatomic, assign) NSInteger selectedItem;
 
@@ -38,10 +41,7 @@ UICollectionViewDelegate
 
 @property (nonatomic, retain) NSMutableArray *chaptersModel;
 
-@property (nonatomic, assign) NSInteger mediaIndex;
-
-@property (nonatomic, assign) BOOL isReload;
-
+@property (nonatomic, assign) NSInteger mark;
 @end
 
 @implementation Glf_RootPlayerViewController
@@ -53,17 +53,30 @@ UICollectionViewDelegate
     return _playerView;
 }
 
+#pragma mark - ChapterCollectionViewCell 协议
+- (void)changeVideoWith:(NSString *)media_url {
+    _playerView.playerUrl = [NSURL URLWithString:media_url];
+    [_playerView play];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
+    [super viewWillAppear:YES];
     
-   // self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    
+    self.navigationController.navigationBar.subviews.firstObject.alpha = 1.0;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.navMutableArray = [[NSMutableArray alloc] initWithObjects:@"章节", @"评论", @"详情", nil];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem getBarButtonItemWithImage:[UIImage imageNamed:@"back-1"] target:^{
+        [self.navigationController popViewControllerAnimated:YES];
+        [_playerView pause];
+    }];
     
-    self.mediaIndex = 0;
+    self.mark = 0;
     self.chaptersModel = [NSMutableArray array];
     
     [self getVideoChaptersData];
@@ -72,44 +85,38 @@ UICollectionViewDelegate
     
     [self creatNavCollectionView];
     [self creatContentCollectionView];
+    
 }
-
 
 #pragma mark - 获取视屏数据
 - (void)getVideoChaptersData {
-//    NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
-//    NSString *body = @"IMid=16092022365416&cid=671&token=115f77db60b36ab780fd914850b38b8e&uid=4017288";
-//    [super postWithURL:url body:body block:^(id result) {
-//        
-//        NSDictionary *dic = (NSDictionary *)result;
-//        NSArray *arr = dic[@"data"];
-//        for (NSDictionary *dic in arr) {
-//            Glf_ChaptersDataModel *model = [Glf_ChaptersDataModel modelWithDic:dic];
-//            [_chaptersModel addObject:model];
-//        }
-//        [_contectCollectionView reloadData];
-////        _isReload = YES;
-//    }];
+    NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
+    
+    NSString *body = [NSString stringWithFormat:@"IMid=16092022365416&cid=%@&token=115f77db60b36ab780fd914850b38b8e&uid=4017288", self.cid];
+    
+    [super postWithURL:url body:body block:^(id result) {
+
+        NSDictionary *dic = (NSDictionary *)result;
+        NSArray *arr = dic[@"data"];
+        for (NSDictionary *dic in arr) {
+            Glf_ChaptersDataModel *model = [Glf_ChaptersDataModel modelWithDic:dic];
+            [_chaptersModel addObject:model];
+        }
+        [_contectCollectionView reloadData];
+        
+    }];
 }
 
 #pragma mark - 创建视屏播放视图
 - (void)creatPlayerView {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statuesBarChanged:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     
-    self.downPlayerView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, WIDTH_SCREEN, HEIGHT_SCREEN * 0.3)];
+    self.downPlayerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, HEIGHT_SCREEN * 0.3)];
+    _downPlayerView.backgroundColor = [UIColor colorWithRed:0.66 green:0.69 blue:0.68 alpha:1.0];
     [self.view addSubview:_downPlayerView];
     
     self.playerView.frame = _downPlayerView.bounds;
     [_downPlayerView addSubview:_playerView];
-    
-    //if (_isReload) {
-//        Glf_ChaptersDataModel *model = _chaptersModel[_mediaIndex];
-//        Glf_ChaptersMediaModel *mediaModel = model.media[_mediaIndex];
-//        NSString *url = mediaModel.media_url;
-        self.playerView.playerUrl = [NSURL URLWithString:@"http://v1.mukewang.com/cf7a7245-938f-4780-a2f1-809c88a56a86/L.mp4"];
-        [_playerView play];
- //   }
-    
 }
 - (void)statuesBarChanged:(NSNotification *)sender{
     //    UIInterfaceOrientation statues = [UIApplication sharedApplication].statusBarOrientation;
@@ -156,9 +163,30 @@ UICollectionViewDelegate
 
 #pragma mark - collectionView 常规协议
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (_mark == 2) {
+        if (_chaptersModel.count != 0) {
+            
+            Glf_ChaptersDataModel *model = _chaptersModel[0];
+            
+            if (model.media.count != 0) {
+                
+                Glf_ChaptersMediaModel *mediaModel = model.media[0];
+                
+                NSString *url = mediaModel.media_url;
+                
+                self.playerView.playerUrl = [NSURL URLWithString:url];
+                [_playerView play];
+            }
+            
+        }
+
+    }
+    _mark++;
+    
     return 3;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
     if (collectionView == _navCollectionView) {
         Glf_NavCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"navCell" forIndexPath:indexPath];
         cell.title = _navMutableArray[indexPath.row];
@@ -167,21 +195,36 @@ UICollectionViewDelegate
     
     if (0 == indexPath.row) {
         Glf_ChaptersCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"chaptersCell" forIndexPath:indexPath];
+        cell.delegate = self;
+        cell.cid = _cid;
         return cell;
     }
     if (1 == indexPath.row) {
         Glf_CommentCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"commentCell" forIndexPath:indexPath];
+        cell.cid = _cid;
         return cell;
     }
     else {
         Glf_DetailInfoCollectionView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"detailInfoCell" forIndexPath:indexPath];
+        cell.delegate = self;
+        cell.cid = _cid;
         return cell;
     }
 }
 
+#pragma mark - Glf_DetailInfoCollectionView 协议
+- (void)playTheVedioWithCid:(NSString *)cid {
+    Glf_RootPlayerViewController *rootPlayerVC = [[Glf_RootPlayerViewController alloc] init];
+    rootPlayerVC.cid = cid;
+    [self.navigationController pushViewController:rootPlayerVC animated:YES];
+    
+    // 播放暂停
+    [_playerView pause];
+}
+
 #pragma mark - 导航栏关联 ContentCollectionView
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     if (collectionView == _navCollectionView) {
         
         Glf_NavCollectionViewCell *notSelectedCell = (Glf_NavCollectionViewCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:_selectedItem inSection:0]];

@@ -30,7 +30,7 @@ UITabBarControllerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
     
     // 课程
     Glf_CourseViewController *courseVC = [[Glf_CourseViewController alloc] init];

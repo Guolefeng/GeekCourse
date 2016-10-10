@@ -10,4 +10,6 @@
 
 @interface Glf_RootPlayerViewController : Glf_BaseViewController
 
+@property (nonatomic, copy) NSString *cid;
+
 @end

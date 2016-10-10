@@ -10,6 +10,7 @@
 #import "Glf_ChaptersTableViewCell.h"
 #import "Glf_ChaptersDataModel.h"
 #import "Glf_BaseViewController.h"
+#import "Glf_ChaptersMediaModel.h"
 
 @interface Glf_ChaptersCollectionViewCell ()
 
@@ -20,6 +21,9 @@ UITableViewDelegate
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, assign) NSInteger *selectedItem;
 @property (nonatomic, retain) NSMutableArray *arr;
+@property (nonatomic, assign) NSIndexPath *indexPath;
+
+@property (nonatomic, assign) NSInteger count;
 @end
 
 @implementation Glf_ChaptersCollectionViewCell
@@ -29,11 +33,12 @@ UITableViewDelegate
     self.dataMutableArray = [NSMutableArray array];
     
     NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
-    NSString *body = @"IMid=16092022365416&cid=671&token=115f77db60b36ab780fd914850b38b8e&uid=4017288";
+    NSString *body = [NSString stringWithFormat:@"IMid=16092022365416&cid=%@&token=115f77db60b36ab780fd914850b38b8e&uid=4017288", _cid];
     
     Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
     
     [baseVC postWithURL:url body:body block:^(id result) {
+        
         NSDictionary *dic = (NSDictionary *)result;
         self.arr = dic[@"data"];
         
@@ -50,6 +55,8 @@ UITableViewDelegate
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    self.count = 0;
+    
     [self getVideoChaptersData];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, self.contentView.frame.size.height - 64) style:UITableViewStylePlain];
@@ -59,11 +66,6 @@ UITableViewDelegate
     
     [_tableView registerClass:[Glf_ChaptersTableViewCell class] forCellReuseIdentifier:@"chaptersCell"];
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//}
-
 
 #pragma mark - 设置分区头
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -87,11 +89,40 @@ UITableViewDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Glf_ChaptersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"chaptersCell"];
     
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [cell addMarkImageViewWith:YES];
+    }
+    
     Glf_ChaptersDataModel *model = _dataMutableArray[indexPath.section];
     Glf_ChaptersMediaModel *mediaModel = model.media[indexPath.row];
     cell.model = mediaModel;
     
     return cell;
+}
+
+#pragma mark - cell 点击方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Glf_ChaptersDataModel *model = _dataMutableArray[indexPath.section];
+    Glf_ChaptersMediaModel *mediaModel = model.media[indexPath.row];
+    NSString *media_url = mediaModel.media_url;
+    
+    [self.delegate changeVideoWith:media_url];
+    
+    // 这个方法只走一次
+    if (_count == 0) {
+        Glf_ChaptersTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [cell addMarkImageViewWith:NO];
+    }
+    
+    Glf_ChaptersTableViewCell *notSelectedCell = [tableView cellForRowAtIndexPath:_indexPath];
+    [notSelectedCell addMarkImageViewWith:NO];
+    
+    Glf_ChaptersTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell addMarkImageViewWith:YES];
+    
+    _indexPath = indexPath;
+    _count++;
+    
 }
 
 @end

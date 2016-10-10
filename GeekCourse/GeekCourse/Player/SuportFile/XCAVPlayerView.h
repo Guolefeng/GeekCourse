@@ -34,9 +34,9 @@ typedef NS_ENUM(NSInteger,XCAVPlayerStatues){
 
 @property (nonatomic, assign) id<XCAVPlayerDelegate> delegate;
 
-@property (nonatomic, assign) Float64 currentPlayTime;/**< current play time */
-@property (nonatomic, assign) Float64 totalDuration;/**< video duration */
-@property (nonatomic, assign) Float64 timeInterval;/**< available Duration (cached) */
+@property (nonatomic, assign) Float64 currentPlayTime; /**< current play time */
+@property (nonatomic, assign) Float64 totalDuration; /**< video duration */
+@property (nonatomic, assign) Float64 timeInterval; /**< available Duration (cached) */
 
 @property (nonatomic, assign) BOOL isShowBottomProgressView;/**< default is YES */
 @property (nonatomic, assign) BOOL isShowResumViewAtPlayEnd;/**< default is YES */

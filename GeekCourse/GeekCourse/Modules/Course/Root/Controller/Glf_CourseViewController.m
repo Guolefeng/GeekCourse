@@ -38,16 +38,12 @@ UITableViewDelegate
 @implementation Glf_CourseViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BackToTabBarViewController" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
-    self.navigationController.navigationBar.translucent = YES;
-
-    [self creatLeftBarButtonItem];
-    [self creatRightBarButtonItem];
-    [self creatSearchFrameAndScan];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
 
 }
 #pragma mark - 课程分类
@@ -65,13 +61,12 @@ UITableViewDelegate
 #pragma mark - 搜索框 扫一扫
 - (void)creatSearchFrameAndScan {
     
-    UIView *view = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 120, 40)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 10, self.view.frame.size.width - 120, 40)];
     view.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
     view.layer.cornerRadius = 10;
     view.clipsToBounds = YES;
-    
     self.navigationItem.titleView = view;
-
+    
     UIImageView *searchImageView = [[UIImageView alloc] init];
     searchImageView.image = [UIImage imageNamed:@"search"];
     [view addSubview:searchImageView];
@@ -115,14 +110,16 @@ UITableViewDelegate
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor cyanColor];
     
     self.arrModel = [NSMutableArray array];
 
     self.number = 1;
+    
+    [self creatLeftBarButtonItem];
+    [self creatRightBarButtonItem];
+    [self creatSearchFrameAndScan];
     
     [self getTableViewCellData];
     [self creatTableView];
@@ -244,8 +241,14 @@ UITableViewDelegate
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     Glf_RootPlayerViewController *rootPlayerVC = [[Glf_RootPlayerViewController alloc] init];
+    
+    Glf_ModelOfCourse *model = _arrModel[indexPath.row];
+    rootPlayerVC.cid = model.id_list;
+    
     [self.navigationController pushViewController:rootPlayerVC animated:YES];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

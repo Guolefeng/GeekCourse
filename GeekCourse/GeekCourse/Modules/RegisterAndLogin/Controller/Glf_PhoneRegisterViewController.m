@@ -21,6 +21,8 @@
 @implementation Glf_PhoneRegisterViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }

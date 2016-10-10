@@ -11,7 +11,8 @@
 @interface Glf_ModelOfCourse : Glf_BaseModel
 
 @property (nonatomic, retain) NSMutableArray *dataArray;
-// 课程 cell
+
+@property (nonatomic, copy) NSString *id_list;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *pic;
 @property (nonatomic, assign) NSInteger numbers;

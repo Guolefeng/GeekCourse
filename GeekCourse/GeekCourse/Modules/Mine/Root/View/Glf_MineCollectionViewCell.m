@@ -11,7 +11,7 @@
 @interface Glf_MineCollectionViewCell ()
 
 @property (nonatomic, retain) UIImageView *mineImageView;
-@property (nonatomic, retain) UILabel *label;
+
 
 @end
 

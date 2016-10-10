@@ -13,4 +13,5 @@
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *labelName;
 
+@property (nonatomic, retain) UILabel *label;
 @end

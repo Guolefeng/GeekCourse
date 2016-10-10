@@ -10,12 +10,14 @@
 
 @protocol Glf_DetailCourseDownCollectionViewCellDelegate <NSObject>
 
-- (void)pushPlayerViewController;
+- (void)pushPlayerViewControllerWith:(NSInteger)row array:(NSMutableArray *)array;
 
 @end
 
 @interface Glf_DetailCourseDownCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, retain) NSMutableArray *array;
+
 @property (nonatomic, assign) id<Glf_DetailCourseDownCollectionViewCellDelegate>delegate;
+
 @end

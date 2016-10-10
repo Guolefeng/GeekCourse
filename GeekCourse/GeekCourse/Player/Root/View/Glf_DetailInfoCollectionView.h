@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol Glf_DetailInfoCollectionViewDelegate <NSObject>
+
+- (void)playTheVedioWithCid:(NSString *)cid;
+
+@end
+
 @interface Glf_DetailInfoCollectionView : UICollectionViewCell
+
+@property (nonatomic, assign) id<Glf_DetailInfoCollectionViewDelegate>delegate;
+@property (nonatomic, copy) NSString *cid;
 
 @end

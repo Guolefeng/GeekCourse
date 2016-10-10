@@ -14,11 +14,13 @@
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UIImageView *playImageView;
 @property (nonatomic, retain) UILabel *timeLabel;
+
 @end
 
 @implementation Glf_ChaptersTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -31,11 +33,21 @@
 }
 
 - (void)addMarkImageViewWith:(BOOL)YesOrNo {
+
     if (YesOrNo) {
-        self.playImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, 30, 30)];
+        self.playImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 20, 20)];
         _playImageView.image = [UIImage imageNamed:@"play"];
         [self.contentView addSubview:_playImageView];
-    } 
+        _nameLabel.textColor = [UIColor redColor];
+        _timeLabel.textColor = [UIColor redColor];
+
+        
+    }  else {
+        [_playImageView removeFromSuperview];
+        _nameLabel.textColor = [UIColor blackColor];
+        _timeLabel.textColor = [UIColor blackColor];
+
+    }
 }
 
 - (void)layoutSubviews {
@@ -63,6 +75,7 @@
         
         _timeLabel.text = time;
     }
+    
 }
 
 // 秒 转换成 时:分:秒

@@ -29,8 +29,6 @@ UICollectionViewDelegate
 @implementation Glf_JobHuntingViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.view.backgroundColor = [UIColor cyanColor];
-    [super setLeftBarButtonItem];
     
     self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
@@ -39,9 +37,11 @@ UICollectionViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [super setLeftBarButtonItem];
+    
     self.modelArray = [NSMutableArray array];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     
     [self getJobHuntingData];
     

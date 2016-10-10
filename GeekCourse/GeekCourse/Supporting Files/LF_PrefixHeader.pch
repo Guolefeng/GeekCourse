@@ -24,7 +24,7 @@
 #import <MJExtension.h>
 #import <SDCycleScrollView.h>
 #import <MJRefresh.h>
-
+#import "JXLDayAndNightMode.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

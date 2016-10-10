@@ -25,11 +25,9 @@ UICollectionViewDelegate
 @implementation Glf_PractiseViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.title = @"实战课程";
+    [super viewWillAppear:YES];
+    
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
-    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [super setLeftBarButtonItem];
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }
@@ -38,6 +36,10 @@ UICollectionViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    self.title = @"实战课程";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [super setLeftBarButtonItem];
     
     self.parctiseModelArray = [NSMutableArray array];
     

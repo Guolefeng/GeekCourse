@@ -45,8 +45,10 @@ UITableViewDelegate
     
     self.modelArray = [NSMutableArray array];
     
+    NSString *body = [NSString stringWithFormat:@"cid=%@&page=1&token=7663346a454986bbb04485f9a37c172b&uid=4017288", _cid];
+    
     Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
-    [baseVC postWithURL:@"http://www.imooc.com/api3/coursecommentlist" body:@"cid=671&page=1&token=7663346a454986bbb04485f9a37c172b&uid=4017288" block:^(id result) {
+    [baseVC postWithURL:@"http://www.imooc.com/api3/coursecommentlist" body:body block:^(id result) {
         
         NSDictionary *dic = (NSDictionary *)result;
         NSArray *array = dic[@"data"];

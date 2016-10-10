@@ -30,15 +30,15 @@ UICollectionViewDelegateFlowLayout
 @implementation Glf_CustomizedCoursesViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.view.backgroundColor = [UIColor cyanColor];
-    self.title = @"定制课程";
+    [super viewWillAppear:YES];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any setup after loading the view.
-    
+    self.title = @"定制课程";
     self.modelArray = [NSMutableArray array];
     
     [self creatNavBar];
