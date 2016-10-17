@@ -56,20 +56,24 @@ UITableViewDelegate
 
 #pragma mark - 获取课程信息
 - (void)getInfoData {
-    NSString *body = [NSString stringWithFormat:@"IMid=1609202236541041&cid=%@&token=80c5b82d56c511ebb9f7f54cdde0e6ac&uid=4017288", _cid];
     
-    Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
-    [baseVC postWithURL:@"http://www.imooc.com/api3/getcourseintro" body:body block:^(id result) {
-        NSDictionary *dic = (NSDictionary *)result;
-        _dataDic = dic[@"data"];
+    if (_cid) {
+        NSString *body = [NSString stringWithFormat:@"IMid=1609202236541041&cid=%@&token=80c5b82d56c511ebb9f7f54cdde0e6ac&uid=4017288", _cid];
         
-        [_tableView reloadData];
-        
-
-        [self creatCourseHeaderInfo];
-        [self creatCourseTeacherInfo];
-        
-    }];
+        Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
+        [baseVC postWithURL:@"http://www.imooc.com/api3/getcourseintro" body:body block:^(id result) {
+            NSDictionary *dic = (NSDictionary *)result;
+            
+            _dataDic = dic[@"data"];
+            
+            [_tableView reloadData];
+            
+            
+            [self creatCourseHeaderInfo];
+            [self creatCourseTeacherInfo];
+            
+        }];
+    }
 }
 
 #pragma mark - 创建课程信息
@@ -78,15 +82,17 @@ UITableViewDelegate
     _courseHeaderInfoView.backgroundColor = [UIColor whiteColor];
     [_tableView addSubview:_courseHeaderInfoView];
     
-    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, WIDTH_SCREEN - 60, 50)];
-    nameLabel.text = _dataDic[@"course_name"];
-    nameLabel.font = [UIFont systemFontOfSize:20];
-    [_courseHeaderInfoView addSubview:nameLabel];
-    
-    UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, nameLabel.frame.size.height, WIDTH_SCREEN - 60, _courseHeaderInfoView.frame.size.height - nameLabel.frame.size.height)];
-    descLabel.text = _dataDic[@"course_des"];
-    descLabel.numberOfLines = 0;
-    [_courseHeaderInfoView addSubview:descLabel];
+    if (_dataDic.count) {
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, WIDTH_SCREEN - 60, 50)];
+        nameLabel.text = _dataDic[@"course_name"];
+        nameLabel.font = [UIFont systemFontOfSize:20];
+        [_courseHeaderInfoView addSubview:nameLabel];
+        
+        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, nameLabel.frame.size.height, WIDTH_SCREEN - 60, _courseHeaderInfoView.frame.size.height - nameLabel.frame.size.height)];
+        descLabel.text = _dataDic[@"course_des"];
+        descLabel.numberOfLines = 0;
+        [_courseHeaderInfoView addSubview:descLabel];
+    }
     
 }
 - (void)creatCourseTeacherInfo {
@@ -145,21 +151,24 @@ UITableViewDelegate
 
 #pragma mark - 获取相关课程
 - (void)getRelativeCourseData {
-    
     self.modelArray = [NSMutableArray array];
-    NSString *body = [NSString stringWithFormat:@"cid=%@&token=5b591cc76a6c73324a00c1b60616c117&uid=4017288", _cid];
+    if (_cid) {
+        
+        NSString *body = [NSString stringWithFormat:@"cid=%@&token=5b591cc76a6c73324a00c1b60616c117&uid=4017288", _cid];
+        
+        Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
+        
+        [baseVC postWithURL:@"http://www.imooc.com/api3/getrelevantcourse" body:body block:^(id result) {
+            NSDictionary *dic = (NSDictionary *)result;
+            NSArray *arr = dic[@"data"];
+            for (NSDictionary *dic in arr) {
+                Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                [_modelArray addObject:model];
+            }
+            [_tableView reloadData];
+        }];
+    }
     
-    Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
-    
-    [baseVC postWithURL:@"http://www.imooc.com/api3/getrelevantcourse" body:body block:^(id result) {
-        NSDictionary *dic = (NSDictionary *)result;
-        NSArray *arr = dic[@"data"];
-        for (NSDictionary *dic in arr) {
-            Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-            [_modelArray addObject:model];
-        }
-        [_tableView reloadData];
-    }];
 }
 
 #pragma mark - tableView 常规协议
@@ -175,9 +184,7 @@ UITableViewDelegate
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"%ld",indexPath.row);
-    
+        
     Glf_ModelOfCourse *model = _modelArray[indexPath.row];
     [self.delegate playTheVedioWithCid:model.id_list];
 }

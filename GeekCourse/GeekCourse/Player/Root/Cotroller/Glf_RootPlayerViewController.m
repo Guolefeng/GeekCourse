@@ -90,21 +90,26 @@ Glf_DetailInfoCollectionViewDelegate
 
 #pragma mark - 获取视屏数据
 - (void)getVideoChaptersData {
-    NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
     
-    NSString *body = [NSString stringWithFormat:@"IMid=16092022365416&cid=%@&token=115f77db60b36ab780fd914850b38b8e&uid=4017288", self.cid];
-    
-    [super postWithURL:url body:body block:^(id result) {
-
-        NSDictionary *dic = (NSDictionary *)result;
-        NSArray *arr = dic[@"data"];
-        for (NSDictionary *dic in arr) {
-            Glf_ChaptersDataModel *model = [Glf_ChaptersDataModel modelWithDic:dic];
-            [_chaptersModel addObject:model];
-        }
-        [_contectCollectionView reloadData];
+    if (_cid) {
+        NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
         
-    }];
+        NSString *body = [NSString stringWithFormat:@"IMid=16092022365416&cid=%@&token=115f77db60b36ab780fd914850b38b8e&uid=4017288", self.cid];
+        
+        [super postWithURL:url body:body block:^(id result) {
+            
+            NSDictionary *dic = (NSDictionary *)result;
+            NSArray *arr = dic[@"data"];
+            
+            for (NSDictionary *dic in arr) {
+                Glf_ChaptersDataModel *model = [Glf_ChaptersDataModel modelWithDic:dic];
+                [_chaptersModel addObject:model];
+            }
+            [_contectCollectionView reloadData];
+            
+        }];
+    }
+   
 }
 
 #pragma mark - 创建视屏播放视图

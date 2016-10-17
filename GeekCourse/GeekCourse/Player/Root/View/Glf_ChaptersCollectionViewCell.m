@@ -24,6 +24,7 @@ UITableViewDelegate
 @property (nonatomic, assign) NSIndexPath *indexPath;
 
 @property (nonatomic, assign) NSInteger count;
+
 @end
 
 @implementation Glf_ChaptersCollectionViewCell
@@ -32,23 +33,25 @@ UITableViewDelegate
 - (void)getVideoChaptersData {
     self.dataMutableArray = [NSMutableArray array];
     
-    NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
-    NSString *body = [NSString stringWithFormat:@"IMid=16092022365416&cid=%@&token=115f77db60b36ab780fd914850b38b8e&uid=4017288", _cid];
-    
-    Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
-    
-    [baseVC postWithURL:url body:body block:^(id result) {
+    if (_cid) {
+        NSString *url = @"http://www.imooc.com/api3/getcpinfo_ver2";
+        NSString *body = [NSString stringWithFormat:@"IMid=16092022365416&cid=%@&token=115f77db60b36ab780fd914850b38b8e&uid=4017288", _cid];
         
-        NSDictionary *dic = (NSDictionary *)result;
-        self.arr = dic[@"data"];
+        Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
         
-        for (NSDictionary *dic in _arr) {
-            Glf_ChaptersDataModel *model = [Glf_ChaptersDataModel modelWithDic:dic];
-            [_dataMutableArray addObject:model];
-        }
-        [_tableView reloadData];
-
-    }];
+        [baseVC postWithURL:url body:body block:^(id result) {
+            
+            NSDictionary *dic = (NSDictionary *)result;
+            self.arr = dic[@"data"];
+            
+            for (NSDictionary *dic in _arr) {
+                Glf_ChaptersDataModel *model = [Glf_ChaptersDataModel modelWithDic:dic];
+                [_dataMutableArray addObject:model];
+            }
+            [_tableView reloadData];
+            
+        }];
+    }
     
 }
 
@@ -96,7 +99,7 @@ UITableViewDelegate
     Glf_ChaptersDataModel *model = _dataMutableArray[indexPath.section];
     Glf_ChaptersMediaModel *mediaModel = model.media[indexPath.row];
     cell.model = mediaModel;
-    
+        
     return cell;
 }
 
@@ -113,12 +116,13 @@ UITableViewDelegate
         Glf_ChaptersTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [cell addMarkImageViewWith:NO];
     }
-    
-    Glf_ChaptersTableViewCell *notSelectedCell = [tableView cellForRowAtIndexPath:_indexPath];
-    [notSelectedCell addMarkImageViewWith:NO];
-    
+
     Glf_ChaptersTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell addMarkImageViewWith:YES];
+
+    Glf_ChaptersTableViewCell *notSelectedCell = [tableView cellForRowAtIndexPath:_indexPath];
+    [notSelectedCell addMarkImageViewWith:NO];
+
     
     _indexPath = indexPath;
     _count++;

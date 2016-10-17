@@ -48,11 +48,11 @@
 }
 
 - (void)changeSurfaceWith:(BOOL)YesOrNo {
-    if (YES == YesOrNo) {
+    if (YesOrNo) {
         _label.textColor = [UIColor redColor];
         _label.font = [UIFont systemFontOfSize:20];
         _lineLabel.backgroundColor = [UIColor redColor];
-    } else if (NO == YesOrNo) {
+    } else {
         _label.textColor = [UIColor blackColor];
         _label.font = [UIFont systemFontOfSize:17];
         _lineLabel.backgroundColor = [UIColor whiteColor];

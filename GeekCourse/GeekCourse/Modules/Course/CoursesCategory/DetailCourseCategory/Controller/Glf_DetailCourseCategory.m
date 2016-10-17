@@ -66,17 +66,19 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        if (dic.count) {
-            NSArray *arr = dic[@"data"];
-            if (arr.count) {
-                for (NSDictionary *dic in arr) {
-                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-                    [_allArray addObject:model];
-                }
-                [_downCollectionView reloadData];
-            }
-        }
         
+        NSString *errorDesc = dic[@"errorDesc"];
+        
+        if (![errorDesc isEqualToString:@"内容为空"]) {
+            NSArray *arr = dic[@"data"];
+            
+            for (NSDictionary *dic in arr) {
+                Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                [_allArray addObject:model];
+            }
+            [_downCollectionView reloadData];
+        }
+ 
     }];
 }
 
@@ -85,15 +87,18 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        if (dic.count) {
+        
+        NSString *errorDesc = dic[@"errorDesc"];
+        
+        if (![errorDesc isEqualToString:@"内容为空"]) {
             NSArray *arr = dic[@"data"];
-            if (arr.count) {
-                for (NSDictionary *dic in arr) {
-                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-                    [_primaryArray addObject:model];
-                }
-                [_downCollectionView reloadData];
+
+            for (NSDictionary *dic in arr) {
+                Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                [_primaryArray addObject:model];
             }
+            [_downCollectionView reloadData];
+
         }
         
     }];
@@ -104,15 +109,18 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        if (dic.count) {
+        
+        NSString *errorDesc = dic[@"errorDesc"];
+        
+        if (![errorDesc isEqualToString:@"内容为空"]) {
+            
             NSArray *arr = dic[@"data"];
-            if (arr.count) {
-                for (NSDictionary *dic in arr) {
-                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-                    [_middleArray addObject:model];
-                }
-                [_downCollectionView reloadData];
+
+            for (NSDictionary *dic in arr) {
+                Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                [_middleArray addObject:model];
             }
+
         }
         
     }];
@@ -123,19 +131,21 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     NSString *body = [NSString stringWithFormat:@"all_type=1&cat_type=%@&easy_type=%ld&page=1&sort_type=0&token=8dded8e1a2c78425715aa040f3ccdbd6&uid=4017288", self.cat_type, integer];
     [super postWithURL:@"http://www.imooc.com/api3/courselist_ver2" body:body block:^(id result) {
         NSDictionary *dic = (NSDictionary *)result;
-        if (dic.count) {
+        
+        NSString *errorDesc = dic[@"errorDesc"];
+        
+        if (![errorDesc isEqualToString:@"内容为空"]) {
             NSArray *arr = dic[@"data"];
-            if (arr.count) {
-                for (NSDictionary *dic in arr) {
-                    Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
-                    [_seniorArray addObject:model];
-                }
-                [_downCollectionView reloadData];
+
+            for (NSDictionary *dic in arr) {
+                Glf_ModelOfCourse *model = [Glf_ModelOfCourse modelWithDic:dic];
+                [_seniorArray addObject:model];
             }
+            [_downCollectionView reloadData];
         }
+
     }];
 }
-
 
 #pragma mark - 创建上面的视图
 - (void)creatUpperView {
@@ -195,7 +205,10 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     _downCollectionView.pagingEnabled = YES;
     [self.view addSubview:_downCollectionView];
     
-    [_downCollectionView registerClass:[Glf_DetailCourseDownCollectionViewCell class] forCellWithReuseIdentifier:@"downCell"];
+    [_downCollectionView registerClass:[Glf_DetailCourseDownCollectionViewCell class] forCellWithReuseIdentifier:@"allCell"];
+    [_downCollectionView registerClass:[Glf_DetailCourseDownCollectionViewCell class] forCellWithReuseIdentifier:@"primaryCell"];
+    [_downCollectionView registerClass:[Glf_DetailCourseDownCollectionViewCell class] forCellWithReuseIdentifier:@"middleCell"];
+    [_downCollectionView registerClass:[Glf_DetailCourseDownCollectionViewCell class] forCellWithReuseIdentifier:@"seniorCell"];
     
 }
 
@@ -212,18 +225,17 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     }
     
     if (indexPath.item == 0) {
-        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
+        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"allCell" forIndexPath:indexPath];
         cell.delegate = self;
         if (_allArray.count) {
             
             cell.array = _allArray;
         }
-        
         return cell;
     }
     
     if (indexPath.item == 1) {
-        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
+        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"primaryCell" forIndexPath:indexPath];
         cell.delegate = self;
         if (_primaryArray.count) {
             
@@ -233,7 +245,7 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     }
     
     if (indexPath.item == 2) {
-        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
+        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"middleCell" forIndexPath:indexPath];
         cell.delegate = self;
         if (_middleArray.count) {
             
@@ -243,7 +255,7 @@ Glf_DetailCourseDownCollectionViewCellDelegate
     }
     
     else {
-        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"downCell" forIndexPath:indexPath];
+        Glf_DetailCourseDownCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"seniorCell" forIndexPath:indexPath];
         cell.delegate = self;
         if (_seniorArray.count != 0) {
             

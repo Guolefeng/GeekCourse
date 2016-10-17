@@ -13,13 +13,15 @@
 #import "Glf_CourseCatagoryViewController.h"
 #import "Glf_HistoryViewController.h"
 #import "Glf_SalaryRaiseViewController.h"
-#import "Glf_PractiseViewController.h"
 #import "Glf_JobHuntingViewController.h"
 #import "Glf_CustomizedCoursesViewController.h"
-#import "Glf_SearchCoursesViewController.h"
-#import "Glf_ScanViewController.h"
 #import "Glf_BaseModel.h"
 #import "Glf_RootPlayerViewController.h"
+#import "Glf_SearchViewController.h"
+#import "AFNetworking.h"
+#import "UIImage+AFNetworking.h"
+#import "UIView+Glf_ShowMessage.h"
+#import "Glf_SettingViewController.h"
 
 @interface Glf_CourseViewController ()
 <
@@ -33,18 +35,19 @@ UITableViewDelegate
 
 @property (nonatomic, assign) NSInteger number;
 
+
 @end
 
 @implementation Glf_CourseViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
+    [_tableView.mj_header beginRefreshing];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BackToTabBarViewController" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.0];
-
+    
 }
 #pragma mark - 课程分类
 - (void)creatLeftBarButtonItem {
@@ -53,13 +56,13 @@ UITableViewDelegate
     
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
-#pragma mark - 历史记录
+#pragma mark - 设置
 - (void)creatRightBarButtonItem {
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"history"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction:)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Setting"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction:)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
-#pragma mark - 搜索框 扫一扫
-- (void)creatSearchFrameAndScan {
+#pragma mark - 搜索框
+- (void)creatSearchFrame {
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 10, self.view.frame.size.width - 120, 40)];
     view.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
@@ -77,18 +80,6 @@ UITableViewDelegate
         make.width.equalTo(@30);
     }];
     
-    // 扫一扫
-    UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [scanButton setBackgroundImage:[UIImage imageNamed:@"scan"] forState:UIControlStateNormal];
-    //scanButton.backgroundColor = [UIColor redColor];
-    [view addSubview:scanButton];
-    [scanButton addTarget:self action:@selector(scanButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [scanButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(view).offset(5);
-        make.right.equalTo(view).offset(-5);
-        make.width.height.equalTo(@30);
-    }];
-    
     // 搜索
     UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //searchButton.backgroundColor = [UIColor blueColor];
@@ -102,7 +93,7 @@ UITableViewDelegate
     [view addSubview:searchButton];
     [searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(searchImageView.mas_right).offset(5);
-        make.right.equalTo(scanButton.mas_left).offset(-5);
+        make.right.equalTo(view).offset(-5);
         make.top.equalTo(view).offset(5);
         make.bottom.equalTo(view.mas_bottom).offset(-5);
     }];
@@ -117,27 +108,15 @@ UITableViewDelegate
 
     self.number = 1;
     
+    [self networkMonitoring];
+    
     [self creatLeftBarButtonItem];
     [self creatRightBarButtonItem];
-    [self creatSearchFrameAndScan];
+    [self creatSearchFrame];
     
     [self getTableViewCellData];
     [self creatTableView];
     [self creatHeaderView];
-}
-
-#pragma mark - 下拉刷新
-- (void)getUpData {
-    [_arrModel removeAllObjects];
-    
-    [self.tableView reloadData];
-    [self getTableViewCellData];
-}
-
-#pragma mark - 上拉加载
-- (void)getDownData {
-    _number++;
-    [self getTableViewCellData];
 }
 
 #pragma mark - 创建轮播图
@@ -166,6 +145,20 @@ UITableViewDelegate
     
 }
 
+#pragma mark - 下拉刷新
+- (void)getUpData {
+    [_arrModel removeAllObjects];
+    
+    [self.tableView reloadData];
+    [self getTableViewCellData];
+}
+
+#pragma mark - 上拉加载
+- (void)getDownData {
+    _number++;
+    [self getTableViewCellData];
+}
+
 #pragma mark - TableView 及相关协议
 - (void)creatTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, HEIGHT - 64) style:0];
@@ -173,12 +166,12 @@ UITableViewDelegate
     _tableView.delegate = self;
     _tableView.rowHeight = 120;
     
-    // 上啦加载
+    // 上拉加载
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self getUpData];
         [self.tableView.mj_header endRefreshing];
     }];
-    // 下拉加载
+    // 下拉刷新
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self getDownData];
         [self.tableView.mj_footer endRefreshing];
@@ -241,6 +234,8 @@ UITableViewDelegate
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 取消选中状态
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     Glf_RootPlayerViewController *rootPlayerVC = [[Glf_RootPlayerViewController alloc] init];
     
@@ -248,7 +243,6 @@ UITableViewDelegate
     rootPlayerVC.cid = model.id_list;
     
     [self.navigationController pushViewController:rootPlayerVC animated:YES];
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -257,6 +251,7 @@ UITableViewDelegate
 
 #pragma mark - 按要求设置 tableView header 形式
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, 150)];
     view.backgroundColor = [UIColor whiteColor];
     
@@ -273,68 +268,22 @@ UITableViewDelegate
         make.height.equalTo(@1);
     }];
     
-    UILabel *customLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, WIDITH / 4, 30)];
-    customLabel.text = @"定制课程";
-    customLabel.textAlignment = NSTextAlignmentCenter;
+    UILabel *customLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 120, WIDTH_SCREEN, 30)];
+    customLabel.text = @"极课 - 海量课程随你想看";
     [view addSubview:customLabel];
-    
-    UIButton *addButton = [[UIButton alloc] init];
-    [addButton setTitle:@"+ 定制" forState:UIControlStateNormal];
-    [addButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [addButton addTarget:self action:@selector(addButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:addButton];
-    [addButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(view).offset(-10);
-        make.top.equalTo(view).offset(120);
-        make.width.equalTo(@80);
-        make.height.equalTo(@30);
-    }];
     
     return view;
 }
 
-#pragma mark - 创建 course 的三个方向
+#pragma mark - 创建 course 的两个方向
 - (void)creatThreeItemsOfCareerPathWithView:(UIView *)view  {
-    
-    UIButton *practiseButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [practiseButton setBackgroundImage:[UIImage imageNamed:@"practice"] forState:UIControlStateNormal];
-    [practiseButton addTarget:self action:@selector(practiseButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:practiseButton];
-    [practiseButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(view).offset(30);
-        make.top.equalTo(view).offset(10);
-        make.width.equalTo(@90);
-        make.height.equalTo(@60);
-    }];
-    
-    UILabel *practiseLable = [[UILabel alloc] init];
-    practiseLable.text = @"实战课程";
-    practiseLable.textAlignment = NSTextAlignmentCenter;
-    [view addSubview:practiseLable];
-    [practiseLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(view).offset(30);
-        make.top.equalTo(practiseButton).offset(70);
-        make.width.equalTo(@90);
-        make.height.equalTo(@20);
-    }];
-    
-    UILabel *firstLabel = [[UILabel alloc] init];
-    firstLabel.backgroundColor = [UIColor blackColor];
-    firstLabel.alpha = 0.5;
-    [view addSubview:firstLabel];
-    [firstLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(practiseButton).offset(110);
-        make.top.equalTo(view).offset(10);
-        make.width.equalTo(@1);
-        make.height.equalTo(@90);
-    }];
     
     UIButton *jobHuntingButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [jobHuntingButton setBackgroundImage:[UIImage imageNamed:@"jobHunting"] forState:UIControlStateNormal];
     [jobHuntingButton addTarget:self action:@selector(jobHuntingButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:jobHuntingButton];
     [jobHuntingButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(firstLabel).offset(21);
+        make.left.equalTo(view).offset(30);
         make.top.equalTo(view).offset(10);
         make.width.equalTo(@90);
         make.height.equalTo(@60);
@@ -344,7 +293,7 @@ UITableViewDelegate
     jobHuntingLable.textAlignment = NSTextAlignmentCenter;
     [view addSubview:jobHuntingLable];
     [jobHuntingLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(firstLabel).offset(21);
+        make.left.equalTo(view).offset(30);
         make.top.equalTo(jobHuntingButton).offset(70);
         make.width.equalTo(@90);
         make.height.equalTo(@20);
@@ -377,7 +326,7 @@ UITableViewDelegate
     secondLabel.alpha = 0.5;
     [view addSubview:secondLabel];
     [secondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(salaryRaiseButton).offset(-110);
+        make.centerX.equalTo(view.mas_centerX).offset(0);
         make.top.equalTo(view).offset(10);
         make.width.equalTo(@1);
         make.height.equalTo(@90);
@@ -386,7 +335,6 @@ UITableViewDelegate
 
 #pragma mark -  course 界面的一些点击事件
 - (void)leftBarButtonItemAction:(UIBarButtonItem *)leftBarButton {
-    NSLog(@"课程分类");
     
     Glf_CourseCatagoryViewController *coursesCatagoryVC = [[Glf_CourseCatagoryViewController alloc] init];
     [self.navigationController pushViewController:coursesCatagoryVC animated:YES];
@@ -394,46 +342,64 @@ UITableViewDelegate
 }
 
 - (void)rightBarButtonItemAction:(UIBarButtonItem *)rightBarButton {
-    NSLog(@"历史记录");
-    Glf_HistoryViewController *historyVC = [[Glf_HistoryViewController alloc] init];
-    [self.navigationController pushViewController:historyVC animated:YES];
+    Glf_SettingViewController *settingVC = [[Glf_SettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)searchButtonAction:(UIButton *)button {
-    NSLog(@"搜索");
-    Glf_SearchCoursesViewController *searchCoursesVC = [[Glf_SearchCoursesViewController alloc] init];
-    [self.navigationController pushViewController:searchCoursesVC animated:YES];
-}
-
-- (void)scanButtonAction:(UIButton *)button {
-    NSLog(@"扫描");
-    Glf_ScanViewController *scanVC = [[Glf_ScanViewController alloc] init];
-    [self.navigationController pushViewController:scanVC animated:YES];
     
+    Glf_SearchViewController *searchVC = [[Glf_SearchViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
+
 }
 
 - (void)addButtonAction:(UIButton *)button {
-    NSLog(@"定制课程");
     Glf_CustomizedCoursesViewController *customizedCoursesVC = [[Glf_CustomizedCoursesViewController alloc] init];
     [self presentViewController:customizedCoursesVC animated:YES completion:nil];
 }
 
-- (void)practiseButtonAction:(UIButton *)button {
-    NSLog(@"实战课程");
-    Glf_PractiseViewController *practiseVC = [[Glf_PractiseViewController alloc] init];
-    [self.navigationController pushViewController:practiseVC animated:YES];
-}
 
 - (void)jobHuntingButtonAction:(UIButton *)button {
-    NSLog(@"求职路线");
+
     Glf_JobHuntingViewController *jobHuntingVC = [[Glf_JobHuntingViewController alloc] init];
     [self.navigationController pushViewController:jobHuntingVC animated:YES];
 }
 - (void)salaryRaiseButtonAction:(UIButton *)button {
-    NSLog(@"加薪利器");
     
     Glf_SalaryRaiseViewController *salaryRaiseVC = [[Glf_SalaryRaiseViewController alloc] init];
     [self.navigationController pushViewController:salaryRaiseVC animated:YES];
+}
+
+#pragma mark - 网络监测
+- (void)networkMonitoring {
+    // 创建网络监听管理者对象
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown: {
+                [UIView showMessage:@"未识别的网络"];
+                break;
+            }
+            case AFNetworkReachabilityStatusNotReachable: {
+                [UIView showMessage:@"未连接网络"];
+                break;
+            }
+            case AFNetworkReachabilityStatusReachableViaWiFi: {
+                [UIView showMessage:@"当前网络环境为: WiFi"];
+                break;
+            }
+            case AFNetworkReachabilityStatusReachableViaWWAN: {
+                [UIView showMessage:@"当前网络环境为:2G/3G/4G"];
+                break;
+            }
+            default:
+                break;
+        }
+
+    }];
+    
+    // 开始监听
+    [manager startMonitoring];
 }
 
 

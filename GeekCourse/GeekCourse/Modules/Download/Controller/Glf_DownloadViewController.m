@@ -48,7 +48,8 @@
     [_backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX).offset(0);
         make.centerY.equalTo(self.view.mas_centerY).offset(0);
-        make.width.height.equalTo(@300);
+        make.width.equalTo(@(WIDTH_SCREEN / 1.38));
+        make.height.equalTo(@(HEIGHT_SCREEN / 2.45));
     }];
 }
 
@@ -81,7 +82,7 @@
 #pragma mark - 创建设备容量说明 Label
 - (void)creatDescSpaceOfDeviceLabel {
     
-    UILabel *deviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, WIDTH_SCREEN - 60, 50)];
+    UILabel *deviceLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, WIDTH_SCREEN - 60, 50)];
     
     CGFloat total = [self totalDiskSpace];
     CGFloat free = [self freeDiskSpace];
@@ -117,7 +118,6 @@
     
     return freeDiskVolume / (1024.0 * 1024.0 * 1024.0);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

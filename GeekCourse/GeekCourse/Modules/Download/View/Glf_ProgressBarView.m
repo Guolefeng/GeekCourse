@@ -31,7 +31,7 @@
         [_view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).offset(30);
             make.right.equalTo(self).offset(-30);
-            make.top.equalTo(self).offset(100);
+            make.top.equalTo(self).offset(50);
             make.height.equalTo(@10);
         }];
         
@@ -42,15 +42,15 @@
         [self.view addSubview:_changingView];
         
         self.time = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(changeAction) userInfo:nil repeats:YES];
-       // [[NSRunLoop mainRunLoop] addTimer:self.time forMode:NSDefaultRunLoopMode];
     }
     return self;
 }
 
 - (void)changeAction {
     CGRect changeFrame = self.changingView.frame;
-    changeFrame.size.width += 0.25;
+    changeFrame.size.width += 1;
     self.changingView.frame = changeFrame;
+    
     if (self.changingView.frame.size.width == self.usedSpace) {
         // 清除 定时器
         [self.time invalidate];

@@ -25,19 +25,15 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.cellImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 150, 100)];
-        _cellImageView.backgroundColor = [UIColor grayColor];
-        
-        
+        self.cellImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, WIDTH_SCREEN / 2.76, 100)];
         [self.contentView addSubview:_cellImageView];
         
         self.cellNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _cellNameLabel.numberOfLines = 0;
         [_cellNameLabel sizeToFit];
-
         [self.contentView addSubview:_cellNameLabel];
         [_cellNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_cellImageView).offset(160);
+            make.left.equalTo(_cellImageView.mas_right).offset(5);
             make.top.equalTo(self).offset(10);
             make.right.equalTo(self).offset(-20);
             make.height.equalTo(@60);
@@ -47,19 +43,18 @@
         _cellUserImageView.image = [UIImage imageNamed:@"user"];
         [self.contentView addSubview:_cellUserImageView];
         [_cellUserImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_cellImageView).offset(160);
+            make.left.equalTo(_cellImageView.mas_right).offset(5);
             make.top.equalTo(_cellNameLabel).offset(75);
             make.width.equalTo(@20);
             make.height.equalTo(@20);
         }];
         
         self.cellNumberLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        
         [self.contentView addSubview:_cellNumberLabel];
         [_cellNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_cellUserImageView).offset(22);
+            make.left.equalTo(_cellUserImageView.mas_right).offset(5);
             make.top.equalTo(_cellNameLabel).offset(70);
-            make.width.equalTo(@100);
+            make.width.equalTo(@50);
             make.height.equalTo(@30);
         }];
         
@@ -67,7 +62,7 @@
         _cellUpDataLabel.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:_cellUpDataLabel];
         [_cellUpDataLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self).offset(-20);
+            make.right.equalTo(self).offset(-10);
             make.top.equalTo(_cellNameLabel).offset(70);
             make.left.equalTo(_cellNumberLabel.mas_right).offset(0);
             make.height.equalTo(@30);

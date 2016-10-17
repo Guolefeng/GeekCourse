@@ -54,9 +54,21 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.frame = CGRectMake(10, 10, 40, 40);
-    _nameLabel.frame = CGRectMake(50, 10, self.contentView.frame.size.width / 2, 40);
-    _numberLabel.frame = CGRectMake(50 + self.contentView.frame.size.width / 2, 10, 40, 40);
+    _imageView.frame = CGRectMake(0, 10, 40, 40);
+
+    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_imageView.mas_right).offset(0);
+        make.top.equalTo(self.contentView).offset(10);
+        make.width.equalTo(@(self.contentView.frame.size.width / 2));
+        make.height.equalTo(@40);
+    }];
+    
+    [_numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_nameLabel.mas_right).offset(0);
+        make.top.equalTo(self.contentView).offset(10);
+        make.right.equalTo(self.contentView).offset(0);
+        make.height.equalTo(@40);
+    }];
 }
 
 

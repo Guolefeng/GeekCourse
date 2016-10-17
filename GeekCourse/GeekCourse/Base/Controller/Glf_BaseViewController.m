@@ -57,6 +57,32 @@
     
 }
 
+#pragma mark - GET 请求
+- (void)getWithURL:(NSString *)URL block:(void (^)(id))block {
+    NSURL *url = [NSURL URLWithString:URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"GET";
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (!error) {
+                id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                // 传值
+                block(result);
+            }
+            
+        });
+        
+    }];
+    
+    [dataTask resume];
+    
+}
+
 #pragma mark - 轮播图
 - (void)creatScrollViewWithImageNameArray:(NSMutableArray *)imageArray frame:(CGRect)frame view:(UIView *)view {
     
@@ -71,6 +97,32 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem getBarButtonItemWithImage:[UIImage imageNamed:@"back-1"] target:^{
         [self.navigationController popViewControllerAnimated:YES];
     }];
+}
+
+#pragma mark - 状态指示器
+- (void)doSomething {
+    sleep(1);
+}
+- (void)doSomethingWithProgress {
+    float progress = 0.0f;
+    while (progress < 1.0) {
+        progress += 0.01;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD HUDForView:self.view].progress = progress;
+        });
+        usleep(50000);
+    }
+}
+- (void)beLoadingMode {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = @"加载中...";
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        [self doSomething];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {

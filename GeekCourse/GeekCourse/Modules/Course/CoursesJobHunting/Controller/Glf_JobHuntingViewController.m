@@ -29,7 +29,8 @@ UICollectionViewDelegate
 @implementation Glf_JobHuntingViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    [super viewWillAppear:YES];
+    [super beLoadingMode];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
 }
@@ -167,12 +168,11 @@ UICollectionViewDelegate
     [self.UpCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
     [self.UpCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     
-//    Glf_JobHuntingModel *model = _modelArray[indexPath.item];
-//    NSLog(@"%@, %ld", model.id_list, indexPath.item);
-//    
-//    Glf_UIWebViewController *webVC = [[Glf_UIWebViewController alloc] init];
-//    webVC.urlString = [NSString stringWithFormat:@"http://www.imooc.com/course/programdetail/pid/%@", model.id_list];
-//    [self.navigationController pushViewController:webVC animated:YES];
+    Glf_JobHuntingModel *model = _modelArray[indexPath.item];
+    
+    Glf_UIWebViewController *webVC = [[Glf_UIWebViewController alloc] init];
+    webVC.urlString = [NSString stringWithFormat:@"http://www.imooc.com/course/programdetail/pid/%@", model.id_list];
+    [self.navigationController pushViewController:webVC animated:YES];
     
    
 }

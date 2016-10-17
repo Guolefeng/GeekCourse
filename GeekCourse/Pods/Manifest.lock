@@ -14,10 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - CYLTableViewPlaceHolder (1.0.8)
   - HYBMasonryAutoCellHeight (2.0.1):
     - Masonry (~> 0.6)
   - JSONModel (1.5.1)
   - Masonry (0.6.4)
+  - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SDCycleScrollView (1.65):
@@ -28,8 +30,10 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - CYLTableViewPlaceHolder (~> 1.0.8)
   - HYBMasonryAutoCellHeight (~> 2.0.1)
   - JSONModel (~> 1.5.1)
+  - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - SDCycleScrollView (~> 1.65)
@@ -37,14 +41,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CYLTableViewPlaceHolder: 44075c119aab78bbc514c75d771d6565e19938e8
   HYBMasonryAutoCellHeight: 9296583777080d32ba6257f55e52b7334dd481fc
   JSONModel: fd2553dc9e6608a3f35bfc956a14be35395d3852
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 6c1a460c2da3a389d20456dc66ff11940205b7ae
+PODFILE CHECKSUM: ddf579f380e736bab68c3d586dd311678cfe4cac
 
 COCOAPODS: 1.0.1

@@ -45,19 +45,21 @@ UITableViewDelegate
     
     self.modelArray = [NSMutableArray array];
     
-    NSString *body = [NSString stringWithFormat:@"cid=%@&page=1&token=7663346a454986bbb04485f9a37c172b&uid=4017288", _cid];
-    
-    Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
-    [baseVC postWithURL:@"http://www.imooc.com/api3/coursecommentlist" body:body block:^(id result) {
+    if (_cid) {
+        NSString *body = [NSString stringWithFormat:@"cid=%@&page=1&token=7663346a454986bbb04485f9a37c172b&uid=4017288", _cid];
         
-        NSDictionary *dic = (NSDictionary *)result;
-        NSArray *array = dic[@"data"];
-        for (NSDictionary *dic in array) {
-            Glf_CommentModel *model = [Glf_CommentModel modelWithDic:dic];
-            [_modelArray addObject:model];
-        }
-        [_tableView reloadData];
-    }];
+        Glf_BaseViewController *baseVC = [[Glf_BaseViewController alloc] init];
+        [baseVC postWithURL:@"http://www.imooc.com/api3/coursecommentlist" body:body block:^(id result) {
+            
+            NSDictionary *dic = (NSDictionary *)result;
+            NSArray *array = dic[@"data"];
+            for (NSDictionary *dic in array) {
+                Glf_CommentModel *model = [Glf_CommentModel modelWithDic:dic];
+                [_modelArray addObject:model];
+            }
+            [_tableView reloadData];
+        }];
+    }
 }
 
 #pragma mark - tableView 常规协议

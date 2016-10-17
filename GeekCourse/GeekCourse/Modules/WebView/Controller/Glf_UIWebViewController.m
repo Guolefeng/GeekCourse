@@ -26,6 +26,7 @@ UIWebViewDelegate
     [super viewWillAppear:YES];
     
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
     [super setLeftBarButtonItem];
 }
 

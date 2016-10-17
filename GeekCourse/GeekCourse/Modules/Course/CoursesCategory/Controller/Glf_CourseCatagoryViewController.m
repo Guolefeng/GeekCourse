@@ -29,7 +29,7 @@ UICollectionViewDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
+    [super beLoadingMode];
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1.0;
@@ -68,7 +68,6 @@ UICollectionViewDelegate
             [model setValuesForKeysWithDictionary:dic];
             [_categoriesModelArray addObject:model];
         }
-        
         [_collectionView reloadData];
         
     }];
@@ -80,8 +79,8 @@ UICollectionViewDelegate
     
     _flowlayout.itemSize =CGSizeMake((WIDITH - 60) / 2, 50);
     // 区之间的边距
-    _flowlayout.sectionInset = UIEdgeInsetsMake(10, 20, 10, 20);
-    
+    _flowlayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+
     _flowlayout.headerReferenceSize = CGSizeMake(self.view.bounds.size.width, 30);
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDITH, HEIGHT - 64) collectionViewLayout:_flowlayout];

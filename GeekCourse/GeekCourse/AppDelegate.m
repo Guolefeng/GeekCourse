@@ -10,11 +10,8 @@
 #import "Glf_GuideViewController.h"
 #import "Glf_CourseViewController.h"
 #import "Glf_TabBarViewController.h"
-#import "Glf_RegisterAndLoginViewController.h"
 
 @interface AppDelegate ()
-
-
 
 @end
 
@@ -24,7 +21,7 @@
     // Override point for customization after application launch.
     
     // 引导页
-//    // 使用 NSUserDefaults 读取用户数据
+    // 使用 NSUserDefaults 读取用户数据
 //    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
 //    
 //    // 判断是否是第一次进入引导页

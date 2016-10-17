@@ -10,9 +10,7 @@
 
 #import "Glf_CourseViewController.h"
 #import "Glf_DownloadViewController.h"
-#import "Glf_DiscoverViewController.h"
-#import "Glf_MineViewController.h"
-
+#import "Glf_TechnologyNewsViewController.h"
 
 @interface Glf_TabBarViewController ()
 <
@@ -54,28 +52,19 @@ UITabBarControllerDelegate
     
     downloadNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"下载" image:downloadImage selectedImage:selectedDownloadImage];
     
-    // 发现
-    Glf_DiscoverViewController *discoverVC = [[Glf_DiscoverViewController alloc] init];
-    UINavigationController *discoverNC = [[UINavigationController alloc] initWithRootViewController:discoverVC];
+    // 科技
+    Glf_TechnologyNewsViewController *technologyNewsVC = [[Glf_TechnologyNewsViewController alloc] init];
+    UINavigationController *discoverNC = [[UINavigationController alloc] initWithRootViewController:technologyNewsVC];
     
     UIImage *discoverImage = [UIImage imageNamed:@"discoverp"];
     discoverImage = [discoverImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *selectedDiscoverImage = [UIImage imageNamed:@"discover"];
     selectedDiscoverImage = [selectedDiscoverImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    discoverNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:discoverImage selectedImage:selectedDiscoverImage];
+    discoverNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"科技" image:discoverImage selectedImage:selectedDiscoverImage];
     
-    // 我的
-    Glf_MineViewController *mineVC = [[Glf_MineViewController alloc] init];
-    UINavigationController *mineNC = [[UINavigationController alloc] initWithRootViewController:mineVC];
     
-    UIImage *mineImage = [UIImage imageNamed:@"minep"];
-    mineImage = [mineImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *selectedMineImage = [UIImage imageNamed:@"mine"];
-    selectedMineImage = [selectedMineImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    mineNC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:mineImage selectedImage:selectedMineImage];
-    
-    self.viewControllers = @[courseNC, downloadNC, discoverNC, mineNC];
+    self.viewControllers = @[courseNC, downloadNC, discoverNC];
     // 设置代理人
     self.delegate = self;
     self.tabBar.tintColor = [UIColor redColor];
@@ -97,10 +86,6 @@ UITabBarControllerDelegate
     self.tabBar.hidden = YES;
 }
 
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"seleted %lu", tabBarController.selectedIndex);
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

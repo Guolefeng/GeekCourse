@@ -17,10 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    view.backgroundColor = [UIColor yellowColor];
-    view.layer.cornerRadius = 40;
-    [self.view addSubview:view];
+    self.title = @"历史记录";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    [super setLeftBarButtonItem];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, HEIGHT_SCREEN - 64)];
+    imageView.image = [UIImage imageNamed:@"history_background"];
+    [self.view addSubview:imageView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -41,6 +41,7 @@ Glf_SalaryCollectionViewCellDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    [super beLoadingMode];
     // 观察者
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhenPushPage" object:nil];
     self.navigationController.navigationBar.subviews.firstObject.alpha = 1;
@@ -152,7 +153,7 @@ Glf_SalaryCollectionViewCellDelegate
 #pragma mark - 创建 header collectionView
 - (void)creatHeaderCollectionView {
     UICollectionViewFlowLayout *headerFlowlayout = [[UICollectionViewFlowLayout alloc] init];
-    headerFlowlayout.itemSize = CGSizeMake((WIDTH_SCREEN - 10 * 7 ) / 6, 50);
+    headerFlowlayout.itemSize = CGSizeMake((WIDTH_SCREEN - 10 * 6 ) / 6, 50);
     headerFlowlayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
     
     self.headerCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_SCREEN, 50) collectionViewLayout:headerFlowlayout];
